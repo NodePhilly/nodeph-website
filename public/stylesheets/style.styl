@@ -1,0 +1,611 @@
+/*CSS for Node Philly*/
+/*Version: 1.0*/
+/*Authored: @bwhitham, @timsavery*/
+
+//styl variables
+nodeph-blue = rgba(130, 192, 192, 1.0)
+nodeph-blue50 = rgba(130, 192, 192, 0.5)
+nodeph-gray = rgba(127, 136, 145, 1.0)
+nodeph-gray50 = rgba(127, 136, 145, 0.5)
+nodeph-gray10 = rgba(127, 136, 145, 0.1)
+nodeph-green = rgba(186, 220, 20, 1.0)
+nodeph-cream = rgba(220, 213, 152, 1.0)
+nodeph-ltblue = rgba(202, 238, 238, 1.0)
+nodeph-mainsprite = url('/imgs/node-philly-sprite01.png')
+nodeph-sitebg = url('/imgs/node-philly-sitebg.png')
+nodeph-logos = url('/imgs/node-philly-sponsors.png')
+nodeph-thickborder = 4px
+nodeph-normalborder = 2px
+nodeph-thinborder = 1px
+center-hor = 0 auto 0 auto
+border-gap = 3px
+standard-padding = 5px
+
+side-border(n)
+	border-left n nodeph-blue solid
+	border-right n nodeph-blue solid
+bottom-border(n)
+	border-bottom n nodeph-blue solid
+top-border(n)
+	border-top n nodeph-blue solid
+top-bottom-border(n)
+	border-top n nodeph-blue solid
+	border-bottom n nodeph-blue solid
+
+/*__________________________________________________________ universals*/
+
+*
+	margin 0
+	padding 0 
+	outline none
+	border none
+	list-style none
+
+.clear
+	clear both
+
+::-moz-selection
+	background-color nodeph-green
+	color inherit
+	text-shadow none
+
+::selection
+	background-color nodeph-green
+	color inherit
+	text-shadow none
+
+
+/*__________________________________________________________ typography*/
+
+html
+	font-size 100%
+	-webkit-text-size-adjust 100%
+	-ms-text-size-adjust 100%
+	font-family sans-serif
+	color nodeph-gray
+
+p
+	font-size 15px
+
+h1, h2, h3, h4
+	font-size 18px
+	font-weight 100
+	text-transform uppercase
+
+a
+	color nodeph-blue
+	text-decoration underline
+
+section.the-tweet, section.the-micro
+	font-size 13px
+
+section.the-calendar ul.headers li
+	font-size 12px
+section.the-calendar ul.week li[name="adate"]
+	font-size 11px
+	color nodeph-gray50
+
+/*__________________________________________________________ structure*/
+
+html
+	width 100%
+	height 100%
+	background-image nodeph-sitebg
+	background-repeat repeat
+
+body
+	width 1240px
+	side-border(nodeph-normalborder)
+	bottom-border(nodeph-normalborder)
+	margin center-hor
+	padding 0 0 15px 0
+
+header.global, section.feature, section.timsdoodads, footer.global
+	width 100%
+
+header.global
+	height 115px
+
+section.feature
+	height 285px
+	bottom-border(nodeph-normalborder)
+
+section.timsdoodads
+	height 400px
+
+footer.global
+	height 54px
+
+/*__________________________________________________________ site head*/
+
+nav.nav1, nav.logo, nav.nav2
+	display inline-block
+
+nav.nav1, nav.nav2
+	height 50px
+	background-image nodeph-mainsprite
+	background-position 0 -15px
+	background-repeat repeat-x
+	vertical-align top
+	margin 34px 0 0 0
+
+nav.nav1
+	width 295px
+	padding 0 0 0 220px
+
+nav.nav2
+	width 500px
+	padding 0 0 0 15px
+
+nav.logo
+	width 180px
+	height 105px
+	margin 5px 15px 0 15px
+	background-image nodeph-mainsprite
+	background-position -319px -65px
+	background-repeat no-repeat
+
+nav.nav1 a, nav.nav2 a
+	height 34px
+	padding 16px 25px 0 25px
+	margin 0 15px 0 0
+	display inline-block
+	vertical-align top
+	text-transform uppercase
+	text-decoration none
+	color nodeph-ltblue
+	cursor pointer
+	transition all 0.3s ease
+	-webkit-transition all 0.3s ease
+	-moz-transition all 0.3s ease
+	-o-transition all 0.3s ease
+	background-image nodeph-mainsprite
+	background-repeat no-repeat
+
+nav.nav1 a:hover, nav.nav2 a:hover, nav.nav1 a.selected, nav.nav2 a.selected
+	color #fff
+
+nav.nav1 a:nth-child(1)
+	background-position -193px -230px
+nav.nav1 a:nth-child(1):hover, nav.nav1 a:nth-child(1):hover.selected
+	background-position -193px -265px
+
+nav.nav1 a:nth-child(2)
+	background-position -184px -245px
+nav.nav1 a:nth-child(2):hover, nav.nav1 a:nth-child(2):hover.selected
+	background-position -184px -265px
+
+nav.nav2 a:nth-child(1), nav.nav2 a:nth-child(2)
+	background-position -190px -245px
+nav.nav2 a:nth-child(1):hover, nav.nav2 a:nth-child(2):hover, nav.nav2 a:nth-child(1).selected, nav.nav2 a:nth-child(2).selected
+	background-position -190px -265px
+
+/*__________________________________________________________ featured content*/
+
+section.viewport, section.overview, article.one, article.two, article.three, article.four, article.five
+	width 1240px
+	height 266px
+
+section.viewport
+	overflow hidden
+	position relative
+
+section.overview
+	position absolute
+	top 0 
+	left 0
+
+section.feature footer
+	width inherit
+	height 19px
+	top-border(nodeph-normalborder)
+
+section.feature footer section.col1, section.feature footer section.col3
+	width 530px
+	background-image nodeph-mainsprite
+	background-position 0 -2px
+	background-repeat repeat-x
+
+section.feature footer section.pager
+	width 150px
+	padding 1px 0 0 30px
+
+section.feature footer section.col1, section.feature footer section.col3
+	height 9px
+	top-bottom-border(nodeph-thinborder)
+	margin border-gap 0 0 0
+
+section.feature footer section.col1, section.feature footer section.col3, section.feature footer section.pager
+	display inline-block
+	vertical-align top
+
+a.pagenum
+	width 15px
+	height 15px
+	display inline-block
+	vertical-align top
+	background-image nodeph-mainsprite
+	background-repeat no-repeat
+	cursor pointer
+	margin 0 10px 0 0
+
+a.pagenum
+	background-position -217px -107px
+
+a.active, a.pagenum:hover
+	background-position -202px -107px
+
+/*__________________________________________________________ featured carousel*/
+
+article.one, article.two, article.three, article.four, article.five
+	float left
+
+section.overview .callout
+	width 40%
+	height 140px
+	margin 60px auto 0 auto
+	position relative
+	padding 0 50px 0 50px
+	text-align center
+	line-height 25px
+
+section.overview .callout:before, section.overview .callout:after
+	display block
+	font-size 100px
+	font-weight 100
+	position absolute
+	top 35px
+
+section.overview .callout:before
+	content "{"
+	left 0
+section.overview .callout:after
+	content "}"
+	right 0
+
+/*__________________________________________________________ widgets*/
+
+section.tweets, section.geeks
+	width 304px
+
+section.calendar
+	width 618px
+
+section.tweets, section.geeks, section.calendar
+	display inline-block
+	height 403px
+	vertical-align top
+
+section.tweets
+	margin 0 border-gap 0 0
+	border-right nodeph-thinborder nodeph-blue solid
+
+section.geeks
+	margin 0 0 0 border-gap
+	border-left nodeph-thinborder nodeph-blue solid
+
+/*calendar*/
+
+section.calendar
+	side-border(nodeph-normalborder)
+
+section.calendar1, section.calendar2
+	width 307px
+	height 307px
+	display inline-block
+	vertical-align top
+
+section.calendar2
+	width 311px
+
+section.calendar footer
+	width inherit
+	height 60px
+	top-bottom-border(nodeph-normalborder)
+
+section.calendar footer section.inset
+	width inherit
+	height 42px
+	margin 3px 0 0 0
+	top-bottom-border(nodeph-thinborder)
+	padding 10px 0 0 0
+
+section.calendar1
+	width 305px
+	border-right nodeph-normalborder nodeph-blue solid
+
+section.calendar1 header
+	width inherit
+	height 45px
+	border-bottom nodeph-thinborder nodeph-blue solid
+	margin 0 0 3px 0
+
+section.calendar1 header a.nextmo, section.calendar1 header a.prevmo, section.calendar1 header h1
+	text-align center
+	display inline-block
+	vertical-align top
+	margin 8px 0
+
+section.calendar1 header h1
+	width 225px
+	padding 5px 0
+
+section.calendar1 header a.nextmo, section.calendar1 header a.prevmo
+	width 31px
+	height 30px
+	background-image nodeph-mainsprite
+	background-repeat no-repeat
+	cursor pointer
+
+section.calendar1 header a.nextmo
+	background-position -100px -65px
+section.calendar1 header a.nextmo:hover
+	background-position -131px -65px
+section.calendar1 header a.nextmo:active
+	background-position -162px -65px
+section.calendar1 header a.prevmo
+	background-position -100px -95px
+	margin 8px 0 0 10px
+section.calendar1 header a.prevmo:hover
+	background-position -131px -95px
+section.calendar1 header a.prevmo:active
+	background-position -162px -95px
+
+section.the-calendar
+	width inherit
+	height 256px
+	border-top nodeph-normalborder nodeph-blue solid
+
+section.the-calendar ul.headers li
+	width 43px
+	text-align center
+	height 15px
+	padding 3px 0
+	display inline-block
+	vertical-align top
+	border-bottom nodeph-thinborder nodeph-blue solid
+
+section.the-calendar ul.headers li:nth-last-child(1)
+	width 46px
+
+section.the-calendar ul.headers li:hover
+	background-color transparent
+	box-shadow none
+	-webkit-box-shadow none
+	-moz-box-shadow none
+
+section.the-calendar ul.week
+	width inherit
+	height 46px
+	border-bottom nodeph-thinborder nodeph-blue solid
+
+
+section.the-calendar ul.week:nth-last-child(1)
+	border-bottom none
+
+section.the-calendar ul.week li
+	height inherit
+	width 43px
+	border-right nodeph-thinborder nodeph-blue solid
+	background-color transparent
+	display inline-block
+	vertical-align top
+
+	transition all 0.4s ease
+	-webkit-transition all 0.4s ease
+	-moz-transition all 0.4s ease
+	-o-transition all 0.4s ease
+
+section.the-calendar ul.week li:hover
+	background-color nodeph-gray10
+	box-shadow inset 0 0 5px nodeph-gray50
+	-webkit-box-shadow inset 0 0 5px nodeph-gray50
+	-moz-box-shadow inset 0 0 5px nodeph-gray50
+
+section.the-calendar ul.week li:nth-last-child(1)
+	border-right none
+	width 41px
+
+section.the-calendar ul.week li[name="adate"]:before
+	content attr(rel)
+	margin 2px 0 0 2px
+
+/*calendar 2*/
+
+section.calendar2 section.the-feature
+	width inherit
+	height 256px
+	border-bottom nodeph-normalborder nodeph-blue solid
+
+section.calendar2 footer
+	width inherit
+	height 45px
+	border-top nodeph-thinborder nodeph-blue solid
+	margin 3px 0
+
+/*tweets and geeks sidebar */
+
+section.tweets h1, section.geeks h1
+	width 250px
+	height 71px
+	background-image nodeph-mainsprite
+	background-repeat no-repeat
+	margin 15px 0 0 25px
+
+section.tweets h1
+	background-position 0 -423px
+
+section.geeks h1
+	background-position 0 -494px
+
+section.the-tweet, section.the-micro
+	width auto
+	height 100px
+	padding 8px 15px 0 25px
+	overflow hidden
+	text-overflow ellipsis
+
+section.the-tweet:nth-child(3), section.the-micro:nth-child(3)
+	top-bottom-border(nodeph-thinborder)
+
+section.the-tweet a.username, section.the-micro a.username
+	display block
+	margin 0 0 5px 0
+
+/*__________________________________________________________ site footer*/
+
+footer.global section.col1, footer.global section.col2, footer.global section.socicons
+	display inline-block
+	height 50px
+
+footer.global section.col1, footer.global section.col2
+	width 495px
+	top-bottom-border(nodeph-normalborder)
+
+footer.global section.socicons
+	width 230px
+	margin 0 10px 0 10px
+	border none
+
+footer.global section.inset
+	width inherit
+	height 42px
+	margin border-gap 0
+	top-bottom-border(nodeph-thinborder)
+	display inline-block
+	
+footer.global section.stars
+	height 9px
+	width 315px
+	background-image nodeph-mainsprite
+	background-position 0 -2px
+	background-repeat repeat-x
+	margin:15px 0
+
+section.established, section.year
+	width 50px
+	height inherit
+	side-border(nodeph-thinborder)
+
+section.established
+	margin 0 5px 0 120px
+
+div.year-icon, div.est-icon
+	width 35px
+	height 15px
+	background-image nodeph-mainsprite
+	background-repeat no-repeat
+	margin 15px 0 0 8px
+
+div.year-icon
+	background-position -202px -90px
+
+div.est-icon
+	background-position -202px -69px
+
+footer.global section.stars, section.established, section.year
+	display inline-block
+
+
+/*__________________________________________________________ footer icons */
+
+
+a.icon-twitter, a.icon-geeklist, a.icon-instagram, a.icon-github
+	width 50px
+	height 50px
+	display inline-block
+	background-image nodeph-mainsprite
+	background-repeat no-repeat
+	cursor pointer
+	margin-top 3px
+	position relative
+
+a.icon-twitter, a.icon-geeklist, a.icon-instagram
+	margin 0 5px 0
+
+
+a.icon-twitter
+	background-position 0 -65px
+a.icon-twitter:hover
+	background-position -50px -65px
+a.icon-instagram
+	background-position 0 -115px
+a.icon-instagram:hover
+	background-position -50px -115px
+a.icon-geeklist
+	background-position 0 -165px
+a.icon-geeklist:hover
+	background-position -50px -165px
+a.icon-github
+	background-position 0 -215px
+a.icon-github:hover
+	background-position -50px -215px
+
+/*__________________________________________________________ logos*/
+
+a.nodejs-logo, a.nodejs-logo:hover
+	width 110px
+	height 30px
+	background-image nodeph-logos
+	background-repeat no-repeat
+	display block
+	margin 0 auto 0 auto
+	cursor pointer
+	position relative
+
+a.nodejs-logo
+	background-position -44px -64px
+
+a.nodejs-logo:hover
+	background-position -244px -64px
+
+
+
+/*__________________________________________________________ pop ups */
+
+a[data-tip]::before
+	content attr(data-tip)
+	font-size 13px
+	position absolute
+	left 50%
+	margin 0 0 0 -50px
+	bottom 9999px
+	background-color nodeph-blue
+	color #fff
+	padding 15px 20px 15px 20px
+	white-space nowrap
+	opacity 0
+	
+	transition opacity 0.5s ease-in-out
+	-webkit-transition opacity 0.5s ease-in-out
+	-moz-transition opacity 0.5s ease-in-out
+	-o-transition opacity 0.5s ease-in-out
+	
+	border-radius 5px
+	-webkit-border-radius 5px
+	-moz-border-radius 5px
+	
+	box-shadow 0 0 15px nodeph-gray50
+	-webkit-box-shadow 0 0 15px nodeph-gray50
+	-moz-box-shadow 0 0 15px nodeph-gray50
+	
+	border 1px rgba(255,255,255,0.9) solid
+	
+a[data-tip]:hover::before
+	opacity 1.0
+	bottom 60px
+
+a.nodejs-logo[data-tip]:hover::before
+	bottom 40px
+	left -15px
+	
+
+
+/*__________________________________________________________ phones */
+
+@media screen and (max-width: 321px)
+	body
+		width 95%
+
+
+
