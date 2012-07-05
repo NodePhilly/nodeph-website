@@ -3,13 +3,13 @@
 
 <h1>Things included in this site…</h1>
 
-Node.js sweetness: Check
-Uber-productive Jade and Stylus: Check
-Super trendy retro design: Check
-CSS tooltips: Check
-Flashy transitions: Check
-Lightweight carousels: Check
-Snobby, blatant disregard for small monitors and fallback solutions: Check Check
+Node.js sweetness: Check<br>
+Uber-productive Jade and Stylus: Check<br>
+Super trendy retro design: Check<br>
+CSS tooltips: Check<br>
+Flashy transitions: Check<br>
+Lightweight carousels: Check<br>
+Snobby, blatant disregard for small monitors and fallback solutions: Check Check<br>
 
 <h1>Contributors</h1>
 <a href="http://www.twitter.com/bwhitham" target="_blank">@bwhitham</a>
