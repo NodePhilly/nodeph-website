@@ -8,7 +8,36 @@ $(document).ready(function(){
 		interval: true,
 		intervaltime: 5000
 	});
+
+	var socket = io.connect('/');
+	
+	socket.on('tweet', function(tweet) {
+		var text = linkifyUrls(tweet.text);
+		text = linkifyHashTags(text);
+		text = linkifyUserHandles(text);
+
+		$('.tweets').append('\
+			<section class="the-tweet">\
+				<a href="https://www.twitter.com/' + tweet.from_user + '" class="username">@' + tweet.from_user + '</a>' + text + '\
+			</section>\
+		');
+	});
 });
+
+function linkifyUrls(text) {
+  var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+  return text.replace(exp, '<a href="$1" target="_blank">$1</a>');
+};
+
+function linkifyHashTags(text) {
+	var exp = /#(\w+)/ig;
+	return text.replace(exp, '<a href="https://twitter.com/#!/search/%23$1" target="_blank">#$1</a>');
+};
+
+function linkifyUserHandles(text) {
+	var exp = /@(\w+)/ig;
+	return text.replace(exp, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
+};
 
 function updateCalendar(year, month) {
 	if (year == undefined) { year = Date.today().getFullYear(); }
