@@ -11,8 +11,8 @@ $(document).ready(function(){
 });
 
 function updateCalendar(year, month) {
-	if (!year) { year = Date.today().getFullYear(); }
-	if (!month) { month = Date.today().getMonth(); }
+	if (year == undefined) { year = Date.today().getFullYear(); }
+	if (month == undefined) { month = Date.today().getMonth(); }
 
 	var today = new Date(year, month, 1)
 	  , firstDayOfMonth = today.moveToFirstDayOfMonth()
@@ -32,5 +32,25 @@ function updateCalendar(year, month) {
 		} else {
 			$(value).attr('rel', '');
 		}
+	});
+
+	var nextMonthButton = $('.calendar header .nextmo');
+	nextMonthButton.off('click');
+	nextMonthButton.click(function() {
+		var nextMonth = today.clearTime().moveToFirstDayOfMonth().add(1).months();
+		updateCalendar(
+			nextMonth.getFullYear(),
+			nextMonth.getMonth()
+		);
+	});
+
+	var prevMonthButton = $('.calendar header .prevmo');
+	prevMonthButton.off('click');
+	prevMonthButton.click(function() {
+		var lastMonth = today.clearTime().moveToFirstDayOfMonth().add(-1).months();
+		updateCalendar(
+			lastMonth.getFullYear(),
+			lastMonth.getMonth()
+		);
 	});
 };
