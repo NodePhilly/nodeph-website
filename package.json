@@ -6,7 +6,7 @@
       "express": "2.5.7"
     , "stylus": "0.28.0"
     , "jade": "0.26.3"
-    , "ntwitter": "0.4.0"
     , "socket.io": "0.9.6"
+    , "twitterfeed": "0.0.1"
   }
 }

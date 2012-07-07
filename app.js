@@ -22,7 +22,7 @@ app.get('/', routes.index);
 
 var self = this;
 app.listen(3000, function() {
-  self.twitterfeed = new (require('./twitterfeed'))({
+  self.twitterfeed = new (require('twitterfeed'))({
     searchString: '@NodePhilly OR #nodephilly OR #nodejs',
     filterString: 'nodephilly,nodejs',
     cacheLimit: 3
