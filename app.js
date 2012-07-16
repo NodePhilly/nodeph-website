@@ -1,5 +1,6 @@
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes/index')
+  , events = require('./routes/events');
 
 var app = module.exports = express.createServer()
   , io = require('socket.io').listen(app);
@@ -20,8 +21,10 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 
+app.get('/events/:year/:month', events.index);
+
 var self = this;
-app.listen(3000, function() {
+app.listen(3000/*, function() {
   self.twitterfeed = new (require('twitterfeed'))({
     searchString: '@NodePhilly OR #nodephilly OR #nodejs',
     filterString: 'nodephilly,nodejs',
@@ -39,4 +42,4 @@ app.listen(3000, function() {
       console.log(tweet);
     });
   });
-});
+}*/);

@@ -39,47 +39,89 @@ function linkifyUserHandles(text) {
 	return text.replace(exp, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
 };
 
-function updateCalendar(year, month) {
-	if (year == undefined) { year = Date.today().getFullYear(); }
-	if (month == undefined) { month = Date.today().getMonth(); }
+function findAll(list, predicate) {
+	var results = [];
 
-	var today = new Date(year, month, 1)
-	  , firstDayOfMonth = today.moveToFirstDayOfMonth()
-	  , daysInMonth = Date.getDaysInMonth(today.getYear(), today.getMonth())
-	  , monthName = today.getMonthName()
-	  , fullYear = today.getFullYear();
-	
-	$('.calendar header h1').text(monthName + ' - ' + fullYear);
-
-	var dates = $('.the-calendar li[name="adate"]')
-		, day = firstDayOfMonth.getDay()
-	  , dayOfMonth = 0;
-
-	$.each(dates, function(idx, value) {
-		if (idx >= day && dayOfMonth < daysInMonth) {
-			$(value).attr('rel', ++dayOfMonth);
-		} else {
-			$(value).attr('rel', '');
+	list.forEach(function(item) {		
+		if (predicate(item)) {
+			results.push(item);
 		}
 	});
 
-	var nextMonthButton = $('.calendar header .nextmo');
-	nextMonthButton.off('click');
-	nextMonthButton.click(function() {
-		var nextMonth = today.clearTime().moveToFirstDayOfMonth().add(1).months();
-		updateCalendar(
-			nextMonth.getFullYear(),
-			nextMonth.getMonth()
-		);
-	});
+	return results;
+};
 
-	var prevMonthButton = $('.calendar header .prevmo');
-	prevMonthButton.off('click');
-	prevMonthButton.click(function() {
-		var lastMonth = today.clearTime().moveToFirstDayOfMonth().add(-1).months();
-		updateCalendar(
-			lastMonth.getFullYear(),
-			lastMonth.getMonth()
-		);
+function updateCalendar(year, month, callback) {
+	if (year == undefined) { year = Date.today().getFullYear(); }
+	if (month == undefined) { month = Date.today().getMonth(); }
+
+	// TODO: ajax get events
+	$.get('/events/' + year + '/' + month, function(events) {
+		var today = new Date(year, month, 1)
+		  , firstDayOfMonth = today.moveToFirstDayOfMonth()
+		  , daysInMonth = Date.getDaysInMonth(today.getYear(), today.getMonth())
+		  , monthName = today.getMonthName()
+		  , fullYear = today.getFullYear();
+		
+		$('.calendar header h1').text(monthName + ' - ' + fullYear);
+
+		var dates = $('.the-calendar li[name="adate"]')
+		  , day = firstDayOfMonth.getDay()
+		  , dayOfMonth = 0;
+
+		$.each(dates, function(idx, value) {
+			if (idx >= day && dayOfMonth < daysInMonth) {
+				var date = new Date(year, month, dayOfMonth)
+				  , todaysEvents = findAll(events, function(e) {
+					  	return e.date == date.getTime();
+					  });
+
+				$(value).attr('rel', ++dayOfMonth)
+								.attr('date', date.getTime());
+
+				if (todaysEvents.length > 0) {
+					todaysEvents.forEach(function(event) {
+						$(value).append('<span>X</span>');
+					});					
+				} 
+				
+				$(value).data('events', todaysEvents);				
+			} else {
+				$(value).attr('rel', '')
+								.attr('date', '')
+								.data('events', [])
+								.children().remove();		
+			}
+
+			$(value).off('click')
+							.click(function() {
+								$('.calendar2 .the-feature').children().remove();
+								$(value).data('events').forEach(function(event) {
+									$('.calendar2 .the-feature').append('<h1>' + event.title + '</h1>')
+																							.append('<div><span class="time">' + event.startTime + '</span> - <span class="time">' + event.endTime + '</span></div>')
+																							.append('<p>' + event.description + '</p>');
+								});
+							});
+		});
+
+		var nextMonthButton = $('.calendar header .nextmo');
+		nextMonthButton.off('click');
+		nextMonthButton.click(function() {
+			var nextMonth = today.clearTime().moveToFirstDayOfMonth().add(1).months();
+			updateCalendar(
+				nextMonth.getFullYear(),
+				nextMonth.getMonth()
+			);
+		});
+
+		var prevMonthButton = $('.calendar header .prevmo');
+		prevMonthButton.off('click');
+		prevMonthButton.click(function() {
+			var lastMonth = today.clearTime().moveToFirstDayOfMonth().add(-1).months();
+			updateCalendar(
+				lastMonth.getFullYear(),
+				lastMonth.getMonth()
+			);
+		});
 	});
 };
