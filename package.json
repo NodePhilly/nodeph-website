@@ -1,7 +1,6 @@
 {
-    "name": "application-name"
+    "name": "nodeph-website"
   , "version": "0.0.1"
-  , "private": true
   , "dependencies": {
       "express": "2.5.7"
     , "stylus": "0.28.0"
