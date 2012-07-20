@@ -91,7 +91,7 @@
                 oTimer = setTimeout(function () {
                     iCurrent = iCurrent + 1 == iSteps ? -1 : iCurrent;
                     bForward = iCurrent + 1 == iSteps ? false : iCurrent == 0 ? true : bForward;
-                    oSelf.move(bForward ? 1 : -1);
+                    oContent.animate({ opacity: 0.0 }, 500, function () {oSelf.move(bForward ? 1 : -1);});                    
                 }, options.intervaltime);
             }
         };
