@@ -63,6 +63,7 @@ html
 	-ms-text-size-adjust 100%
 	font-family sans-serif
 	color nodeph-gray
+	text-rendering optimizeLegibility
 
 p
 	font-size 15px
@@ -84,6 +85,11 @@ section.the-calendar ul.headers li
 section.the-calendar ul.week li[name="adate"]
 	font-size 11px
 	color nodeph-gray50
+
+form.contact label
+	text-size 10px
+	color #fff
+
 
 /*__________________________________________________________ structure*/
 
@@ -162,6 +168,7 @@ nav.nav1 a, nav.nav2 a
 	-o-transition all 0.3s ease
 	background-image nodeph-mainsprite
 	background-repeat no-repeat
+	position relative
 
 nav.nav1 a:hover, nav.nav2 a:hover, nav.nav1 a.selected, nav.nav2 a.selected
 	color #fff
@@ -622,6 +629,7 @@ a[data-tip]::before
 	-moz-box-shadow 0 0 15px nodeph-gray50
 	
 	border 1px rgba(255,255,255,0.9) solid
+	z-index 2
 	
 a[data-tip]:hover::before
 	opacity 1.0
@@ -639,6 +647,9 @@ a.speakicon[data-tip]:hover::before
 	bottom 40px
 	left 0
 
+nav.nav1 a[data-tip]:hover::before, nav.nav2 a[data-tip]:hover::before
+	bottom 10px
+	left 60px
 
 /*__________________________________________________________ contact form */
 
@@ -649,9 +660,13 @@ form.contact
 	background-image url('/imgs/node-philly-formbg.png')
 	background-repeat repeat-x
 	background-position bottom left
-	display block
+	display none
 
-form.contact input
+form.contact section
+	float left
+	margin 15px 0 0 275px
+
+form.contact input, form.contact textarea
 	width 240px
 	height 25px
 	border nodeph-gray50 nodeph-thinborder solid
@@ -661,6 +676,46 @@ form.contact input
 	padding 0 5px 0 5px
 	margin 0 0 10px 0
 	display block
+
+form.contact textarea
+	width 325px
+	height 150px
+	padding 5px
+	float left
+	margin 15px 0 0 15px
+	resize none
+
+form.contact label
+	display block
+	margin 0 0 5px 0
+
+
+form.contact label input[type='checkbox']
+	float left
+	width auto
+	margin -5px 5px 0 0
+
+form.contact input[type='submit'], form.contact a.cancelbtn
+	width 20px
+	height 20px
+	display block
+	background-image nodeph-mainsprite
+	background-repeat no-repeat
+	background-position -200px -140px
+	margin 150px 0 0 -25px
+	background-color transparent
+	border none
+	float left
+	cursor pointer
+
+form.contact a.cancelbtn
+	background-position -220px -140px
+	float right
+	margin 5px 5px 0 0
+
+
+.contactinnerstuff
+	opacity 0.0
 
 /*__________________________________________________________ phones */
 

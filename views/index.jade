@@ -1,14 +1,28 @@
 form.contact
-	input(placeholder='Your name', type='text', name='username')
-	input(placeholder='Your email', type='email', name='useremail')
+	section.contactinnerstuff
+		input(placeholder='Your name', type='text', name='username')
+		input(placeholder='Your email', type='email', name='useremail')
+		label General Inquiry
+			input(type='checkbox', name='generalinq')
+			div.clear
+		label I'd like to host an event
+			input(type='checkbox', name='generalinq')
+			div.clear
+		label I'd like to speak at an event
+			input(type='checkbox', name='generalinq')
+			div.clear
+	textarea(placeholder='Your message (500 character max)', type='text', name='usermessage', maxlength='500', required='required').contactinnerstuff
+	input(type='submit', value='').contactinnerstuff
+	a.cancelbtn.contactinnerstuff
+
 header.global
 	nav.nav1
-		a Events
-		a Partners
+		a(data-tip='Coming Soon') Events
+		a(data-tip='Coming Soon') Partners
 	nav.logo
 	nav.nav2
-		a Gallery
-		a Connect
+		a(data-tip='Coming Soon') Gallery
+		a.contactbtn Connect
 section.feature
 	section.viewport
 		section.overview
