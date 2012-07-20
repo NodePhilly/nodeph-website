@@ -339,7 +339,7 @@ section.calendar1 header h1
 	padding 5px 0
 
 //icons 
-section.calendar1 header a.nextmo, section.calendar1 header a.prevmo, a.addtocalendar, a.speakicon, a.eventalert
+section.calendar1 header a.nextmo, section.calendar1 header a.prevmo, a.addtocalendar, a.speakicon, a.eventalert, a.hostevent
 	width 31px
 	height 30px
 	background-image nodeph-mainsprite
@@ -349,10 +349,9 @@ section.calendar1 header a.nextmo, section.calendar1 header a.prevmo, a.addtocal
 a.addtocalendar
 	background-position -100px -125px
 	float left
-	margin 6px 0 0 110px
 	display block
 	position relative
-
+	margin 6px 0 0 95px
 a.addtocalendar:hover
 	background-position -131px -125px
 a.addtocalendar:active
@@ -360,15 +359,26 @@ a.addtocalendar:active
 
 a.speakicon
 	background-position -100px -185px
-	float right
-	margin 6px 110px 0 0
+	float left
 	display block
 	position relative
-
+	margin 6px 10px 0 10px
 a.speakicon:hover
 	background-position -131px -185px
 a.speakicon:active
 	background-position -162px -185px
+
+a.hostevent
+	background-position -193px -185px
+	float left
+	display block
+	position relative
+	margin 6px 0 0 0
+a.hostevent:hover
+	background-position -224px -185px
+a.hostevent:active
+	background-position -255px -185px
+
 
 a.eventalert
 	background-position -100px -215px
@@ -643,7 +653,7 @@ a.addtocalendar[data-tip]:hover::before
 	bottom 40px
 	left -25px
 
-a.speakicon[data-tip]:hover::before
+a.speakicon[data-tip]:hover::before, a.hostevent[data-tip]:hover::before
 	bottom 40px
 	left 0
 
