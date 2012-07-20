@@ -4,8 +4,7 @@ var express = require('express')
   , tweets = require('./routes/twitter')
   , geeks = require('./routes/geeklist');
 
-var app = module.exports = express.createServer()
-  , io = require('socket.io').listen(app);
+var app = module.exports = express.createServer();
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
