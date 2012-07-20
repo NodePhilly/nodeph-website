@@ -71,37 +71,50 @@ function updateCalendar(year, month, callback) {
 
 		$.each(dates, function(idx, value) {
 			if (idx >= day && dayOfMonth < daysInMonth) {
-				var date = new Date(year, month, dayOfMonth)
+				var date = new Date(year, month, dayOfMonth + 1)
 				  , todaysEvents = findAll(events, function(e) {
-					  	return e.date == date.getTime();
+					  	return e.date == date.toString('MM-dd-yyyy');
 					  });
 
 				$(value).attr('rel', ++dayOfMonth)
-								.attr('date', date.getTime());
+								.attr('date', date.toString('MM-dd-yyyy'));
 
 				if (todaysEvents.length > 0) {
 					todaysEvents.forEach(function(event) {
 						$(value).append('<span>X</span>');
-					});					
-				} 
-				
-				$(value).data('events', todaysEvents);				
+					});
+
+					$(value).data('events', todaysEvents)
+									.off('click')
+									.click(function() {
+										var theFeature = $('.calendar2 .the-feature');
+
+										theFeature.children().remove();
+										$(this).data('events').forEach(function(event) {
+											theFeature.append('<h1>' + event.title + '</h1>')
+																.append('<div><span class="date">' + event.date + '</span>: <span class="time">' + event.startTime + '</span> - <span class="time">' + event.endTime + '</span></div>')
+																.append('<p>' + event.description + '</p>');
+										});
+									});
+				} else {
+					$(value).data('events', [])									
+									.off('click')									
+									.click(function() {
+										var theFeature = $('.calendar2 .the-feature');
+
+										theFeature.children().remove();
+										$(this).data('events').forEach(function(event) {
+											theFeature.append('<h1>' + event.title + '</h1>')
+																.append('<div><span class="date">' + event.date + '</span>: <span class="time">' + event.startTime + '</span> - <span class="time">' + event.endTime + '</span></div>')
+																.append('<p>' + event.description + '</p>');
+										});
+									})
+									.children().remove();
+				}
 			} else {
 				$(value).attr('rel', '')
-								.attr('date', '')
-								.data('events', [])
-								.children().remove();		
+								.attr('date', '');
 			}
-
-			$(value).off('click')
-							.click(function() {
-								$('.calendar2 .the-feature').children().remove();
-								$(value).data('events').forEach(function(event) {
-									$('.calendar2 .the-feature').append('<h1>' + event.title + '</h1>')
-																							.append('<div><span class="time">' + event.startTime + '</span> - <span class="time">' + event.endTime + '</span></div>')
-																							.append('<p>' + event.description + '</p>');
-								});
-							});
 		});
 
 		var nextMonthButton = $('.calendar header .nextmo');

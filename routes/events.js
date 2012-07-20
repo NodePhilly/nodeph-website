@@ -1,14 +1,36 @@
+var request = require('request')
+  , moment = require('moment');
+
 exports.index = function(req, res) {
 	var year = req.param('year')
-	  , month = req.param('month')
-	  , day = 1 + Math.random() * (28 - 1);
+	  , month = req.param('month');
 
-	res.send([{
-		date: new Date(year, month, day).getTime(),
-		title: 'Node.Philly July Meetup',
-		startTime: '7:00 PM',
-		endTime: '10:00 PM',
-		type: 'meetup',
-		description: 'Our monthly meetup for July will be held at the Center for Architecture.'
-	}]);
+	request.get('http://www.google.com/calendar/feeds/node.ph_njl3mveagvvfr4g21nbnetd658@group.calendar.google.com/public/full?alt=json&orderby=starttime&singleevents=true&sortorder=ascending&futureevents=true', function(error, request, body) {
+		var result = JSON.parse(body)
+		  , events = [];
+
+		if (result.feed) {
+			if (result.feed.entry) {				
+				result.feed.entry.forEach(function(event) {
+					var startTime = moment(event.gd$when[0].startTime);
+					
+					if (startTime.year() == year && startTime.month() == month) {
+						var endTime = moment(event.gd$when[0].endTime)
+							, date = startTime.format('MM-DD-YYYY');
+
+						events.push({
+							title: event.title.$t,
+							description: event.content.$t,
+							location: event.gd$where[0].valueString,
+							date: date,
+							startTime: startTime.format('hh:mm A'),
+							endTime: endTime.format('hh:mm A')
+						});
+					}
+				});
+			}
+		}
+
+		res.send(events);
+	});	
 };
