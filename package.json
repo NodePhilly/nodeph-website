@@ -6,8 +6,9 @@
     , "stylus": "0.28.0"
     , "jade": "0.26.3"
     , "socket.io": "0.9.6"
-    , "twitterfeed": "0.0.1"
+    , "twitterfeed": "0.0.3"
     , "request": "2.9.203"
     , "moment": "1.6.2"
+    , "geeklist": "git://github.com/chapel/node-geeklist.git"
   }
 }

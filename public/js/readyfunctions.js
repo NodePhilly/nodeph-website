@@ -9,35 +9,18 @@ $(document).ready(function(){
 		intervaltime: 5000
 	});
 
-	var socket = io.connect('/');
-	
-	socket.on('tweet', function(tweet) {
-		var text = linkifyUrls(tweet.text);
-		text = linkifyHashTags(text);
-		text = linkifyUserHandles(text);
+	getTweets(function(tweets) {
+		tweets.forEach(function(tweet) {
+			$('.tweets').append(createTweetElement(tweet));
+		});	
+	});
 
-		$('.tweets').append('\
-			<section class="the-tweet">\
-				<a href="https://www.twitter.com/' + tweet.from_user + '" class="username">@' + tweet.from_user + '</a>' + text + '\
-			</section>\
-		');
+	getGeeks(function(geeks) {
+		geeks.forEach(function(geek) {
+			$('.geeks').append(createGeekElement(geek));
+		});
 	});
 });
-
-function linkifyUrls(text) {
-  var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-  return text.replace(exp, '<a href="$1" target="_blank">$1</a>');
-};
-
-function linkifyHashTags(text) {
-	var exp = /#(\w+)/ig;
-	return text.replace(exp, '<a href="https://twitter.com/#!/search/%23$1" target="_blank">#$1</a>');
-};
-
-function linkifyUserHandles(text) {
-	var exp = /@(\w+)/ig;
-	return text.replace(exp, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
-};
 
 function findAll(list, predicate) {
 	var results = [];
@@ -120,6 +103,8 @@ function updateCalendar(year, month, callback) {
 		var nextMonthButton = $('.calendar header .nextmo');
 		nextMonthButton.off('click');
 		nextMonthButton.click(function() {
+			$('.calendar2 .the-feature').children().remove();
+
 			var nextMonth = today.clearTime().moveToFirstDayOfMonth().add(1).months();
 			updateCalendar(
 				nextMonth.getFullYear(),
@@ -130,6 +115,8 @@ function updateCalendar(year, month, callback) {
 		var prevMonthButton = $('.calendar header .prevmo');
 		prevMonthButton.off('click');
 		prevMonthButton.click(function() {
+			$('.calendar2 .the-feature').children().remove();
+
 			var lastMonth = today.clearTime().moveToFirstDayOfMonth().add(-1).months();
 			updateCalendar(
 				lastMonth.getFullYear(),
@@ -137,4 +124,49 @@ function updateCalendar(year, month, callback) {
 			);
 		});
 	});
+};
+
+function getTweets(callback) {
+	$.get('/tweets', callback);
+};
+
+function createTweetElement(tweet) {
+	var text = linkifyUrls(tweet.text);
+			text = linkifyHashTags(text);
+			text = linkifyUserHandles(text);
+
+	return $('\
+		<section class="the-tweet">\
+			<a href="https://www.twitter.com/' + tweet.from_user + '" class="username">@' + tweet.from_user + '</a>' + text + '\
+		</section>\
+	');
+};
+
+function linkifyUrls(text) {
+  var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+  return text.replace(exp, '<a href="$1" target="_blank">$1</a>');
+};
+
+function linkifyHashTags(text) {
+	var exp = /#(\w+)/ig;
+	return text.replace(exp, '<a href="https://twitter.com/#!/search/%23$1" target="_blank">#$1</a>');
+};
+
+function linkifyUserHandles(text) {
+	var exp = /@(\w+)/ig;
+	return text.replace(exp, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
+};
+
+function getGeeks(callback) {
+	$.get('/geeks', callback);
+};
+
+function createGeekElement(geek) {
+	return $('\
+		<section class="the-micro">\
+			<a href="#" class="username">@username</a>\
+			<span>Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adabore et doleiusmod…</span>\
+			<a href="#">View on Geeklist &rarr;</a>\
+		</section>\
+	');
 };
