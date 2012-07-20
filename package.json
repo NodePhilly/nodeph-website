@@ -8,5 +8,6 @@
     , "socket.io": "0.9.6"
     , "twitterfeed": "0.0.1"
     , "request": "2.9.203"
+    , "moment": "1.6.2"
   }
 }
