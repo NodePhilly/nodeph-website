@@ -14,4 +14,4 @@ Snobby, blatant disregard for small monitors and fallback solutions: Check Check
 <h1>Contributors</h1>
 <a href="http://www.twitter.com/bwhitham" target="_blank">@bwhitham</a>
 <a href="http://www.twitter.com/timsavery" target="_blank">@timsavery</a>
-<a href="http://www.twitter.com/mrkeithelliott" target="_blank">@mrkeithelliott</a>
+<a href="http://www.twitter.com/mrkeithelliott" target="_blank">@mrkeithelliott</a> is pending a real commit.

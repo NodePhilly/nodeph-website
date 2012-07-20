@@ -102,6 +102,7 @@ body
 
 header.global, section.feature, section.timsdoodads, footer.global
 	width 100%
+	position relative
 
 header.global
 	height 115px
@@ -330,13 +331,44 @@ section.calendar1 header h1
 	width 225px
 	padding 5px 0
 
-section.calendar1 header a.nextmo, section.calendar1 header a.prevmo
+//icons 
+section.calendar1 header a.nextmo, section.calendar1 header a.prevmo, a.addtocalendar, a.speakicon, a.eventalert
 	width 31px
 	height 30px
 	background-image nodeph-mainsprite
 	background-repeat no-repeat
 	cursor pointer
 
+a.addtocalendar
+	background-position -100px -125px
+	float left
+	margin 6px 0 0 110px
+	display block
+	position relative
+
+a.addtocalendar:hover
+	background-position -131px -125px
+a.addtocalendar:active
+	background-position -162px -125px
+
+a.speakicon
+	background-position -100px -185px
+	float right
+	margin 6px 110px 0 0
+	display block
+	position relative
+
+a.speakicon:hover
+	background-position -131px -185px
+a.speakicon:active
+	background-position -162px -185px
+
+a.eventalert
+	background-position -100px -215px
+a.eventalert:hover
+	background-position -131px -215px
+a.eventalert:active
+	background-position -162px -215px
 section.calendar1 header a.nextmo
 	background-position -100px -65px
 section.calendar1 header a.nextmo:hover
@@ -598,8 +630,37 @@ a[data-tip]:hover::before
 a.nodejs-logo[data-tip]:hover::before
 	bottom 40px
 	left -15px
-	
 
+a.addtocalendar[data-tip]:hover::before
+	bottom 40px
+	left -25px
+
+a.speakicon[data-tip]:hover::before
+	bottom 40px
+	left 0
+
+
+/*__________________________________________________________ contact form */
+
+form.contact
+	width 100%
+	height 200px
+	background-color nodeph-blue
+	background-image url('/imgs/node-philly-formbg.png')
+	background-repeat repeat-x
+	background-position bottom left
+	display block
+
+form.contact input
+	width 240px
+	height 25px
+	border nodeph-gray50 nodeph-thinborder solid
+	border-radius 5px
+	-webkit-border-radius 5px
+	-moz-border-radius 5px
+	padding 0 5px 0 5px
+	margin 0 0 10px 0
+	display block
 
 /*__________________________________________________________ phones */
 

@@ -25,21 +25,21 @@ app.get('/events/:year/:month', events.index);
 
 var self = this;
 app.listen(3000, function() {
-  // self.twitterfeed = new (require('twitterfeed'))({
-  //   searchString: '@NodePhilly OR #nodephilly OR #nodejs',
-  //   filterString: 'nodephilly,nodejs',
-  //   cacheLimit: 3
-  // });
+  self.twitterfeed = new (require('twitterfeed'))({
+    searchString: '@NodePhilly OR #nodephilly OR #nodejs',
+    filterString: 'nodephilly,nodejs',
+    cacheLimit: 3
+  });
 
-  // self.twitterfeed.init(function() {
-  //   io.sockets.on('connection', function(socket) {
-  //     self.twitterfeed.getCachedTweets().forEach(function(tweet) {
-  //       socket.emit('tweet', tweet);
-  //     });
-  //   });
+  self.twitterfeed.init(function() {
+    io.sockets.on('connection', function(socket) {
+      self.twitterfeed.getCachedTweets().forEach(function(tweet) {
+        socket.emit('tweet', tweet);
+      });
+    });
 
-  //   self.twitterfeed.stream(function(tweet) {
-  //     console.log(tweet);
-  //   });
-  // });
+    self.twitterfeed.stream(function(tweet) {
+      console.log(tweet);
+    });
+  });
 });

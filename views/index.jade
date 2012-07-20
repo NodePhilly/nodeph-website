@@ -1,3 +1,6 @@
+form.contact
+	input(placeholder='Your name', type='text', name='username')
+	input(placeholder='Your email', type='email', name='useremail')
 header.global
 	nav.nav1
 		a Events
@@ -90,6 +93,8 @@ section.timsdoodads
 		section.calendar2
 			section.the-feature
 			footer
+				a(href="#", data-tip="Add Node Philly to your calendar").addtocalendar
+				a(href="#", data-tip="Speak at an event").speakicon
 		footer
 			section.inset
 				a(href="http://www.nodejs.org", target="_blank", data-tip="Flux-capacitation gigawattage by Node.js").nodejs-logo
@@ -106,11 +111,11 @@ footer.global
 			section.stars
 	section.socicons
 		a(href="https://twitter.com/nodephilly", target="_blank", data-tip="Follow @NodePhilly's Tweets").icon-twitter
-		a(data-tip="nodephilly's pics are Instariffic").icon-instagram
+		a(data-tip="@nodephilly's pics are Instariffic").icon-instagram
 		a(href="http://geekli.st/NodePhilly", target="_blank", data-tip="Geek out with us on Geeklist").icon-geeklist
 		a(href="https://github.com/NodePhilly", target="_blank", data-tip="Git at us and see what we're building").icon-github
 	section.col2
 		section.inset
 			section.stars
 			section.year
-				div.year-icon
+				div.year-ico
