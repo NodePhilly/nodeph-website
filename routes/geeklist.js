@@ -1,12 +1,12 @@
 var feed = (require('geeklist')).create({
-		  consumer_key: '9WbN1ldj1TCrMFvXUURDOOhMgso',
-		  consumer_secret: 'KMkY0iWYzHauUwaglN0LX8vFvIKaglM-NNFLqssMB5g'
+		  consumer_key: process.env.GEEKLIST_CONSUMER_KEY,
+		  consumer_secret: process.env.GEEKLIST_CONSUMER_SECRET
 		})
 	, geeks = [];
 
 feed.auth({
-  token: 'PNjjzkGdWBpuVmbA7HRtijECazc',
-  secret: 'x3Zz-dxd4kx7b9qjwkS-OODfYhOaUmVUeJg2h6dXj_k'
+  token: process.env.GEEKLIST_AUTH_TOKEN,
+  secret: process.env.GEEKLIST_AUTH_SECRET
 });
 
 feed.users('nodephilly').followers(function(err, followers) {
