@@ -23,10 +23,14 @@ app.configure('development', function(){
 app.get('/', routes.index);
 
 app.get('/events/:year/:month', events.index);
+
 app.get('/geeks', geeks.all);
-app.get('/nextgeek/not/{currentgeek}', geeks.next);
+app.get('/geeks/next', geeks.next);
+app.get('/geeks/next/:prevGeek', geeks.next);
+
 app.get('/tweets', tweets.all);
-app.get('/nexttweet/not/{currenttweet}', tweets.next);
+app.get('/tweets/next', tweets.next);
+app.get('/tweets/next/:prevTweet', tweets.next);
 
 app.listen(3000, function() {
   console.log('server started on port 3000');

@@ -16,16 +16,16 @@ $(document).ready(function(){
 	});
 
 	getGeeks(function(geeks) {
-		geeks.forEach(function(geek) {
-			$('.geeks').append(createGeekElement(geek));
-		});
+		for (var i = 0; i < geeks.length && i < 3; i++) {
+			$('.geeks').append(createGeekElement(geeks[i]));
+		}
 	});
 });
 
 function findAll(list, predicate) {
 	var results = [];
 
-	list.forEach(function(item) {		
+	list.forEach(function(item) {
 		if (predicate(item)) {
 			results.push(item);
 		}
@@ -63,6 +63,7 @@ function updateCalendar(year, month, callback) {
 								.attr('date', date.toString('MM-dd-yyyy'));
 
 				if (todaysEvents.length > 0) {
+
 					todaysEvents.forEach(function(event) {
 						$(value).append('<span>X</span>');
 					});
@@ -162,11 +163,15 @@ function getGeeks(callback) {
 };
 
 function createGeekElement(geek) {
+	var bio = geek.bio || '';
+	bio = linkifyUrls(bio);
+	bio = linkifyUserHandles(bio);
+
 	return $('\
 		<section class="the-micro">\
-			<a href="#" class="username">@username</a>\
-			<span>Lorem ipsum dolor sit amet, adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adabore et doleiusmod…</span>\
-			<a href="#">View on Geeklist &rarr;</a>\
+			<a href="#" class="username">@' + geek.screen_name + '</a>\
+			<span>' + bio + '</span>\
+			<a href="http://geekli.st/' + geek.screen_name + '" target="_blank">View on Geeklist &rarr;</a>\
 		</section>\
 	');
 };

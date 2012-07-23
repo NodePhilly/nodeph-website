@@ -10,7 +10,7 @@ feed.auth({
 });
 
 feed.users('nodephilly').followers(function(err, followers) {
-	geeks = followers;
+	geeks = followers || [];
 });
 
 exports.all = function(req, res) {
@@ -18,5 +18,20 @@ exports.all = function(req, res) {
 };
 
 exports.next = function(req, res) {
-	res.send(geeks[0]);
+	var prevGeekScreenName = req.param('prevGeek');
+
+	var prevGeekIndex = prevGeekScreenName
+		? findIndex(geeks, function(geek) { return geek.screen_name == prevGeekScreenName; })
+		: -1;
+
+	res.send(geeks[++prevGeekIndex]);
+};
+
+function findIndex(list, predicate) {
+	for (var i = 0; i < list.length; i++) {
+		if (predicate(list[i])) {
+			return i;
+		}
+	}
+	return -1;
 };
