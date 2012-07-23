@@ -9,16 +9,20 @@ $(document).ready(function(){
 		intervaltime: 5000
 	});
 
-	getTweets(function(tweets) {
+	getNextTweets(3, function(tweets) {
 		tweets.forEach(function(tweet) {
 			$('.tweets').append(createTweetElement(tweet));
 		});	
+
+		setInterval('changeTweet()', 3000);
 	});
 
-	getGeeks(function(geeks) {
-		for (var i = 0; i < geeks.length && i < 3; i++) {
-			$('.geeks').append(createGeekElement(geeks[i]));
-		}
+	getNextGeeks(3, function(geeks) {
+		geeks.forEach(function(geek) {
+			$('.geeks').append(createGeekElement(geek));
+		});
+
+		setInterval('changeGeek()', 3000);
 	});
 });
 
@@ -127,8 +131,23 @@ function updateCalendar(year, month, callback) {
 	});
 };
 
-function getTweets(callback) {
-	$.get('/tweets', callback);
+function getNextTweets(count, callback) {
+	$.get('/tweets/next/' + count, callback);
+};
+
+var lastChangedTweetElementIndex = -1;
+function changeTweet() {
+	getNextTweets(1, function(tweets) {
+		if (++lastChangedTweetElementIndex > 2) {
+			lastChangedTweetElementIndex = 0;
+		}
+
+		var newElement = createTweetElement(tweets[0]).hide();
+		$('.tweets .the-tweet').eq(lastChangedTweetElementIndex).fadeOut(1000, function() {
+			$(this).replaceWith(newElement);
+			newElement.fadeIn(1000);
+		});		
+	});	
 };
 
 function createTweetElement(tweet) {
@@ -158,8 +177,23 @@ function linkifyUserHandles(text) {
 	return text.replace(exp, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
 };
 
-function getGeeks(callback) {
-	$.get('/geeks', callback);
+function getNextGeeks(count, callback) {
+	$.get('/geeks/next/' + count, callback);
+};
+
+var lastChangedGeekElementIndex = -1;
+function changeGeek() {
+	getNextGeeks(1, function(geeks) {
+		if (++lastChangedGeekElementIndex > 2) {
+			lastChangedGeekElementIndex = 0;
+		}
+
+		var newElement = createGeekElement(geeks[0]).hide();
+		$('.geeks .the-micro').eq(lastChangedGeekElementIndex).fadeOut(1000, function() {
+			$(this).replaceWith(newElement);
+			newElement.fadeIn(1000);
+		});		
+	});	
 };
 
 function createGeekElement(geek) {

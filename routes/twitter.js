@@ -1,7 +1,7 @@
 var feed = new (require('twitterfeed'))({
   searchString: '@NodePhilly OR #nodephilly OR #nodejs',
   filterString: 'nodephilly,nodejs',
-  cacheLimit: 3
+  cacheLimit: 10
 });
 
 feed.init(function() {
@@ -11,10 +11,22 @@ feed.init(function() {
   );
 });
 
-exports.all = function(req, res) {
-  res.send(feed.getCachedTweets());
+exports.next = function(req, res) {
+  var tweets = feed.getCachedTweets()
+    , numTweets = req.param('numTweets');
+
+  if (!numTweets) {
+    numTweets = 1;
+  }
+
+  var list = [];
+  for (var i = 0; i < numTweets; i++) {
+    list.push(tweets[randomIntBetween(0, tweets.length -1 )]);
+  }
+
+  res.send(list);
 };
 
-exports.next = function(req, res) {
-  res.send(feed.getCachedTweets()[0]);
+function randomIntBetween(from, to) {
+  return Math.floor(Math.random() * (to - from + 1) + from);
 };

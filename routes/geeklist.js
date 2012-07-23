@@ -10,21 +10,28 @@ feed.auth({
 });
 
 feed.users('nodephilly').followers(function(err, followers) {
-	geeks = followers || [];
+	geeks = [];
+
+	followers.forEach(function(follower) {
+		if (follower.bio) {
+			geeks.push(follower);
+		}
+	});
 });
 
-exports.all = function(req, res) {
-	res.send(geeks);
-};
-
 exports.next = function(req, res) {
-	var prevGeekScreenName = req.param('prevGeek');
+	var numGeeks = req.param('numGeeks');
 
-	var prevGeekIndex = prevGeekScreenName
-		? findIndex(geeks, function(geek) { return geek.screen_name == prevGeekScreenName; })
-		: -1;
+	if (!numGeeks) {
+		numGeeks = 1;
+	}
 
-	res.send(geeks[++prevGeekIndex]);
+	var list = [];
+	for (var i = 0; i < numGeeks; i++) {
+		list.push(geeks[randomIntBetween(0, geeks.length -1 )]);
+	}
+
+	res.send(list);
 };
 
 function findIndex(list, predicate) {
@@ -34,4 +41,8 @@ function findIndex(list, predicate) {
 		}
 	}
 	return -1;
+};
+
+function randomIntBetween(from, to) {
+	return Math.floor(Math.random() * (to - from + 1) + from);
 };
