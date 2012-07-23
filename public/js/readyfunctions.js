@@ -76,7 +76,7 @@ function updateCalendar(year, month, callback) {
 										theFeature.children().remove();
 										$(this).data('events').forEach(function(event) {
 											theFeature.append('<h1>' + event.title + '</h1>')
-																.append('<div><span class="date">' + event.date + '</span>: <span class="time">' + event.startTime + '</span> - <span class="time">' + event.endTime + '</span></div>')
+																.append('<section><time class="date">' + event.date + '</time>: <time class="time">' + event.startTime + '</time> - <time class="time">' + event.endTime + '</time></section>')
 																.append('<p>' + event.description + '</p>');
 										});
 									});
@@ -89,7 +89,7 @@ function updateCalendar(year, month, callback) {
 										theFeature.children().remove();
 										$(this).data('events').forEach(function(event) {
 											theFeature.append('<h1>' + event.title + '</h1>')
-																.append('<div><span class="date">' + event.date + '</span>: <span class="time">' + event.startTime + '</span> - <span class="time">' + event.endTime + '</span></div>')
+																.append('<section><time class="date">' + event.date + '</time>: <time class="time">' + event.startTime + '</time> - <time class="time">' + event.endTime + '</time></section>')
 																.append('<p>' + event.description + '</p>');
 										});
 									})
