@@ -9,6 +9,18 @@ $(document).ready(function(){
 		intervaltime: 5000
 	});
 
+	$(".contactbtn").click(function() {
+  	$(".contact").stop().slideDown(500, function() {
+			$(".contactinnerstuff").stop().animate({ opacity: 1.0 }, 100);
+   	});
+   });
+
+   $(".cancelbtn").click(function() {
+   	$(".contactinnerstuff").stop().animate({ opacity: 0.0 }, 100, function() {
+    	$(".contact").stop().slideUp(500);
+   	});
+   });
+
 	getNextTweets(3, function(tweets) {
 		tweets.forEach(function(tweet) {
 			$('.tweets').append(createTweetElement(tweet));
@@ -204,9 +216,8 @@ function createGeekElement(geek) {
 
 	return $('\
 		<section class="the-micro">\
-			<a href="#" class="username">@' + geek.screen_name + '</a>\
+			<a href="http://geekli.st/' + geek.screen_name + '" class="username" target="_blank">@' + geek.screen_name + '</a>\
 			<span>' + bio + '</span>\
-			<a href="http://geekli.st/' + geek.screen_name + '" target="_blank">View on Geeklist &rarr;</a>\
 		</section>\
 	');
 };

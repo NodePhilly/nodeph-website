@@ -8,6 +8,7 @@
     , "twitterfeed": "0.0.3"
     , "request": "2.9.203"
     , "moment": "1.6.2"
-    , "geeklist": "git://github.com/chapel/node-geeklist.git"
+    , "async": "0.1.22"
+    , "geeklist": "git://github.com/timsavery/node-geeklist.git"
   }
 }

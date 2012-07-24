@@ -1,23 +1,29 @@
-var feed = (require('geeklist')).create({
-		  consumer_key: process.env.GEEKLIST_CONSUMER_KEY,
-		  consumer_secret: process.env.GEEKLIST_CONSUMER_SECRET
-		})
-	, geeks = [];
+var async = require('async')
+  , gklst = (require('geeklist')).create();
 
-feed.auth({
-  token: process.env.GEEKLIST_AUTH_TOKEN,
-  secret: process.env.GEEKLIST_AUTH_SECRET
-});
+// load all geeklist followers
+var geeks = []
+	, recordsPage = 0
+  , recordsPerCall = 50
+  , lastRetrievedCount = 50;
 
-feed.users('nodephilly').followers(function(err, followers) {
-	geeks = [];
+async.whilst(
+	function() { return lastRetrievedCount == recordsPerCall; },
+	
+	function(callback) {
+		gklst.users('nodephilly').followers({ count: recordsPerCall, page: ++recordsPage }, function(err, followers) {
+			lastRetrievedCount = followers.length;
 
-	followers.forEach(function(follower) {
-		if (follower.bio) {
-			geeks.push(follower);
-		}
-	});
-});
+			geeks = geeks.concat(followers);
+
+			callback();
+		});
+	},
+
+	function(err) {
+		console.log('loaded %s geeklist followers', geeks.length);
+	}
+);
 
 exports.next = function(req, res) {
 	var numGeeks = req.param('numGeeks');
