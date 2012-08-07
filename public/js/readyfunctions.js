@@ -81,7 +81,7 @@ function updateCalendar(year, month, callback) {
 				if (todaysEvents.length > 0) {
 
 					todaysEvents.forEach(function(event) {
-						$(value).append('<span>X</span>');
+						$(value).append('<a class="eventalert"></a>');
 					});
 
 					$(value).data('events', todaysEvents)
@@ -91,23 +91,22 @@ function updateCalendar(year, month, callback) {
 
 										theFeature.children().remove();
 										$(this).data('events').forEach(function(event) {
-											theFeature.append('<h1 class="date">' + event.date + '</h1>')
-																.append('<h1 class="time">' + event.startTime + ' - ' + event.endTime + '</h1')
-																.append('<h1>' + event.title + '</h1>')
-																.append('<p>' + event.description + '</p>');
+											theFeature.append('<p class="title">' + event.title + '</p>')
+																.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
+																.append('<p class="description">' + event.description + '</p>');
 										});
 									});
 				} else {
-					$(value).data('events', [])									
+					$(value).data('events', [])
 									.off('click')									
 									.click(function() {
 										var theFeature = $('.calendar2 .the-feature');
 
 										theFeature.children().remove();
 										$(this).data('events').forEach(function(event) {
-											theFeature.append('<section><p class="date">' + event.date + '</p><p class="time">' + event.startTime + ' - ' + event.endTime + '</p></section>')
-																.append('<h1>' + event.title + '</h1>')
-																.append('<p>' + event.description + '</p>');
+											theFeature.append('<p class="title">' + event.title + '</p>')
+																.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
+																.append('<p class="description">' + event.description + '</p>');
 										});
 									})
 									.children().remove();
@@ -170,7 +169,9 @@ function createTweetElement(tweet) {
 
 	return $('\
 		<section class="the-tweet">\
-			<a href="https://www.twitter.com/' + tweet.from_user + '" class="username">@' + tweet.from_user + '</a>' + text + '\
+			<img src="' + tweet.profile_image_url + '" />\
+			<a href="https://www.twitter.com/' + tweet.from_user + '" class="username">@' + tweet.from_user + ':</a>\
+			<span class="text">' + text + '</span>\
 		</section>\
 	');
 };
@@ -216,8 +217,9 @@ function createGeekElement(geek) {
 
 	return $('\
 		<section class="the-micro">\
+			<img src="' + geek.avatar.small + '" />\
 			<a href="http://geekli.st/' + geek.screen_name + '" class="username" target="_blank">@' + geek.screen_name + '</a>\
-			<span>' + bio + '</span>\
+			<span class="bio">' + bio + '</span>\
 		</section>\
 	');
 };

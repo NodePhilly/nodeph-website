@@ -379,7 +379,7 @@ a.speakicon {
   float: left;
   display: block;
   position: relative;
-  margin: 6px 10px 0 10px;
+  margin: 6px 10px 0 115px;
 }
 a.speakicon:hover {
   background-position: -131px -185px;
@@ -491,6 +491,17 @@ section.calendar2 section.the-feature {
   height: 256px;
   border-bottom: 2px #82c0c0 solid;
 }
+section.calendar2 section.the-feature p {
+  padding: 5px 10px;
+}
+section.calendar2 section.the-feature p.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+section.calendar2 section.the-feature p.date {
+  font-weight: bold;
+  font-size: 14px;
+}
 section.calendar2 footer {
   width: inherit;
   height: 45px;
@@ -525,10 +536,21 @@ section.the-micro:nth-child(3) {
   border-top: 1px #82c0c0 solid;
   border-bottom: 1px #82c0c0 solid;
 }
+section.the-tweet img,
+section.the-micro img {
+  width: 42px;
+  height: 42px;
+  float: left;
+  margin-right: 5px;
+}
 section.the-tweet a.username,
 section.the-micro a.username {
-  display: block;
-  margin: 0 0 5px 0;
+  float: left;
+  margin: 0 0 0 0;
+}
+section.the-tweet span.text,
+section.the-micro span.bio {
+  padding-left: 5px;
 }
 /*__________________________________________________________ site footer*/
 footer.global section.col1,
