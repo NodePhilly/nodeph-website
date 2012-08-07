@@ -424,6 +424,8 @@ a.hostevent:active {
   background-position: -255px -185px;
 }
 a.eventalert {
+  display: block;
+  margin: -3px 0 0 5px;
   background-position: -100px -215px;
 }
 a.eventalert:hover {

@@ -26,7 +26,7 @@ $(document).ready(function(){
 			$('.tweets').append(createTweetElement(tweet));
 		});	
 
-		setInterval('changeTweet()', 3000);
+		setInterval('changeTweet()', 8000);
 	});
 
 	getNextGeeks(3, function(geeks) {
@@ -34,7 +34,7 @@ $(document).ready(function(){
 			$('.geeks').append(createGeekElement(geek));
 		});
 
-		setInterval('changeGeek()', 3000);
+		setInterval('changeGeek()', 6000);
 	});
 });
 
@@ -90,24 +90,34 @@ function updateCalendar(year, month, callback) {
 										var theFeature = $('.calendar2 .the-feature');
 
 										theFeature.children().remove();
-										$(this).data('events').forEach(function(event) {
-											theFeature.append('<p class="title">' + event.title + '</p>')
-																.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
-																.append('<p class="description">' + event.description + '</p>');
-										});
+
+										if ($(this).data('events').length > 0) {
+											$(this).data('events').forEach(function(event) {
+												theFeature.append('<p class="title">' + event.title + '</p>')
+																	.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
+																	.append('<p class="description">' + event.description + '</p>');
+											});
+										} else {
+											theFeature.append('<p class="nuttin">No events today : (</p>');
+										}
 									});
 				} else {
 					$(value).data('events', [])
-									.off('click')									
+									.off('click')
 									.click(function() {
 										var theFeature = $('.calendar2 .the-feature');
 
 										theFeature.children().remove();
-										$(this).data('events').forEach(function(event) {
-											theFeature.append('<p class="title">' + event.title + '</p>')
-																.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
-																.append('<p class="description">' + event.description + '</p>');
-										});
+
+										if ($(this).data('events').length > 0) {
+											$(this).data('events').forEach(function(event) {
+												theFeature.append('<p class="title">' + event.title + '</p>')
+																	.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
+																	.append('<p class="description">' + event.description + '</p>');
+											});
+										} else {
+											theFeature.append('<p class="nuttin">No events today : (</p>');
+										}
 									})
 									.children().remove();
 				}
