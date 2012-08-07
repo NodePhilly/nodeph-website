@@ -1,18 +1,13 @@
-var feed = new (require('twitterfeed'))({
+var TwitterFeed = new (require('twitterfeed'))({
   searchString: '@NodePhilly OR #nodephilly OR #nodejs',
   filterString: 'nodephilly,nodejs',
   cacheLimit: 10
 });
 
-feed.init(function() {
-  feed.stream(
-    function() {}, // tweet handler
-    function() {}  // callback
-  );
-});
+TwitterFeed.start();
 
 exports.next = function(req, res) {
-  var tweets = feed.getCachedTweets()
+  var tweets = TwitterFeed.getCachedTweets()
     , numTweets = req.param('numTweets');
 
   if (!numTweets) {

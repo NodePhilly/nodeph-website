@@ -5,7 +5,7 @@
       "express": "2.5.7"
     , "stylus": "0.28.0"
     , "jade": "0.26.3"
-    , "twitterfeed": "0.0.3"
+    , "twitterfeed": "0.1.0"
     , "request": "2.9.203"
     , "moment": "1.6.2"
     , "async": "0.1.22"
