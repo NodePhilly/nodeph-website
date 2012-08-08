@@ -86,8 +86,16 @@ function updateCalendar(year, month, callback) {
 					if ($(this).data('events').length > 0) {
 						$(this).data('events').forEach(function(event) {
 							theFeature.append('<p class="title">' + event.title + '</p>')
-												.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
-												.append('<p class="description">' + event.description + '</p>');
+												.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>');
+
+							var description = event.description
+							  , descriptionMaxLength = 400;
+
+							if (description.length > descriptionMaxLength) {
+								description = description.substring(0, descriptionMaxLength) + '...';								
+							}
+							
+							theFeature.append('<p class="description">' + description + '</p>');
 						});
 					} else {
 						theFeature.append('<p class="nuttin">No events today : (</p>');
