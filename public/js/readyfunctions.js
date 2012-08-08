@@ -78,6 +78,22 @@ function updateCalendar(year, month, callback) {
 				$(value).attr('rel', ++dayOfMonth)
 								.attr('date', date.toString('MM-dd-yyyy'));
 
+				var showEventDetails = function() {
+					var theFeature = $('.calendar2 .the-feature');
+
+					theFeature.children().remove();
+
+					if ($(this).data('events').length > 0) {
+						$(this).data('events').forEach(function(event) {
+							theFeature.append('<p class="title">' + event.title + '</p>')
+												.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
+												.append('<p class="description">' + event.description + '</p>');
+						});
+					} else {
+						theFeature.append('<p class="nuttin">No events today : (</p>');
+					}
+				};
+
 				if (todaysEvents.length > 0) {
 
 					todaysEvents.forEach(function(event) {
@@ -86,44 +102,19 @@ function updateCalendar(year, month, callback) {
 
 					$(value).data('events', todaysEvents)
 									.off('click')
-									.click(function() {
-										var theFeature = $('.calendar2 .the-feature');
-
-										theFeature.children().remove();
-
-										if ($(this).data('events').length > 0) {
-											$(this).data('events').forEach(function(event) {
-												theFeature.append('<p class="title">' + event.title + '</p>')
-																	.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
-																	.append('<p class="description">' + event.description + '</p>');
-											});
-										} else {
-											theFeature.append('<p class="nuttin">No events today : (</p>');
-										}
-									});
+									.click(showEventDetails);
 				} else {
 					$(value).data('events', [])
 									.off('click')
-									.click(function() {
-										var theFeature = $('.calendar2 .the-feature');
-
-										theFeature.children().remove();
-
-										if ($(this).data('events').length > 0) {
-											$(this).data('events').forEach(function(event) {
-												theFeature.append('<p class="title">' + event.title + '</p>')
-																	.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
-																	.append('<p class="description">' + event.description + '</p>');
-											});
-										} else {
-											theFeature.append('<p class="nuttin">No events today : (</p>');
-										}
-									})
+									.click(showEventDetails)
 									.children().remove();
 				}
 			} else {
 				$(value).attr('rel', '')
-								.attr('date', '');
+								.attr('date', '')
+								.data('events', [])
+								.click(showEventDetails)
+								.children().remove();
 			}
 		});
 
