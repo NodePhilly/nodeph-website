@@ -78,6 +78,28 @@ function updateCalendar(year, month, callback) {
 				$(value).attr('rel', ++dayOfMonth)
 								.attr('date', date.toString('MM-dd-yyyy'));
 
+				var showFeature = function(){
+					var theFeature = $('.calendar2 .the-feature');
+
+					theFeature.children().remove();
+
+					if ($(value).data('events').length > 0) {
+						$(value).data('events').forEach(function(event) {
+							theFeature.append('<p class="title">' + event.title + '</p>')
+												.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>');
+
+							var description = event.description
+							  , descriptionMaxLength = 400;
+
+							if (description.length > descriptionMaxLength) {
+								description = description.substring(0, descriptionMaxLength) + '...';								
+							}
+							
+							theFeature.append('<p class="description">' + description + '</p>');
+						});
+					}
+				};
+				
 				var showEventDetails = function() {
 					var theFeature = $('.calendar2 .the-feature');
 
@@ -111,6 +133,7 @@ function updateCalendar(year, month, callback) {
 					$(value).data('events', todaysEvents)
 									.off('click')
 									.click(showEventDetails);
+					showFeature();
 				} else {
 					$(value).data('events', [])
 									.off('click')
