@@ -61,7 +61,7 @@ function updateCalendar(year, month, callback) {
 		  , daysInMonth = Date.getDaysInMonth(today.getYear(), today.getMonth())
 		  , monthName = today.getMonthName()
 		  , fullYear = today.getFullYear();
-		
+
 		$('.calendar header h1').text(monthName + ' - ' + fullYear);
 
 		var dates = $('.the-calendar li[name="adate"]')
@@ -72,21 +72,27 @@ function updateCalendar(year, month, callback) {
 			if (idx >= day && dayOfMonth < daysInMonth) {
 				var date = new Date(year, month, dayOfMonth + 1)
 				  , todaysEvents = findAll(events, function(e) {
-					  	return e.date == date.toString('MM-dd-yyyy');
+				  		var startDate = new Date(e.startTime);
+					  	return startDate.getFullYear() == date.getFullYear()
+					  			&& startDate.getMonth() == date.getMonth()
+					  			&& startDate.getDate() == date.getDate();
 					  });
 
 				$(value).attr('rel', ++dayOfMonth)
 								.attr('date', date.toString('MM-dd-yyyy'));
 
-				var showFeature = function(){
+				var showFeature = function() {
 					var theFeature = $('.calendar2 .the-feature');
 
 					theFeature.children().remove();
 
 					if ($(value).data('events').length > 0) {
 						$(value).data('events').forEach(function(event) {
+							var startTime = new Date(event.startTime)
+							  , endTime = new Date(event.endTime);							  
+
 							theFeature.append('<p class="title">' + event.title + '</p>')
-												.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>');
+												.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>');
 
 							var description = event.description
 							  , descriptionMaxLength = 400;
@@ -107,8 +113,11 @@ function updateCalendar(year, month, callback) {
 
 					if ($(this).data('events').length > 0) {
 						$(this).data('events').forEach(function(event) {
+							var startTime = new Date(event.startTime)
+							  , endTime = new Date(event.endTime);							  
+
 							theFeature.append('<p class="title">' + event.title + '</p>')
-												.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>');
+												.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>');
 
 							var description = event.description
 							  , descriptionMaxLength = 400;
@@ -125,7 +134,6 @@ function updateCalendar(year, month, callback) {
 				};
 
 				if (todaysEvents.length > 0) {
-
 					todaysEvents.forEach(function(event) {
 						$(value).append('<a class="eventalert"></a>');
 					});
@@ -133,6 +141,7 @@ function updateCalendar(year, month, callback) {
 					$(value).data('events', todaysEvents)
 									.off('click')
 									.click(showEventDetails);
+
 					showFeature();
 				} else {
 					$(value).data('events', [])
