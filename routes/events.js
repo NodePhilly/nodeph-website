@@ -1,5 +1,4 @@
-var request = require('request')
-  , moment = require('moment');
+var request = require('request');
 
 exports.index = function(req, res) {
 	var year = req.param('year')
@@ -12,19 +11,18 @@ exports.index = function(req, res) {
 		if (result.feed) {
 			if (result.feed.entry) {				
 				result.feed.entry.forEach(function(event) {
-					var startTime = moment(event.gd$when[0].startTime);
 					
-					if (startTime.year() == year && startTime.month() == month) {
-						var endTime = moment(event.gd$when[0].endTime)
-							, date = startTime.format('MM-DD-YYYY');
+					var startTime = new Date(Date.parse(event.gd$when[0].startTime));
+					
+					if (startTime.getFullYear() == year && startTime.getMonth() == month) {
+						var endTime = Date.parse(event.gd$when[0].endTime);
 
 						events.push({
 							title: event.title.$t,
 							description: event.content.$t,
 							location: event.gd$where[0].valueString,
-							date: date,
-							startTime: startTime.format('hh:mm A'),
-							endTime: endTime.format('hh:mm A')
+							startTime: startTime.getTime(),
+							endTime: endTime
 						});
 					}
 				});

@@ -4,7 +4,13 @@ var TwitterFeed = new (require('twitterfeed'))({
   cacheLimit: 10
 });
 
-TwitterFeed.start();
+var feed = TwitterFeed.start()
+  , noop = function(){};
+  
+feed.on('error', function(error) { console.log('ERROR :: %s', JSON.stringify(error)); });
+feed.on('tweet', noop);
+feed.on('destroy', noop);
+feed.on('end', noop)
 
 exports.next = function(req, res) {
   var tweets = TwitterFeed.getCachedTweets()
