@@ -70,7 +70,10 @@ function showNextEvent(year, month) {
 						if (idx >= day && dayOfMonth < daysInMonth) {
 							var date = new Date(year, month, dayOfMonth + 1)
 							  , todaysEvents = findAll(events, function(e) {
-								  	return e.date == date.toString('MM-dd-yyyy');
+								  	var startDate = new Date(e.startTime);
+								  	return startDate.getFullYear() == date.getFullYear()
+								  			&& startDate.getMonth() == date.getMonth()
+								  			&& startDate.getDate() == date.getDate();
 								  });
 
 							$(value).attr('rel', ++dayOfMonth)
@@ -81,8 +84,11 @@ function showNextEvent(year, month) {
 								var theFeature = $('.calendar2 .the-feature');
 								theFeature.children().remove();
 								$(this).data('events').forEach(function(event) {
+									var startTime = new Date(event.startTime)
+									  , endTime = new Date(event.endTime);							  
+
 									theFeature.append('<p class="title">' + event.title + '</p>')
-														.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>');
+														.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>');
 
 									var description = event.description
 									  , descriptionMaxLength = 400;
@@ -90,6 +96,7 @@ function showNextEvent(year, month) {
 									if (description.length > descriptionMaxLength) {
 										description = description.substring(0, descriptionMaxLength) + '...';								
 									}
+
 									theFeature.append('<p class="description">' + description + '</p>');
 									foundFirstEvent = true;
 								});
@@ -165,6 +172,7 @@ function updateCalendar(year, month, callback) {
 					$(value).data('events', todaysEvents)
 									.off('click')
 									.click(showEventDetails);
+
 				} else {
 					$(value).data('events', [])
 									.off('click')
