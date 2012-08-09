@@ -50,6 +50,55 @@ function findAll(list, predicate) {
 	return results;
 };
 
+function showNextEvent(year, month) {
+	if (year == undefined) { year = Date.today().getFullYear(); }
+	if (month == undefined) { month = Date.today().getMonth(); }
+
+	// TODO: ajax get events
+	$.get('/events/' + year + '/' + month, function(events) {
+		var today = new Date(year, month, 1)
+		  , firstDayOfMonth = today.moveToFirstDayOfMonth()
+		  , daysInMonth = Date.getDaysInMonth(today.getYear(), today.getMonth())
+		  , monthName = today.getMonthName()
+		  , fullYear = today.getFullYear()
+			, foundFirstEvent = false;
+		
+		var dates = $('.the-calendar li[name="adate"]')
+		  , day = firstDayOfMonth.getDay()
+		  , dayOfMonth = 0;
+					$.each(dates, function(idx, value) {
+						if (idx >= day && dayOfMonth < daysInMonth) {
+							var date = new Date(year, month, dayOfMonth + 1)
+							  , todaysEvents = findAll(events, function(e) {
+								  	return e.date == date.toString('MM-dd-yyyy');
+								  });
+
+							$(value).attr('rel', ++dayOfMonth)
+											.attr('date', date.toString('MM-dd-yyyy'));
+
+							if (foundFirstEvent === false && todaysEvents.length > 0) {
+								$(value).data('events', todaysEvents);
+								var theFeature = $('.calendar2 .the-feature');
+								theFeature.children().remove();
+								$(this).data('events').forEach(function(event) {
+									theFeature.append('<p class="title">' + event.title + '</p>')
+														.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>');
+
+									var description = event.description
+									  , descriptionMaxLength = 400;
+
+									if (description.length > descriptionMaxLength) {
+										description = description.substring(0, descriptionMaxLength) + '...';								
+									}
+									theFeature.append('<p class="description">' + description + '</p>');
+									foundFirstEvent = true;
+								});
+							}
+						} 
+					});
+			});
+}
+
 function updateCalendar(year, month, callback) {
 	if (year == undefined) { year = Date.today().getFullYear(); }
 	if (month == undefined) { month = Date.today().getMonth(); }
@@ -77,29 +126,7 @@ function updateCalendar(year, month, callback) {
 
 				$(value).attr('rel', ++dayOfMonth)
 								.attr('date', date.toString('MM-dd-yyyy'));
-
-				var showFeature = function(){
-					var theFeature = $('.calendar2 .the-feature');
-
-					theFeature.children().remove();
-
-					if ($(value).data('events').length > 0) {
-						$(value).data('events').forEach(function(event) {
-							theFeature.append('<p class="title">' + event.title + '</p>')
-												.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>');
-
-							var description = event.description
-							  , descriptionMaxLength = 400;
-
-							if (description.length > descriptionMaxLength) {
-								description = description.substring(0, descriptionMaxLength) + '...';								
-							}
-							
-							theFeature.append('<p class="description">' + description + '</p>');
-						});
-					}
-				};
-				
+		
 				var showEventDetails = function() {
 					var theFeature = $('.calendar2 .the-feature');
 
@@ -133,7 +160,6 @@ function updateCalendar(year, month, callback) {
 					$(value).data('events', todaysEvents)
 									.off('click')
 									.click(showEventDetails);
-					showFeature();
 				} else {
 					$(value).data('events', [])
 									.off('click')
@@ -173,7 +199,9 @@ function updateCalendar(year, month, callback) {
 			);
 		});
 	});
-};
+	
+	showNextEvent(year,month);
+}
 
 function getNextTweets(count, callback) {
 	$.get('/tweets/next/' + count, callback);
