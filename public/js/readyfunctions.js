@@ -50,6 +50,62 @@ function findAll(list, predicate) {
 	return results;
 };
 
+function showNextEvent(year, month) {
+	if (year == undefined) { year = Date.today().getFullYear(); }
+	if (month == undefined) { month = Date.today().getMonth(); }
+
+	// TODO: ajax get events
+	$.get('/events/' + year + '/' + month, function(events) {
+		var today = new Date(year, month, 1)
+		  , firstDayOfMonth = today.moveToFirstDayOfMonth()
+		  , daysInMonth = Date.getDaysInMonth(today.getYear(), today.getMonth())
+		  , monthName = today.getMonthName()
+		  , fullYear = today.getFullYear()
+			, foundFirstEvent = false;
+		
+		var dates = $('.the-calendar li[name="adate"]')
+		  , day = firstDayOfMonth.getDay()
+		  , dayOfMonth = 0;
+					$.each(dates, function(idx, value) {
+						if (idx >= day && dayOfMonth < daysInMonth) {
+							var date = new Date(year, month, dayOfMonth + 1)
+							  , todaysEvents = findAll(events, function(e) {
+								  	var startDate = new Date(e.startTime);
+								  	return startDate.getFullYear() == date.getFullYear()
+								  			&& startDate.getMonth() == date.getMonth()
+								  			&& startDate.getDate() == date.getDate();
+								  });
+
+							$(value).attr('rel', ++dayOfMonth)
+											.attr('date', date.toString('MM-dd-yyyy'));
+
+							if (foundFirstEvent === false && todaysEvents.length > 0) {
+								$(value).data('events', todaysEvents);
+								var theFeature = $('.calendar2 .the-feature');
+								theFeature.children().remove();
+								$(this).data('events').forEach(function(event) {
+									var startTime = new Date(event.startTime)
+									  , endTime = new Date(event.endTime);							  
+
+									theFeature.append('<p class="title">' + event.title + '</p>')
+														.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>');
+
+									var description = event.description
+									  , descriptionMaxLength = 400;
+
+									if (description.length > descriptionMaxLength) {
+										description = description.substring(0, descriptionMaxLength) + '...';								
+									}
+
+									theFeature.append('<p class="description">' + description + '</p>');
+									foundFirstEvent = true;
+								});
+							}
+						} 
+					});
+			});
+}
+
 function updateCalendar(year, month, callback) {
 	if (year == undefined) { year = Date.today().getFullYear(); }
 	if (month == undefined) { month = Date.today().getMonth(); }
@@ -61,7 +117,7 @@ function updateCalendar(year, month, callback) {
 		  , daysInMonth = Date.getDaysInMonth(today.getYear(), today.getMonth())
 		  , monthName = today.getMonthName()
 		  , fullYear = today.getFullYear();
-		
+
 		$('.calendar header h1').text(monthName + ' - ' + fullYear);
 
 		var dates = $('.the-calendar li[name="adate"]')
@@ -72,58 +128,63 @@ function updateCalendar(year, month, callback) {
 			if (idx >= day && dayOfMonth < daysInMonth) {
 				var date = new Date(year, month, dayOfMonth + 1)
 				  , todaysEvents = findAll(events, function(e) {
-					  	return e.date == date.toString('MM-dd-yyyy');
+				  		var startDate = new Date(e.startTime);
+					  	return startDate.getFullYear() == date.getFullYear()
+					  			&& startDate.getMonth() == date.getMonth()
+					  			&& startDate.getDate() == date.getDate();
 					  });
 
 				$(value).attr('rel', ++dayOfMonth)
 								.attr('date', date.toString('MM-dd-yyyy'));
 
-				if (todaysEvents.length > 0) {
+				var showEventDetails = function() {
+					var theFeature = $('.calendar2 .the-feature');
 
+					theFeature.children().remove();
+
+					if ($(this).data('events').length > 0) {
+						$(this).data('events').forEach(function(event) {
+							var startTime = new Date(event.startTime)
+							  , endTime = new Date(event.endTime);							  
+
+							theFeature.append('<p class="title">' + event.title + '</p>')
+												.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>');
+
+							var description = event.description
+							  , descriptionMaxLength = 400;
+
+							if (description.length > descriptionMaxLength) {
+								description = description.substring(0, descriptionMaxLength) + '...';								
+							}
+							
+							theFeature.append('<p class="description">' + description + '</p>');
+						});
+					} else {
+						theFeature.append('<p class="nuttin">No events today : (</p>');
+					}
+				};
+
+				if (todaysEvents.length > 0) {
 					todaysEvents.forEach(function(event) {
 						$(value).append('<a class="eventalert"></a>');
 					});
 
 					$(value).data('events', todaysEvents)
 									.off('click')
-									.click(function() {
-										var theFeature = $('.calendar2 .the-feature');
+									.click(showEventDetails);
 
-										theFeature.children().remove();
-
-										if ($(this).data('events').length > 0) {
-											$(this).data('events').forEach(function(event) {
-												theFeature.append('<p class="title">' + event.title + '</p>')
-																	.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
-																	.append('<p class="description">' + event.description + '</p>');
-											});
-										} else {
-											theFeature.append('<p class="nuttin">No events today : (</p>');
-										}
-									});
 				} else {
 					$(value).data('events', [])
 									.off('click')
-									.click(function() {
-										var theFeature = $('.calendar2 .the-feature');
-
-										theFeature.children().remove();
-
-										if ($(this).data('events').length > 0) {
-											$(this).data('events').forEach(function(event) {
-												theFeature.append('<p class="title">' + event.title + '</p>')
-																	.append('<p class="date">' + event.date + ' @ ' + event.startTime + ' - ' + event.endTime + '</p>')																
-																	.append('<p class="description">' + event.description + '</p>');
-											});
-										} else {
-											theFeature.append('<p class="nuttin">No events today : (</p>');
-										}
-									})
+									.click(showEventDetails)
 									.children().remove();
 				}
 			} else {
 				$(value).attr('rel', '')
-								.attr('date', '');
+								.attr('date', '')
+								.data('events', [])
+								.click(showEventDetails)
+								.children().remove();
 			}
 		});
 
@@ -151,7 +212,9 @@ function updateCalendar(year, month, callback) {
 			);
 		});
 	});
-};
+	
+	showNextEvent(year,month);
+}
 
 function getNextTweets(count, callback) {
 	$.get('/tweets/next/' + count, callback);

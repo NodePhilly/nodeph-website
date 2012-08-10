@@ -1,18 +1,19 @@
-var feed = new (require('twitterfeed'))({
+var TwitterFeed = new (require('twitterfeed'))({
   searchString: '@NodePhilly OR #nodephilly OR #nodejs',
   filterString: 'nodephilly,nodejs',
   cacheLimit: 10
 });
 
-feed.init(function() {
-  feed.stream(
-    function() {}, // tweet handler
-    function() {}  // callback
-  );
-});
+var feed = TwitterFeed.start()
+  , noop = function(){};
+  
+feed.on('error', function(error) { console.log('ERROR :: %s', JSON.stringify(error)); });
+feed.on('tweet', noop);
+feed.on('destroy', noop);
+feed.on('end', noop)
 
 exports.next = function(req, res) {
-  var tweets = feed.getCachedTweets()
+  var tweets = TwitterFeed.getCachedTweets()
     , numTweets = req.param('numTweets');
 
   if (!numTweets) {
