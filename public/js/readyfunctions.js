@@ -166,7 +166,7 @@ function updateCalendar(year, month, callback) {
 
 				if (todaysEvents.length > 0) {
 					todaysEvents.forEach(function(event) {
-						$(value).append('<a class="eventalert"></a>');
+						$(value).attr('class','eventalert');
 					});
 
 					$(value).data('events', todaysEvents)
@@ -176,12 +176,14 @@ function updateCalendar(year, month, callback) {
 				} else {
 					$(value).data('events', [])
 									.off('click')
+									.attr('class','')
 									.click(showEventDetails)
 									.children().remove();
 				}
 			} else {
 				$(value).attr('rel', '')
 								.attr('date', '')
+								.attr('class','')
 								.data('events', [])
 								.click(showEventDetails)
 								.children().remove();
