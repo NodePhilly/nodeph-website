@@ -88,7 +88,8 @@ function showNextEvent(year, month) {
 									  , endTime = new Date(event.endTime);							  
 
 									theFeature.append('<p class="title">' + event.title + '</p>')
-														.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>');
+														.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>')
+														.append('<p class="venue"><a href="https://maps.google.com/?q=' + event.venue.address + '" target="_blank">' + event.venue.name + '</a></p>');
 
 									var description = event.description
 									  , descriptionMaxLength = 400;
@@ -148,7 +149,8 @@ function updateCalendar(year, month, callback) {
 							  , endTime = new Date(event.endTime);							  
 
 							theFeature.append('<p class="title">' + event.title + '</p>')
-												.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>');
+												.append('<p class="date">' + startTime.toString('MM-dd-yyyy') + ' @ ' + startTime.toString('hh:mm tt') + ' - ' + endTime.toString('hh:mm tt') + '</p>')
+												.append('<p class="venue"><a href="https://maps.google.com/?q=' + event.venue.address + '" target="_blank">' + event.venue.name + '</a></p>');
 
 							var description = event.description
 							  , descriptionMaxLength = 400;
