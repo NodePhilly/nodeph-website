@@ -16,4 +16,47 @@ html
     // if lt IE8
       meta(http-equiv="refresh", content="0;url=http://browsehappy.com/")
 
-  body!= body
+  body
+    form.contact
+      section.contactinnerstuff
+        input(placeholder='Your name', type='text', name='username')
+        input(placeholder='Your email', type='email', name='useremail')
+        label General Inquiry
+          input(type='checkbox', name='generalinq')
+          div.clear
+        label I'd like to host an event
+          input(type='checkbox', name='generalinq')
+          div.clear
+        label I'd like to speak at an event
+          input(type='checkbox', name='generalinq')
+          div.clear
+      textarea(placeholder='Your message (500 character max)', type='text', name='usermessage', maxlength='500', required='required').contactinnerstuff
+      input(type='submit', value='').contactinnerstuff
+      a.cancelbtn.contactinnerstuff
+    header.global
+      nav.nav1
+        a(data-tip='Coming Soon') Events
+        a(data-tip='Coming Soon') Partners
+      nav.logo
+      nav.nav2
+        a(data-tip='Coming Soon') Gallery
+        a(data-tip='Coming Soon') Connect
+
+    section!= body
+
+    footer.global
+      section.col1
+        section.inset
+          section.established
+            div.est-icon
+          section.stars
+      section.socicons
+        a(href="https://twitter.com/nodephilly", target="_blank", data-tip="Follow @NodePhilly's Tweets").icon-twitter
+        a(data-tip="@nodephilly's pics are Instariffic").icon-instagram
+        a(href="http://geekli.st/NodePhilly", target="_blank", data-tip="Geek out with us on Geeklist").icon-geeklist
+        a(href="https://github.com/NodePhilly", target="_blank", data-tip="Git at us and see what we're building").icon-github
+      section.col2
+        section.inset
+          section.stars
+          section.year
+            div.year-icon
