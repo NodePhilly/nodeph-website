@@ -1,6 +1,9 @@
 var express = require('express')
   , routes = require('./routes/index')
   , events = require('./routes/events')
+  , partners = require('./routes/partners')
+  , gallery = require('./routes/gallery')
+  , connect = require('./routes/connect')
   , tweets = require('./routes/twitter')
   , geeks = require('./routes/geeklist');
 
@@ -22,7 +25,14 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 
-app.get('/events/:year/:month', events.index);
+app.get('/events', events.index);
+app.get('/events/:year/:month', events.month);
+
+app.get('/partners', partners.index);
+
+app.get('/gallery', gallery.index);
+
+app.get('/connect', connect.index);
 
 app.get('/geeks/next', geeks.next);
 app.get('/geeks/next/:numGeeks', geeks.next);

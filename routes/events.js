@@ -1,6 +1,10 @@
 var allEvents = require('../data/events.json');
 
 exports.index = function(req, res) {
+	res.render('events', allEvents);
+};
+
+exports.month = function(req, res) {
 	var year = req.param('year')
 	  , month = req.param('month')
 	  , events = [];
