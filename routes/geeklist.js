@@ -12,6 +12,10 @@ async.whilst(
 	
 	function(callback) {
 		gklst.users('nodephilly').followers({ count: recordsPerCall, page: ++recordsPage }, function(err, followers) {
+			if (err) {
+				return console.log('ERROR :: %s', JSON.stringify(err));
+			}
+			
 			lastRetrievedCount = followers.length;
 
 			geeks = geeks.concat(followers);

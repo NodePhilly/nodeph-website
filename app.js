@@ -7,6 +7,42 @@ var express = require('express')
   , tweets = require('./routes/twitter')
   , geeks = require('./routes/geeklist');
 
+var nano = require('nano')(process.env.COUCHDB_URI || 'http://localhost:5984');
+
+nano.db.list(function(err, body) {
+  if (body.indexOf('nodephilly') < 0) {
+    if (err) {
+      return console.log('ERROR :: %s', JSON.stringify(err));
+    }
+
+    nano.db.create('nodephilly', function(err, body) {
+      if (err) {
+        return console.log('ERROR :: %s', JSON.stringify(err));
+      }
+
+      var db = nano.db.use('nodephilly');
+
+      db.insert({
+        'views': {
+          'all': {
+            'map': function(doc) {
+              emit(doc._id, doc);              
+            }
+          }
+        } 
+      }, '_design/events', function(err, body) {
+        db.insert((require('./data/events.json'))[0], function(err, body) {
+          if (err) {
+            return console.log('ERROR :: %s', JSON.stringify(err));
+          }
+
+          console.log('INFO :: created database "nodephilly"');
+        });
+      });
+    });
+  }
+});
+
 var app = module.exports = express.createServer();
 
 app.configure(function(){
