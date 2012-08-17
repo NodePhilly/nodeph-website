@@ -609,6 +609,11 @@ aside.global li {
   -moz-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
 }
+aside.global li img {
+  width: inherit;
+  height: auto;
+  padding: 10px 0 10px 0;
+}
 aside.global li:hover,
 aside.global li.selected {
   color: #82c0c0;
@@ -633,6 +638,26 @@ article.global aside.intro a {
 }
 article.global section.content {
   width: 73%;
+}
+section.sponsors {
+  width: inherit;
+  clear: both;
+  border-top: 2px #82c0c0 solid;
+  padding: 5px 0 0 0;
+}
+section.sponsors ul {
+  width: inherit;
+  height: auto;
+  padding: 10px 0 10px 20px;
+  box-sizing: border-box;
+}
+section.sponsors ul:nth-child(1) {
+  border-top: 1px #82c0c0 solid;
+}
+section.sponsors li {
+  width: 200px;
+  height: auto;
+  float: left;
 }
 /*__________________________________________________________ site footer*/
 footer.global section.col1,
