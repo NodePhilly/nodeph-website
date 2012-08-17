@@ -73,6 +73,11 @@ h1, h2, h3, h4
 	font-weight 100
 	text-transform uppercase
 
+h2
+	font-size 25px
+	font-weight 600
+	margin 0 0 10px 0
+
 a
 	color nodeph-blue
 	text-decoration underline
@@ -125,11 +130,14 @@ section.timsdoodads
 footer.global
 	height 54px
 
+section.global
+	width 100%
+	height 100%
+	padding 15px 0 0 0
+
 aside.global
 	width 300px
-	height auto
-	margin 0 15px 15px 0
-	border-right nodeph-thinborder nodeph-blue solid
+	height 100%
 
 /*__________________________________________________________ site head*/
 
@@ -556,8 +564,10 @@ section.the-tweet span.text, section.the-micro span.bio
 
 /*__________________________________________________________ basic page layout*/
 
-aside.global, article.global, aside.date, section.content
+
+aside.global, article.global, aside.intro, section.content
 	float left
+	line-height 25px
 
 aside.global
 	li
@@ -566,21 +576,31 @@ aside.global
 		padding 10px
 		border-bottom nodeph-thinborder nodeph-blue solid
 		cursor pointer
+
+		transition all 0.4s ease
+		-webkit-transition all 0.4s ease
+		-moz-transition all 0.4s ease
+		-o-transition all 0.4s ease
 	li:hover, li.selected
 		color nodeph-blue
 
 article.global
 	width 900px
-	height 150px
-	border nodeph-thinborder nodeph-blue solid
+	margin 0 0 0 0
+	border-left nodeph-thinborder nodeph-blue solid
+	padding 0 0 0 15px
+	p, a
+		margin 0 0 15px 0
+	aside.intro
+		width 22%
+		margin 0 20px 0 0
 
-	aside.date
-		width 200px
-		border nodeph-thinborder nodeph-blue solid
+		a
+			display block
+			text-decoration none
 
 	section.content
-		width 300px
-		border nodeph-thinborder nodeph-blue solid
+		width 73%
 
 
 /*__________________________________________________________ site footer*/
