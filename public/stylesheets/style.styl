@@ -125,6 +125,12 @@ section.timsdoodads
 footer.global
 	height 54px
 
+aside.global
+	width 300px
+	height auto
+	margin 0 15px 15px 0
+	border-right nodeph-thinborder nodeph-blue solid
+
 /*__________________________________________________________ site head*/
 
 nav.nav1, nav.logo, nav.nav2
@@ -547,6 +553,35 @@ section.the-tweet a.username, section.the-micro a.username
 
 section.the-tweet span.text, section.the-micro span.bio
 	padding-left 5px
+
+/*__________________________________________________________ basic page layout*/
+
+aside.global, article.global, aside.date, section.content
+	float left
+
+aside.global
+	li
+		width 260px
+		margin center-hor
+		padding 10px
+		border-bottom nodeph-thinborder nodeph-blue solid
+		cursor pointer
+	li:hover, li.selected
+		color nodeph-blue
+
+article.global
+	width 900px
+	height 150px
+	border nodeph-thinborder nodeph-blue solid
+
+	aside.date
+		width 200px
+		border nodeph-thinborder nodeph-blue solid
+
+	section.content
+		width 300px
+		border nodeph-thinborder nodeph-blue solid
+
 
 /*__________________________________________________________ site footer*/
 

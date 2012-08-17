@@ -98,6 +98,12 @@ section.timsdoodads {
 footer.global {
   height: 54px;
 }
+aside.global {
+  width: 300px;
+  height: auto;
+  margin: 0 15px 15px 0;
+  border-right: 1px #82c0c0 solid;
+}
 /*__________________________________________________________ site head*/
 nav.nav1,
 nav.logo,
@@ -575,6 +581,37 @@ section.the-micro a.username {
 section.the-tweet span.text,
 section.the-micro span.bio {
   padding-left: 5px;
+}
+/*__________________________________________________________ basic page layout*/
+aside.global,
+article.global,
+aside.date,
+section.content {
+  float: left;
+}
+aside.global li {
+  width: 260px;
+  margin: 0 auto 0 auto;
+  padding: 10px;
+  border-bottom: 1px #82c0c0 solid;
+  cursor: pointer;
+}
+aside.global li:hover,
+aside.global li.selected {
+  color: #82c0c0;
+}
+article.global {
+  width: 900px;
+  height: 150px;
+  border: 1px #82c0c0 solid;
+}
+article.global aside.date {
+  width: 200px;
+  border: 1px #82c0c0 solid;
+}
+article.global section.content {
+  width: 300px;
+  border: 1px #82c0c0 solid;
 }
 /*__________________________________________________________ site footer*/
 footer.global section.col1,
