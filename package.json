@@ -8,7 +8,8 @@
     "jade": "0.26.3",
     "twitterfeed": "0.1.1",
     "async": "0.1.22",
-    "geeklist": "git://github.com/timsavery/node-geeklist.git"
+    "geeklist": "git://github.com/timsavery/node-geeklist.git",
+		"nodemailer": "0.3.22"
   },
   "subdomain": "nodephilly",
   "domains": [

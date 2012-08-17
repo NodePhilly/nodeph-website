@@ -25,10 +25,10 @@ html
           input(type='checkbox', name='generalinq')
           div.clear
         label I'd like to host an event
-          input(type='checkbox', name='generalinq')
+          input(type='checkbox', name='hostevent')
           div.clear
         label I'd like to speak at an event
-          input(type='checkbox', name='generalinq')
+          input(type='checkbox', name='speaker')
           div.clear
       textarea(placeholder='Your message (500 character max)', type='text', name='usermessage', maxlength='500', required='required').contactinnerstuff
       input(type='submit', value='').contactinnerstuff
@@ -40,7 +40,7 @@ html
       nav.logo
       nav.nav2
         a(data-tip='Coming Soon') Gallery
-        a(data-tip='Coming Soon') Connect
+        a.contactbtn Connect
 
     section!= body
 
