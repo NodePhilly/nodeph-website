@@ -42,6 +42,11 @@ h4 {
   font-weight: 100;
   text-transform: uppercase;
 }
+h2 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
 a {
   color: #82c0c0;
   text-decoration: underline;
@@ -97,6 +102,15 @@ section.timsdoodads {
 }
 footer.global {
   height: 54px;
+}
+section.global {
+  width: 100%;
+  height: 100%;
+  padding: 15px 0 0 0;
+}
+aside.global {
+  width: 300px;
+  height: 100%;
 }
 /*__________________________________________________________ site head*/
 nav.nav1,
@@ -575,6 +589,75 @@ section.the-micro a.username {
 section.the-tweet span.text,
 section.the-micro span.bio {
   padding-left: 5px;
+}
+/*__________________________________________________________ basic page layout*/
+aside.global,
+article.global,
+aside.intro,
+section.content {
+  float: left;
+  line-height: 25px;
+}
+aside.global li {
+  width: 260px;
+  margin: 0 auto 0 auto;
+  padding: 10px;
+  border-bottom: 1px #82c0c0 solid;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+aside.global li img {
+  width: inherit;
+  height: auto;
+  padding: 10px 0 10px 0;
+}
+aside.global li:hover,
+aside.global li.selected {
+  color: #82c0c0;
+}
+article.global {
+  width: 900px;
+  margin: 0 0 0 0;
+  border-left: 1px #82c0c0 solid;
+  padding: 0 0 0 15px;
+}
+article.global p,
+article.global a {
+  margin: 0 0 15px 0;
+}
+article.global aside.intro {
+  width: 22%;
+  margin: 0 20px 0 0;
+}
+article.global aside.intro a {
+  display: block;
+  text-decoration: none;
+}
+article.global section.content {
+  width: 73%;
+}
+section.sponsors {
+  width: inherit;
+  clear: both;
+  border-top: 2px #82c0c0 solid;
+  padding: 5px 0 0 0;
+}
+section.sponsors ul {
+  width: inherit;
+  height: auto;
+  padding: 10px 0 10px 20px;
+  box-sizing: border-box;
+}
+section.sponsors ul:nth-child(1) {
+  border-top: 1px #82c0c0 solid;
+}
+section.sponsors li {
+  width: 200px;
+  height: auto;
+  float: left;
 }
 /*__________________________________________________________ site footer*/
 footer.global section.col1,

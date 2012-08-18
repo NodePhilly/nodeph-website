@@ -69,6 +69,7 @@ app.get('/partners', partners.index);
 app.get('/gallery', gallery.index);
 
 app.get('/connect', connect.index);
+app.post('/connect', connect.post);
 
 app.get('/geeks/next', geeks.next);
 app.get('/geeks/next/:numGeeks', geeks.next);

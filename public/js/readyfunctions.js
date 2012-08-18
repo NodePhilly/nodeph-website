@@ -21,6 +21,12 @@ $(document).ready(function(){
    	});
    });
 
+	$('input.contactinnerstuff').click(function(){
+		$.post('/connect',$('form.contact').serialize());
+	});
+		
+	
+	
 	getNextTweets(3, function(tweets) {
 		tweets.forEach(function(tweet) {
 			$('.tweets').append(createTweetElement(tweet));
