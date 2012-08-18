@@ -9,7 +9,8 @@
     "twitterfeed": "0.1.1",
     "async": "0.1.22",
     "geeklist": "git://github.com/timsavery/node-geeklist.git",
-		"nodemailer": "0.3.22"
+    "nodemailer": "0.3.22",
+    "nano": "3.3.0"
   },
   "subdomain": "nodephilly",
   "domains": [
