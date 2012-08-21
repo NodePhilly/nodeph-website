@@ -29,7 +29,7 @@ exports.month = function(req, res) {
 		  , events = [];
 
 		body.rows.forEach(function(e) {
-			var startTime = new Date(Date.parse(e.value.startTime));
+			var startTime = new Date(e.value.startTime);
 			
 			if (startTime.getFullYear() == year && startTime.getMonth() == month) {
 				var endTime = Date.parse(e.value.endTime);

@@ -24,8 +24,6 @@ $(document).ready(function(){
 	$('input.contactinnerstuff').click(function(){
 		$.post('/connect',$('form.contact').serialize());
 	});
-		
-	
 	
 	getNextTweets(3, function(tweets) {
 		tweets.forEach(function(tweet) {
@@ -60,7 +58,6 @@ function showNextEvent(year, month) {
 	if (year == undefined) { year = Date.today().getFullYear(); }
 	if (month == undefined) { month = Date.today().getMonth(); }
 
-	// TODO: ajax get events
 	$.get('/events/' + year + '/' + month, function(events) {
 		var today = new Date(year, month, 1)
 		  , firstDayOfMonth = today.moveToFirstDayOfMonth()
@@ -117,7 +114,6 @@ function updateCalendar(year, month, callback) {
 	if (year == undefined) { year = Date.today().getFullYear(); }
 	if (month == undefined) { month = Date.today().getMonth(); }
 
-	// TODO: ajax get events
 	$.get('/events/' + year + '/' + month, function(events) {
 		var today = new Date(year, month, 1)
 		  , firstDayOfMonth = today.moveToFirstDayOfMonth()
