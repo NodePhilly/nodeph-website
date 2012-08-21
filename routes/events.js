@@ -32,7 +32,7 @@ exports.month = function(req, res) {
 			var startTime = new Date(e.value.startTime);
 			
 			if (startTime.getFullYear() == year && startTime.getMonth() == month) {
-				var endTime = Date.parse(e.value.endTime);
+				var endTime = new Date(e.value.endTime);
 
 				events.push(e.value);
 			}

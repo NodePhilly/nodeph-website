@@ -5,8 +5,16 @@ section.global
 	article.global
 		- each event in events
 			aside.intro
-				p Date:<br />#{new Date(event.value.startTime).toString('MM-dd-yyyy')}
-				p Time:<br />#{new Date(event.value.startTime).toString('hh:mm tt')} - #{new Date(event.value.endTime).toString('hh:mm tt')}
+				p 
+					span Date:
+					br
+					span(class='unformatted_date', date='#{event.value.startTime}')
+				p 
+					span Time:
+					br
+					span(class='unformatted_time', time='#{event.value.startTime}')
+					span &nbsp;-&nbsp;
+					span(class='unformatted_time', time='#{event.value.endTime}')				 
 				p Location:<br /><a target='_blank' href='https://maps.google.com/?q=#{event.value.venue.address}'>#{event.value.venue.name}</a>
 				<a href='#{event.value.rsvp}' target='_blank'>Get Tickets &rarr;</a>
 			section.content
@@ -29,3 +37,4 @@ section.global
 			div.clear
 		div.clear
 	div.clear
+script(src='/js/events.js')
