@@ -1,14 +1,18 @@
+require('../public/js/date.js'); // what a hack!!!
+
 var nano = require('nano')(process.env.COUCHDB_URI || 'http://localhost:5984');
 
 exports.index = function(req, res) {
 	var db = nano.use('nodephilly');
 
-	db.list({ include_doc: true }, function(err, events) {
+	db.view('events', 'all', function(err, events) {
 		if (err) {
 			return console.log('ERROR :: %s', JSON.stringify(err));
 		}
 
-		res.render('events', events);
+		res.render('events', {
+			events: events.rows
+		});
 	});
 };
 
@@ -25,7 +29,6 @@ exports.month = function(req, res) {
 		  , events = [];
 
 		body.rows.forEach(function(e) {
-			console.log(JSON.stringify(e));
 			var startTime = new Date(Date.parse(e.value.startTime));
 			
 			if (startTime.getFullYear() == year && startTime.getMonth() == month) {

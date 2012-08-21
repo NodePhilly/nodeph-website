@@ -1,20 +1,31 @@
 section.global
 	aside.global
-		li Here we would list links to events
-		li These links will be clickable and load data to the content area to the right.
-		li.selected They even have a selected state to remind the user.
-		li There's even space here to give a better description of what the link would hold if we chose to do that.
+		- each event in events
+			li #{event.value.title}
 	article.global
-		aside.intro
-			p This area lets us put importan event info up front for the user.
-			p This event occurs on <br>January 25, 2012 and goes from 8:00pm – 10:00pm
-			p This event is being hosted at A Location at 9238 Some Street, In a City, 90807
-			a(href="#", target='_blank') We could include a link for the location &rarr;
-			a(href="#", target='_blank') Or one for where you can sign up &rarr;
-		section.content 
-			h2 The headline for this event
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		- each event in events
+			aside.intro
+				p Date:<br />#{new Date(event.value.startTime).toString('MM-dd-yyyy')}
+				p Time:<br />#{new Date(event.value.startTime).toString('hh:mm tt')} - #{new Date(event.value.endTime).toString('hh:mm tt')}
+				p Location:<br /><a target='_blank' href='https://maps.google.com/?q=#{event.value.venue.address}'>#{event.value.venue.name}</a>
+				<a href='#{event.value.rsvp}' target='_blank'>Get Tickets &rarr;</a>
+			section.content
+				h2 #{event.value.title}
+				p #{event.value.description}							
+				- each item in event.value.agenda
+					hr
+					h4 #{item.title}
+					p #{item.description}
+					h4 Speakers
+					p
+						- each speaker in item.presenters
+							span #{speaker.name}
+							br
+							span #{speaker.bio}
+							br
+							a(style='margin-right: 8px', href='#{speaker.website}', target='_blank') #{speaker.website}
+							- each contact in Object.keys(speaker.contacts)
+								a(style='margin-right: 8px', href='#{speaker.contacts[contact]}', target='_blank') #{contact}
+			div.clear
 		div.clear
 	div.clear

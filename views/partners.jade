@@ -1,45 +1,27 @@
 section.global
 	aside.global
-			li 
+			li(partner='chatham')
 				img(src='/imgs/node-philly-partner-chathamfinancial.png', alt='Chatham Financial')
-			li 
+			li(partner='geeklist')
 				img(src='/imgs/node-philly-partner-geeklist.png', alt='Geeklist')
 	article.global
-		aside.intro
-			p Chatham Financial is <br>Node Philly's founding partner and primary contributor to all of our fantastic events.
-			a(href="http://www.chathamfinancial.com", target='_blank') chathamfinancial.com &rarr;
-		section.content 
-			h2 Chatham Financial
-			p Chatham Financial feeds on complexity, creating simple solutions for our clients using sophisticated technology. We help companies with foreign currency, interest rate and commodity risk understand their risk profile and offer alternatives for how to manage it. We are great at listening to clients, doing hard math and writing powerful analysis tools that can be used both within Chatham and by external users.
-			p Our technology team was once considered a commodity within a consultant led company. But in the last ten years, we have organically grown into an integral part of the business; nearly doubling in size in the last two years. We have assembled a phenomenal team of freethinkers, beer drinkers, Nerf blasters and lambasters who are always thirsting for another adventure. We are highly engaged with the technology community and we strive to stay abreast of the latest happenings in the technology world that are relevant to us and our clients. We love learning and when we come across new technologies that offer competitive advantage to Chatham Financial or our clients, we are proactive in adopting and implementing them.
+		section(partner='chatham')
+			aside.intro
+				p Chatham Financial is <br>Node Philly's founding partner and primary contributor to all of our fantastic events.
+				a(href="http://www.chathamfinancial.com", target='_blank') chathamfinancial.com &rarr;
+			section.content 
+				h2 Chatham Financial
+				p Chatham Financial feeds on complexity, creating simple solutions for our clients using sophisticated technology. We help companies with foreign currency, interest rate and commodity risk understand their risk profile and offer alternatives for how to manage it. We are great at listening to clients, doing hard math and writing powerful analysis tools that can be used both within Chatham and by external users.
+				p Our technology team was once considered a commodity within a consultant led company. But in the last ten years, we have organically grown into an integral part of the business; nearly doubling in size in the last two years. We have assembled a phenomenal team of freethinkers, beer drinkers, Nerf blasters and lambasters who are always thirsting for another adventure. We are highly engaged with the technology community and we strive to stay abreast of the latest happenings in the technology world that are relevant to us and our clients. We love learning and when we come across new technologies that offer competitive advantage to Chatham Financial or our clients, we are proactive in adopting and implementing them.
 		div.clear
-	section.sponsors
-		ul
-			li 
-				img(src='/imgs/node-philly-partnerlow-geeklist.png', alt='Geeklist')
-			li
-				img(src='/imgs/node-philly-partnerlow-att.png', alt='AT&T')
-			li 
-				img(src='/imgs/node-philly-partnerlow-nodejs.png', alt='Node.js')
-			li 
-				img(src='/imgs/node-philly-partnerlow-twitter.png', alt='AT&T')
-			li 
-				img(src='/imgs/node-philly-partnerlow-geeklist.png', alt='Geeklist')
-			li
-				img(src='/imgs/node-philly-partnerlow-att.png', alt='AT&T')
-			div.clear
-		ul
-			li 
-				img(src='/imgs/node-philly-partnerlow-geeklist.png', alt='Geeklist')
-			li
-				img(src='/imgs/node-philly-partnerlow-att.png', alt='AT&T')
-			li 
-				img(src='/imgs/node-philly-partnerlow-nodejs.png', alt='Node.js')
-			li 
-				img(src='/imgs/node-philly-partnerlow-twitter.png', alt='AT&T')
-			li 
-				img(src='/imgs/node-philly-partnerlow-geeklist.png', alt='Geeklist')
-			li
-				img(src='/imgs/node-philly-partnerlow-att.png', alt='AT&T')
-			div.clear			
+		section.hidden(partner='geeklist')
+			aside.intro
+				p Geeklist is <br>one of the original sponsors of our first Node.Philly conference in 2012. They believe in our mission and we love what Geeklist provides for the Node.js community.
+				a(href="http://geekli.st", target='_blank') geekli.st &rarr;
+			section.content 
+				h2 Geeklist
+				p Geeklist is where developers come to discover, connect and themselves and the great work they have done. We connect developers to each other and companies they love, making their lives better, helping them build relationships that are relevant to them and their careers as well as providing a platform for companies to build relationships with developers to show them what they are building and hire developers interested.
+				p <a href='http://geekli.st/NodePhilly/invite/D3E8BB6A3E'>Sign Up Now</a> and start your Geek-ography!
+		div.clear
 	div.clear
+script(src='/js/partners.js')

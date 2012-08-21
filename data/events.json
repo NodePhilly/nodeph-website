@@ -1,9 +1,9 @@
 [{
-		"title": "Inaugural Meetup!"
+	  "title": "Inaugural Meetup!"
 	, "description": "Our inaugural meetup! Join us to hear some great talks, meet local Noders, talk about projects and share ideas. Of course we'll have food and refreshments as well."
  	, "startTime": "2012-08-23T18:30:00.000-04:00"
 	, "endTime": "2012-08-23T22:30:00.000-04:00"
-	, "capacity": "40"
+	, "rsvp": "http://www.eventbrite.com/event/4122713146"
 	, "venue": {
 		    "name": "Philadelphia Center for Architecture"
 		  , "address": "1218 Arch Street, Philadelphia, PA 19107"
@@ -14,12 +14,25 @@
 			, "description": "Not every Node app belongs in the cloud. The performance wins of Node can be biggest for those who bring their own servers to the party, and intranet apps often must be internally hosted. Stagecoach is a simple toolkit for painlessly deploying and hosting Node apps on Linux, especially Ubuntu Linux. The talk will cover installation of node and MongoDB from a sysadmin's perspective, deployment of Node apps with sc-deploy and hosting of multiple Node apps on the same server with sc-proxy. The stagecoach project lives here: https://github.com/punkave/stagecoach"
 			, "presenters": [{
 					  "name": "Tom Boutell"
-					, "bio": "Tom Boutell is a senior developer at P'unk Avenue (punkave.com), a web design and development firm in South Philly where Node is rapidly taking over. He blogs about  Node and JavaScript development at justjs.com."
+					, "bio": "Tom is a senior developer at P'unk Avenue (punkave.com), a web design and development firm in South Philly where Node is rapidly taking over. He blogs about  Node and JavaScript development at justjs.com."
 					, "email": "tom@punkave.com"
 					, "website": "http://punkave.com"
 					, "contacts": {
-							  "twitter": "@boutell"
+							  "twitter": "http://twitter.com/boutell"
 							, "github": "https://github.com/boutell"
+						}
+				}]
+		},{
+			  "title": "Your Module Doesn't Exist Without Tests"
+			, "description": "Unit testing is not a new thing. There are a surprising number of modules in NPM that have zero test coverage. Writing tests gives you and others confidence in your code, makes it easier to maintain and easier for others to contribute. There are plenty of unit test frameworks available, but today's talk will take a look at Jasime and how we can integrate this into our development cycle. Jasmine is a behavior-driven development framework that has no external JS dependencies. The framework lives at https://github.com/pivotal/jasmine"
+			, "presenters": [{
+					  "name": "Keith Elliott"
+					, "bio": "Keith is a senior front-end developer at Chatham Financial. He is passionate about JavaScript, Node.js and all things mobile."
+					, "email": "kelliott@chathamfinancial.com"
+					, "website": "http://chathamfinancial.com"
+					, "contacts": {
+							  "twitter": "http://twitter.com/mrkeithelliott"
+							, "github": "https://github.com/keithelliott"
 						}
 				}]
 		}]
