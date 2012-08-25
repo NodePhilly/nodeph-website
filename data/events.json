@@ -35,5 +35,18 @@
 							, "github": "https://github.com/keithelliott"
 						}
 				}]
+		},{
+			  "title": "Poet"
+			, "description": "Poet (http://jsantell.github.com/poet/) is a blog generator in node.js to generate routing, render markdown posts, and get a blog up and running fast. Poet may not make you blog-famous, and it may give you one less excuse for not having a blog, but just imagine the insane hipster cred you get for having node power your blog. \"Cool blog, is this Wordpress or something?\" your square friend asks. \"Nah dude, this is in node,\" you respond, while skateboarding off into the sunset, doing mad flips and stuff. Little do they know you just used Poet's autoroute generation to get your content in, like, seconds, up on that internet."
+			, "presenters": [{
+					  "name": "Jordan Santell"
+					, "bio": "Jordan is a JavaScript developer at WebLinc (http://weblinc.com) down in Old City. He's interested in all forms of JavaScript: node.js apps and CLI tools, wrestling with audio and JavaScript in the form of browser audio APIs with dancer.js (http://github.com/jsantell/dancer.js) and audio decoding with ogg.js (http://github.com/jsantell/ogg.js), and slinging out open source JS."
+					, "email": "jsantell@gmail.com"
+					, "website": "http://jsantell.com"
+					, "contacts": {
+							  "twitter": "http://twitter.com/jsantell"
+							, "github": "http://github.com/jsantell"
+						}
+				}]
 		}]
 }]

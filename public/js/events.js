@@ -10,4 +10,15 @@ $(document).ready(function() {
 
 		date.text(new Date(date.attr('date')).toString('MM-dd-yyyy'));
 	});
+
+	$.each($('.linkify'), function(idx, target) {
+		target = $(target);
+
+		target.html(linkifyUrls(target.text()));
+	});
 });
+
+function linkifyUrls(text) {
+  var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+  return text.replace(exp, '<a href="$1" target="_blank">$1</a>');
+};

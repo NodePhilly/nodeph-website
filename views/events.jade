@@ -23,13 +23,13 @@ section.global
 				- each item in event.value.agenda
 					hr
 					h4 #{item.title}
-					p #{item.description}
+					p.linkify #{item.description}
 					h4 Speakers
 					p
 						- each speaker in item.presenters
 							span #{speaker.name}
 							br
-							span #{speaker.bio}
+							span.linkify #{speaker.bio}
 							br
 							a(style='margin-right: 8px', href='#{speaker.website}', target='_blank') #{speaker.website}
 							- each contact in Object.keys(speaker.contacts)
