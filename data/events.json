@@ -49,4 +49,29 @@
 						}
 				}]
 		}]
+},{
+	  "title": "September Meetup & Hack Time"
+	, "description": ""
+ 	, "startTime": "2012-09-27T18:30:00.000-04:00"
+	, "endTime": "2012-09-27T22:30:00.000-04:00"
+	, "rsvp": ""
+	, "venue": {
+		    "name": ""
+		  , "address": ""
+		  , "website": ""
+	  }
+	, "agenda": [{
+			  "title": ""
+			, "description": ""
+			, "presenters": [{
+					  "name": ""
+					, "bio": ""
+					, "email": ""
+					, "website": ""
+					, "contacts": {
+							  "twitter": ""
+							, "github": ""
+						}
+				}]
+		}]
 }]
