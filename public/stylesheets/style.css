@@ -613,6 +613,7 @@ aside.global li {
   margin: 0 auto 0 auto;
   padding: 10px;
   border-bottom: 1px #82c0c0 solid;
+  border-right: 1px #82c0c0 solid;
   cursor: pointer;
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
@@ -631,7 +632,6 @@ aside.global li.selected {
 article.global {
   width: 900px;
   margin: 0 0 0 0;
-  border-left: 1px #82c0c0 solid;
   padding: 0 0 0 15px;
 }
 article.global p,

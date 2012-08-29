@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 		$.each($('article.global > section[partner]'), function(idx, partnerSection) {
 			var partnerSection = $(partnerSection);
-			console.log(partnerSection.attr('partner') + ' == ' + selectedPartner);
+			
 			if (partnerSection.attr('partner') == selectedPartner) {
 				partnerSection.removeClass('hidden');
 			} else {

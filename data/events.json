@@ -51,10 +51,10 @@
 		}]
 },{
 	  "title": "September Meetup & Hack Time"
-	, "description": "Come join us for our second Node.Philly meetup and Hack Time! We will be at another unique space in Philly with some great talks, demos, food and beer. We are also going to kick off \"Hack Time\" which we hope will become a strong Node.Philly tradition. VoltDB will also be joining as a special guest to talk high-performance node."
+	, "description": "Come join us for our second Node.Philly meetup and Hack Time! We will be at another unique space in Philly with some great talks, demos, food and beer. VoltDB will also be joining as a special guest to talk high-performance node. We are also going to kick off \"Hack Time\" which we hope will become a strong Node.Philly tradition."
  	, "startTime": "2012-09-27T18:30:00.000-04:00"
 	, "endTime": "2012-09-27T22:00:00.000-04:00"
-	, "rsvp": ""
+	, "rsvp": "http://www.eventbrite.com/event/4234062194"
 	, "venue": {
 		    "name": "MAAS Building"
 		  , "address": "1325 N. Randolph St, Philadelphia, PA 19122"

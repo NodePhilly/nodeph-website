@@ -1,39 +1,41 @@
 section.global
 	aside.global
 		- each event in events
-			li #{event.value.title}
+			li.eventlink(eventid="#{event.id}") #{event.value.title}
 	article.global
 		- each event in events
-			aside.intro
-				p 
-					span Date:
-					br
-					span(class='unformatted_date', date='#{event.value.startTime}')
-				p 
-					span Time:
-					br
-					span(class='unformatted_time', time='#{event.value.startTime}')
-					span &nbsp;-&nbsp;
-					span(class='unformatted_time', time='#{event.value.endTime}')				 
-				p Location:<br /><a target='_blank' href='https://maps.google.com/?q=#{event.value.venue.address}'>#{event.value.venue.name}</a>
-				<a href='#{event.value.rsvp}' target='_blank'>Get Tickets &rarr;</a>
-			section.content
-				h2 #{event.value.title}
-				p #{event.value.description}							
-				- each item in event.value.agenda
-					hr
-					h4 #{item.title}
-					p.linkify #{item.description}
-					h4 Speakers
-					p
-						- each speaker in item.presenters
-							span #{speaker.name}
-							br
-							span.linkify #{speaker.bio}
-							br
-							a(style='margin-right: 8px', href='#{speaker.website}', target='_blank') #{speaker.website}
-							- each contact in Object.keys(speaker.contacts)
-								a(style='margin-right: 8px', href='#{speaker.contacts[contact]}', target='_blank') #{contact}
+			section.hidden(eventid="#{event.id}")
+				aside.intro
+					p 
+						span Date:
+						br
+						span(class='unformatted_date', date='#{event.value.startTime}')
+					p 
+						span Time:
+						br
+						span(class='unformatted_time', time='#{event.value.startTime}')
+						span &nbsp;-&nbsp;
+						span(class='unformatted_time', time='#{event.value.endTime}')				 
+					p Location:<br /><a target='_blank' href='https://maps.google.com/?q=#{event.value.venue.address}'>#{event.value.venue.name}</a>
+					<a href='#{event.value.rsvp}' target='_blank'>Get Tickets &rarr;</a>
+				section.content
+					h2 #{event.value.title}
+					p #{event.value.description}							
+					- each item in event.value.agenda
+						hr
+						h4 #{item.title}
+						p.linkify #{item.description}
+						h4 Speakers
+						p
+							- each speaker in item.presenters
+								span #{speaker.name}
+								br
+								span.linkify #{speaker.bio}
+								br
+								a(style='margin-right: 8px', href='#{speaker.website}', target='_blank') #{speaker.website}
+								- each contact in Object.keys(speaker.contacts)
+									a(style='margin-right: 8px', href='#{speaker.contacts[contact]}', target='_blank') #{contact}
+				div.clear
 			div.clear
 		div.clear
 	div.clear

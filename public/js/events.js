@@ -16,6 +16,22 @@ $(document).ready(function() {
 
 		target.html(linkifyUrls(target.text()));
 	});
+
+	$('.eventlink').click(function() {
+		var selectedEvent = $(this).attr('eventid');
+
+		$.each($('section[eventid]'), function(idx, eventSection) {
+			var eventSection = $(eventSection);
+			
+			if (eventSection.attr('eventid') == selectedEvent) {
+				eventSection.removeClass('hidden');
+			} else {
+				eventSection.addClass('hidden');
+			}
+		});
+	});
+
+	$('section[eventid]').first().removeClass('hidden');
 });
 
 function linkifyUrls(text) {

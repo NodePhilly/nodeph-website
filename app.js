@@ -31,13 +31,15 @@ nano.db.list(function(err, body) {
           }
         } 
       }, '_design/events', function(err, body) {
-        db.insert((require('./data/events.json'))[0], function(err, body) {
-          if (err) {
-            return console.log('ERROR :: %s', JSON.stringify(err));
-          }
+        (require('./data/events.json')).forEach(function(e) {
+          db.insert(e, function(err, body) {
+            if (err) {
+              return console.log('ERROR :: %s', JSON.stringify(err));
+            }            
+          });
+        });  
 
-          console.log('INFO :: created database "nodephilly"');
-        });
+        console.log('INFO :: created database "nodephilly"');      
       });
     });
   }
