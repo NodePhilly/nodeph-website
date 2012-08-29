@@ -51,26 +51,25 @@
 		}]
 },{
 	  "title": "September Meetup & Hack Time"
-	, "description": ""
+	, "description": "Come join us for our second Node.Philly meetup and Hack Time! We will be at another unique space in Philly with some great talks, demos, food and beer. We are also going to kick off \"Hack Time\" which we hope will become a strong Node.Philly tradition. VoltDB will also be joining as a special guest to talk high-performance node."
  	, "startTime": "2012-09-27T18:30:00.000-04:00"
-	, "endTime": "2012-09-27T22:30:00.000-04:00"
+	, "endTime": "2012-09-27T22:00:00.000-04:00"
 	, "rsvp": ""
 	, "venue": {
-		    "name": ""
-		  , "address": ""
-		  , "website": ""
+		    "name": "MAAS Building"
+		  , "address": "1325 N. Randolph St, Philadelphia, PA 19122"
+		  , "website": "http://www.maasbuilding.com/"
 	  }
 	, "agenda": [{
-			  "title": ""
-			, "description": ""
+			  "title": "VoltDB"
+			, "description": "VoltDB (http://voltdb.com/) field engineer Andy Wilson will be on hand to talk about using VoltDB with Node.js. VoltDB recently released a Node.js driver that allows you to build Node apps that scale to hundreds of thousands of database TPS. Whether you're building a mobile app, an online game, a digital advertising system or any other application that needs incredibly high throughput and scale, VoltDB should be on your database short list."
 			, "presenters": [{
-					  "name": ""
-					, "bio": ""
+					  "name": "Andy Wilson"
+					, "bio": "Andy is a Field Engineer at VoltDB. Prior to VoltDB, Andy was the architect of Harvard Business Publishing's Higher Education E-commerce site, Co-founder of Visible Measures and has held senior software developer positions for the past 15 years."
 					, "email": ""
-					, "website": ""
+					, "website": "http://voltdb.com"
 					, "contacts": {
-							  "twitter": ""
-							, "github": ""
+							  "blog": "http://voltdb.com/blogs/Andrew-Wilson"
 						}
 				}]
 		}]
