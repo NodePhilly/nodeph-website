@@ -22,5 +22,9 @@
   },
   "engines": {
     "node": "v0.8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NodePhilly/nodeph-website.git"
   }
 }
