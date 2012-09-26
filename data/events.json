@@ -72,5 +72,17 @@
 							  "blog": "http://voltdb.com/blogs/Andrew-Wilson"
 						}
 				}]
+		},{
+			  "title": "Deploying Node.js in Production"
+			, "description": "Seamlessly integrating forever into your apps."
+			, "presenters": [{
+					  "name": "Ilya Braude"
+					, "bio": "Ilya is Co-Founder, Developer, and VP of Engineering at CloudMine - a platform that provides full backend support for applications via an API, allowing developers to build fast, scalable apps quickly. Prior to CloudMine, Ilya had a blast developing next-gen (“Jack Bauer”) mobile data collaboration systems for SWAT teams and managed projects at Drexel University for the DoD as a research staff member. Ilya graduated from Drexel University with BS and MS degrees in Computer Science. He loves to play with new technologies, talk tech, and keeps himself busy with activities such as Karate and rock climbing."
+					, "email": ""
+					, "website": "http://cloudmine.me/"
+					, "contacts": {
+							  "twitter": "http://twitter.com/ilybr"
+						}
+				}]
 		}]
 }]
