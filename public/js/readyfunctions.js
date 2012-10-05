@@ -22,7 +22,8 @@ $(document).ready(function(){
    });
 
 	$('input.contactinnerstuff').click(function(){
-		$.post('/connect',$('form.contact').serialize());
+		if (validateContactForm()) 
+			$.post('/connect',$('form.contact').serialize());
 	});
 	
 	getNextTweets(3, function(tweets) {
@@ -41,6 +42,12 @@ $(document).ready(function(){
 		setInterval('changeGeek()', 6000);
 	});
 });
+
+function validateContactForm() {
+	return ($('#username').val().length > 0
+			&& $('#useremail').val().length > 0
+			&& $('#usermessage').val().length > 0);
+}
 
 function findAll(list, predicate) {
 	var results = [];
