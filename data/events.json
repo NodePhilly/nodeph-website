@@ -85,4 +85,41 @@
 						}
 				}]
 		}]
+},{
+	  "title": "October Meetup & Hack Time"
+	, "description": "Another month, another great night of Node.js. We will be at the 'Search Church' this month talking and hacking streams with special guest Luke Arduini coming down from NYC to join us."
+ 	, "startTime": "2012-10-25T18:30:00.000-04:00"
+	, "endTime": "2012-10-25T22:00:00.000-04:00"
+	, "rsvp": "http://www.eventbrite.com/event/4615290458"
+	, "venue": {
+		    "name": "SEER Interactive (The Search Church)"
+		  , "address": "1028 N. 3rd Street, Philadelphia, PA 19123"
+		  , "website": "http://www.seerinteractive.com/inside-seer/new-office"
+	  }
+	, "agenda": [{
+			  "title": "Then I'll See You In Hell"
+			, "description": "You don't want to miss this."
+			, "presenters": [{
+					  "name": "Luke Arduini"
+					, "bio": "Luke is a Javascript fanatic and evangelist who thinks that server-side Javascript by way of node.js is changing the face of programming. He's currently curating EmpireJS and writing Javascript for every level of the stack at a cloud services company in NYC."
+					, "email": ""
+					, "website": "http://luke.xxx"
+					, "contacts": {
+							  "twitter": "http://twitter.com/st_luke"
+						}
+				}]
+		},{
+			  "title": "Creating CLI Modules"
+			, "description": "A walkthrough and experience share of creating my first CLI module with Node."
+			, "presenters": [{
+					  "name": "Matt Parke"
+					, "bio": "Matt is a JavaScript developer who loves learning new things. He's currently interested in writing node.js for single page apps and client side JavaScript libraries."
+					, "email": ""
+					, "website": "http://ordinaryrobot.com"
+					, "contacts": {
+							  "twitter": "http://twitter.com/matt_parke",
+							  "github": "https://github.com/mparke"
+						}
+				}]
+		}]
 }]
