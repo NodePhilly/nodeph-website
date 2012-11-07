@@ -1,4 +1,4 @@
-var nodemailer = require('nodemailer');
+//var nodemailer = require('nodemailer');
 
 exports.index = function(req, res) {
 	res.render('connect');
