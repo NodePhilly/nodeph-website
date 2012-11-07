@@ -11,7 +11,7 @@ var express = require('express')
 var nano = require('nano')(process.env.COUCHDB_URI || 'http://localhost:5984');
 
 nano.db.list(function(err, body) {
-  if (body.indexOf('nodephilly') < 0) {
+  if (body === null || body.indexOf('nodephilly') < 0) {
     if (err) {
       return console.log('ERROR :: %s', JSON.stringify(err));
     }
