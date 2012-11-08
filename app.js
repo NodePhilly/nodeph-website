@@ -6,6 +6,7 @@ var express = require('express')
   , connect = require('./routes/connect')
   , tweets = require('./routes/twitter')
   , geeks = require('./routes/geeklist')
+  , stylus = require('stylus')
   , poet = require('poet')
   , hackandhops = require('./routes/hackandhops');
 
@@ -65,6 +66,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
+
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
