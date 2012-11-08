@@ -6,7 +6,8 @@ var express = require('express')
   , connect = require('./routes/connect')
   , tweets = require('./routes/twitter')
   , geeks = require('./routes/geeklist')
-  , poet = require('poet');
+  , poet = require('poet')
+  , hackandhops = require('./routes/hackandhops');
 
 var nano = require('nano')(process.env.COUCHDB_URI || 'http://localhost:5984');
 
@@ -77,6 +78,8 @@ app.get('/events/:year/:month', events.month);
 app.get('/partners', partners.index);
 
 app.get('/gallery', gallery.index);
+
+app.get('/hackandhops', hackandhops.index);
 
 app.get('/connect', connect.index);
 app.post('/connect', connect.post);
