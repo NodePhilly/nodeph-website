@@ -848,7 +848,7 @@ form.contact a.cancelbtn
 
 /*__________________________________________________________ hackandhops 2012 */
 
-hackandhops-logo = url('/imgs/nodephilly-hackandhops.png')
+hackandhops-sprite = url('/imgs/nodephilly-hackandhops.png')
 
 animation(n)
 	-webkit-animation arguments
@@ -858,28 +858,35 @@ animation(n)
 
 
 body.hackandhops
-	min-width 100%
-	min-height 100%
-	overflow hidden
+	width inherit
+	height inherit
 	position relative
 	border none
 	margin 0 auto
 	padding 0 0 0 0
 
+section.cloudybackground, section.cloudymidground, section.cloudyforeground
+	width inherit
+	position absolute
+	top 0
+	left 0
+	background-repeat repeat
+	background-color transparent
+	background-position 0 0
+
 header.hackandhops
-	width 100%
-	margin 0 0 0 0
+	position fixed
+	top 0
+	left 0
+	right 0
+	z-index 2
 
 div.hackandhops-logo
-	background-image hackandhops-logo
+	background-image hackandhops-sprite
 	width 350px
 	height 240px
 	margin 15px auto 0 auto
-	z-index 2
 	position relative
-
-section.hackandhops-welcome
-	width 100%
 
 section.foreground, section.background
 	position absolute
@@ -888,7 +895,7 @@ section.foreground, section.background
 	left 0
 
 section.foreground
-	top 200px
+	top 60px
 	background-image url('/imgs/hnh-snow01.png')
 	background-repeat repeat
 	background-position 0 0
@@ -897,48 +904,28 @@ section.foreground
 	animation itsfrosty 30s infinite linear
 
 section.cloudyforeground
-	position absolute
-	top 0
-	left 0
-	min-width 100%
 	height 300px
 	background-image url('/imgs/hnh-clouds01.png')
-	background-repeat repeat
-	background-color transparent
-	background-position 0 0
 	z-index 101
 	animation itscloudy 100s infinite linear
 
 section.cloudymidground
-	position absolute
-	top 0
-	left 0
-	min-width 100%
 	height 300px
 	background-image url('/imgs/hnh-clouds02.png')
-	background-repeat repeat
-	background-color transparent
-	background-position 0 0
 	z-index 1
 	animation itsstillcloudy 120s infinite linear
 
 section.cloudybackground
-	position absolute
-	top 0
-	left 0
-	min-width 100%
-	height 350px
+	top -15px
+	height 150px
 	background-image url('/imgs/hnh-clouds03.png')
-	background-repeat repeat
-	background-color transparent
-	background-position 0 0
 	z-index 1
-	animation itsstillreallycloudy 160s infinite linear
+	animation itsstillreallycloudy 500s infinite linear
 
 section.background
 	min-width 100%
 	min-height 100%
-	top 150px
+	top 60px
 	background-image url('/imgs/hnh-snow02.png'), url('/imgs/hnh-snow03.png')
 	background-repeat repeat
 	background-position 0 100, 25 25
@@ -946,31 +933,71 @@ section.background
 	z-index 1
 	animation itsstillfrosty 40s infinite linear
 
+div.floater01, div.floater02
+	background-image hackandhops-sprite
+	position absolute
+
+div.floater01
+	top 500px
+	left -10%
+	width 120px
+	height 60px
+	background-position 0 -240px
+	animation floater 100s infinite linear 25s
+
+div.floater02
+	top 700px
+	left -10%
+	width 150px
+	height 60px
+	background-position -120px -240px
+	animation floater 100s infinite linear
+
+	&:nth-child(2)
+		top 750px
+		animation floater 10s infinite linear
+
+
+
+//footer.hackandhops
+
+
+
 @keyframes itsfrosty
 	0%
 		background-position 0 0
 	100%
 		background-position 700px 700px
+
 @keyframes itsstillfrosty
 	0%
 		background-position 0 0, 0 0
 	100%
-		background-position -700px 700px, -700px 700px
+		background-position 700px 700px, 700px 700px
+
 @keyframes itscloudy
 	0%
 		background-position 0 0
 	100%
 		background-position 1015px 0
+
 @keyframes itsstillcloudy
 	0%
 		background-position 0 0
 	100%
 		background-position 997px 0
+
 @keyframes itsstillreallycloudy
 	0%
 		background-position 0 0
 	100%
 		background-position 1042px 0
+
+@keyframes floater
+	0%
+		left -10%
+	100%
+		left 105%
 
 /*__________________________________________________________ media queries */
 

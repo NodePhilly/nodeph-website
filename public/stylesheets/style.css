@@ -891,28 +891,37 @@ form.contact a.cancelbtn {
 }
 /*__________________________________________________________ hackandhops 2012 */
 body.hackandhops {
-  min-width: 100%;
-  min-height: 100%;
-  overflow: hidden;
+  width: inherit;
+  height: inherit;
   position: relative;
   border: none;
   margin: 0 auto;
   padding: 0 0 0 0;
 }
+section.cloudybackground,
+section.cloudymidground,
+section.cloudyforeground {
+  width: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: repeat;
+  background-color: transparent;
+  background-position: 0 0;
+}
 header.hackandhops {
-  width: 100%;
-  margin: 0 0 0 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 div.hackandhops-logo {
   background-image: url("/imgs/nodephilly-hackandhops.png");
   width: 350px;
   height: 240px;
   margin: 15px auto 0 auto;
-  z-index: 2;
   position: relative;
-}
-section.hackandhops-welcome {
-  width: 100%;
 }
 section.foreground,
 section.background {
@@ -922,7 +931,7 @@ section.background {
   left: 0;
 }
 section.foreground {
-  top: 200px;
+  top: 60px;
   background-image: url("/imgs/hnh-snow01.png");
   background-repeat: repeat;
   background-position: 0 0;
@@ -934,15 +943,8 @@ section.foreground {
   animation: itsfrosty 30s infinite linear;
 }
 section.cloudyforeground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
   height: 300px;
   background-image: url("/imgs/hnh-clouds01.png");
-  background-repeat: repeat;
-  background-color: transparent;
-  background-position: 0 0;
   z-index: 101;
   -webkit-animation: itscloudy 100s infinite linear;
   -moz-animation: itscloudy 100s infinite linear;
@@ -950,15 +952,8 @@ section.cloudyforeground {
   animation: itscloudy 100s infinite linear;
 }
 section.cloudymidground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
   height: 300px;
   background-image: url("/imgs/hnh-clouds02.png");
-  background-repeat: repeat;
-  background-color: transparent;
-  background-position: 0 0;
   z-index: 1;
   -webkit-animation: itsstillcloudy 120s infinite linear;
   -moz-animation: itsstillcloudy 120s infinite linear;
@@ -966,25 +961,19 @@ section.cloudymidground {
   animation: itsstillcloudy 120s infinite linear;
 }
 section.cloudybackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 350px;
+  top: -15px;
+  height: 150px;
   background-image: url("/imgs/hnh-clouds03.png");
-  background-repeat: repeat;
-  background-color: transparent;
-  background-position: 0 0;
   z-index: 1;
-  -webkit-animation: itsstillreallycloudy 160s infinite linear;
-  -moz-animation: itsstillreallycloudy 160s infinite linear;
-  -o-animation: itsstillreallycloudy 160s infinite linear;
-  animation: itsstillreallycloudy 160s infinite linear;
+  -webkit-animation: itsstillreallycloudy 500s infinite linear;
+  -moz-animation: itsstillreallycloudy 500s infinite linear;
+  -o-animation: itsstillreallycloudy 500s infinite linear;
+  animation: itsstillreallycloudy 500s infinite linear;
 }
 section.background {
   min-width: 100%;
   min-height: 100%;
-  top: 150px;
+  top: 60px;
   background-image: url("/imgs/hnh-snow02.png"), url("/imgs/hnh-snow03.png");
   background-repeat: repeat;
   background-position: 0 100, 25 25;
@@ -994,6 +983,40 @@ section.background {
   -moz-animation: itsstillfrosty 40s infinite linear;
   -o-animation: itsstillfrosty 40s infinite linear;
   animation: itsstillfrosty 40s infinite linear;
+}
+div.floater01,
+div.floater02 {
+  background-image: url("/imgs/nodephilly-hackandhops.png");
+  position: absolute;
+}
+div.floater01 {
+  top: 500px;
+  left: -10%;
+  width: 120px;
+  height: 60px;
+  background-position: 0 -240px;
+  -webkit-animation: floater 100s infinite linear 25s;
+  -moz-animation: floater 100s infinite linear 25s;
+  -o-animation: floater 100s infinite linear 25s;
+  animation: floater 100s infinite linear 25s;
+}
+div.floater02 {
+  top: 700px;
+  left: -10%;
+  width: 150px;
+  height: 60px;
+  background-position: -120px -240px;
+  -webkit-animation: floater 100s infinite linear;
+  -moz-animation: floater 100s infinite linear;
+  -o-animation: floater 100s infinite linear;
+  animation: floater 100s infinite linear;
+}
+div.floater02:nth-child(2) {
+  top: 750px;
+  -webkit-animation: floater 10s infinite linear;
+  -moz-animation: floater 10s infinite linear;
+  -o-animation: floater 10s infinite linear;
+  animation: floater 10s infinite linear;
 }
 /*__________________________________________________________ media queries */
 @media screen and (max-width: 321px) {
@@ -1052,7 +1075,7 @@ section.background {
   }
 
   100% {
-    background-position: -700px 700px, -700px 700px;
+    background-position: 700px 700px, 700px 700px;
   }
 }
 @-webkit-keyframes itsstillfrosty {
@@ -1061,7 +1084,7 @@ section.background {
   }
 
   100% {
-    background-position: -700px 700px, -700px 700px;
+    background-position: 700px 700px, 700px 700px;
   }
 }
 @-o-keyframes itsstillfrosty {
@@ -1070,7 +1093,7 @@ section.background {
   }
 
   100% {
-    background-position: -700px 700px, -700px 700px;
+    background-position: 700px 700px, 700px 700px;
   }
 }
 @-ms-keyframes itsstillfrosty {
@@ -1079,7 +1102,7 @@ section.background {
   }
 
   100% {
-    background-position: -700px 700px, -700px 700px;
+    background-position: 700px 700px, 700px 700px;
   }
 }
 @keyframes itsstillfrosty {
@@ -1088,7 +1111,7 @@ section.background {
   }
 
   100% {
-    background-position: -700px 700px, -700px 700px;
+    background-position: 700px 700px, 700px 700px;
   }
 }
 @-moz-keyframes itscloudy {
@@ -1224,5 +1247,50 @@ section.background {
 
   100% {
     background-position: 1042px 0;
+  }
+}
+@-moz-keyframes floater {
+  0% {
+    left: -10%;
+  }
+
+  100% {
+    left: 105%;
+  }
+}
+@-webkit-keyframes floater {
+  0% {
+    left: -10%;
+  }
+
+  100% {
+    left: 105%;
+  }
+}
+@-o-keyframes floater {
+  0% {
+    left: -10%;
+  }
+
+  100% {
+    left: 105%;
+  }
+}
+@-ms-keyframes floater {
+  0% {
+    left: -10%;
+  }
+
+  100% {
+    left: 105%;
+  }
+}
+@keyframes floater {
+  0% {
+    left: -10%;
+  }
+
+  100% {
+    left: 105%;
   }
 }
