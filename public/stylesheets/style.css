@@ -914,7 +914,7 @@ header.hackandhops {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 100;
 }
 div.hackandhops-logo {
   background-image: url("/imgs/nodephilly-hackandhops.png");
@@ -937,10 +937,10 @@ section.foreground {
   background-position: 0 0;
   background-color: transparent;
   z-index: 100;
-  -webkit-animation: itsfrosty 30s infinite linear;
-  -moz-animation: itsfrosty 30s infinite linear;
-  -o-animation: itsfrosty 30s infinite linear;
-  animation: itsfrosty 30s infinite linear;
+  -webkit-animation: itsfrosty 20s infinite linear;
+  -moz-animation: itsfrosty 20s infinite linear;
+  -o-animation: itsfrosty 20s infinite linear;
+  animation: itsfrosty 20s infinite linear;
 }
 section.cloudyforeground {
   height: 300px;
@@ -952,9 +952,9 @@ section.cloudyforeground {
   animation: itscloudy 100s infinite linear;
 }
 section.cloudymidground {
-  height: 300px;
+  height: 225px;
   background-image: url("/imgs/hnh-clouds02.png");
-  z-index: 1;
+  z-index: 2;
   -webkit-animation: itsstillcloudy 120s infinite linear;
   -moz-animation: itsstillcloudy 120s infinite linear;
   -o-animation: itsstillcloudy 120s infinite linear;
@@ -964,6 +964,7 @@ section.cloudybackground {
   top: -15px;
   height: 150px;
   background-image: url("/imgs/hnh-clouds03.png");
+  background-repeat: repeat-x;
   z-index: 1;
   -webkit-animation: itsstillreallycloudy 500s infinite linear;
   -moz-animation: itsstillreallycloudy 500s infinite linear;
@@ -990,33 +991,28 @@ div.floater02 {
   position: absolute;
 }
 div.floater01 {
-  top: 500px;
-  left: -10%;
-  width: 120px;
-  height: 60px;
+  top: 400px;
+  left: -20%;
+  width: 160px;
+  height: 100px;
   background-position: 0 -240px;
   -webkit-animation: floater 100s infinite linear 25s;
   -moz-animation: floater 100s infinite linear 25s;
   -o-animation: floater 100s infinite linear 25s;
   animation: floater 100s infinite linear 25s;
+  z-index: 102;
 }
 div.floater02 {
-  top: 700px;
+  top: 600px;
   left: -10%;
-  width: 150px;
-  height: 60px;
-  background-position: -120px -240px;
+  width: 200px;
+  height: 120px;
+  background-position: -160px -240px;
   -webkit-animation: floater 100s infinite linear;
   -moz-animation: floater 100s infinite linear;
   -o-animation: floater 100s infinite linear;
   animation: floater 100s infinite linear;
-}
-div.floater02:nth-child(2) {
-  top: 750px;
-  -webkit-animation: floater 10s infinite linear;
-  -moz-animation: floater 10s infinite linear;
-  -o-animation: floater 10s infinite linear;
-  animation: floater 10s infinite linear;
+  z-index: 102;
 }
 /*__________________________________________________________ media queries */
 @media screen and (max-width: 321px) {
