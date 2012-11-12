@@ -164,6 +164,9 @@ nav.nav2 a {
   text-decoration: none;
   color: #caeeee;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -505,6 +508,9 @@ section.the-calendar ul.week li {
   display: inline-block;
   vertical-align: top;
   padding: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -615,6 +621,9 @@ aside.global li {
   border-bottom: 1px #82c0c0 solid;
   border-right: 1px #82c0c0 solid;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -789,6 +798,9 @@ a[data-tip]::before {
   padding: 15px 20px 15px 20px;
   white-space: nowrap;
   opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
@@ -897,6 +909,7 @@ body.hackandhops {
   border: none;
   margin: 0 auto;
   padding: 0 0 0 0;
+  overflow: hidden;
 }
 section.cloudybackground,
 section.cloudymidground,
@@ -920,8 +933,29 @@ div.hackandhops-logo {
   background-image: url("/imgs/nodephilly-hackandhops.png");
   width: 350px;
   height: 240px;
-  margin: 15px auto 0 auto;
+  margin: 5px auto 0 auto;
   position: relative;
+}
+section.hackandhops-content {
+  height: 500px;
+  border-radius: 3px;
+  border: 1px solid rgba(127,136,145,0.5);
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 26%;
+}
+section.hackandhops-content p.welcome {
+  font-family: 'sorts-mill-goudy';
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  font-size: 25px;
+  line-height: 20px;
+  font-weight: 300;
+  color: #82c0c0;
+  text-align: center;
 }
 section.foreground,
 section.background {
@@ -985,34 +1019,160 @@ section.background {
   -o-animation: itsstillfrosty 40s infinite linear;
   animation: itsstillfrosty 40s infinite linear;
 }
-div.floater01,
-div.floater02 {
+section.randomclouds div.floater {
   background-image: url("/imgs/nodephilly-hackandhops.png");
   position: absolute;
+  width: 210px;
+  height: 120px;
+  left: -18%;
+  z-index: 102;
+  background-repeat: no-repeat;
 }
-div.floater01 {
-  top: 400px;
-  left: -20%;
-  width: 160px;
-  height: 100px;
+section.randomclouds div.floater a {
+  width: 150px;
+  height: 90px;
+  margin: 10px auto 0 auto;
+  display: block;
+  background-image: url("/imgs/nodephilly-hackandhops.png");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+section.randomclouds div.floater:nth-child(1) {
+  bottom: 600px;
   background-position: 0 -240px;
+  -webkit-animation: floater 100s infinite linear 10s;
+  -moz-animation: floater 100s infinite linear 10s;
+  -o-animation: floater 100s infinite linear 10s;
+  animation: floater 100s infinite linear 10s;
+}
+section.randomclouds div.floater:nth-child(2) {
+  bottom: 80px;
+  background-position: -210px -240px;
+  -webkit-animation: floater 100s infinite linear 20s;
+  -moz-animation: floater 100s infinite linear 20s;
+  -o-animation: floater 100s infinite linear 20s;
+  animation: floater 100s infinite linear 20s;
+}
+section.randomclouds div.floater[name="Monetate"] {
+  bottom: 125px;
+  background-position: 0 -360px;
+  -webkit-animation: floater 100s infinite linear 3s;
+  -moz-animation: floater 100s infinite linear 3s;
+  -o-animation: floater 100s infinite linear 3s;
+  animation: floater 100s infinite linear 3s;
+  z-index: 103;
+}
+section.randomclouds div.floater[name="Monetate"] a {
+  background-position: -210px -360px;
+}
+section.randomclouds div.floater[name="Monetate"] a:hover {
+  background-position: -210px -450px;
+}
+section.randomclouds div.floater[name="Chatham"] {
+  bottom: 225px;
+  background-position: 0 -360px;
+  -webkit-animation: floater 100s infinite linear 8s;
+  -moz-animation: floater 100s infinite linear 8s;
+  -o-animation: floater 100s infinite linear 8s;
+  animation: floater 100s infinite linear 8s;
+  z-index: 103;
+}
+section.randomclouds div.floater[name="Chatham"] a {
+  background-position: -360px -360px;
+}
+section.randomclouds div.floater[name="Chatham"] a:hover {
+  background-position: -360px -450px;
+}
+section.randomclouds div.floater[name="AndYet"] {
+  bottom: 165px;
+  background-position: 0 -360px;
+  -webkit-animation: floater 100s infinite linear 17s;
+  -moz-animation: floater 100s infinite linear 17s;
+  -o-animation: floater 100s infinite linear 17s;
+  animation: floater 100s infinite linear 17s;
+  z-index: 103;
+}
+section.randomclouds div.floater[name="AndYet"] a {
+  background-position: -510px -360px;
+}
+section.randomclouds div.floater[name="AndYet"] a:hover {
+  background-position: -510px -450px;
+}
+section.randomclouds div.floater:nth-child(6) {
+  bottom: 100px;
+  background-position: 0 -240px;
+  -webkit-animation: floater 100s infinite linear 37s;
+  -moz-animation: floater 100s infinite linear 37s;
+  -o-animation: floater 100s infinite linear 37s;
+  animation: floater 100s infinite linear 37s;
+}
+section.randomclouds div.floater:nth-child(7) {
+  bottom: 50px;
+  background-position: -210px -240px;
   -webkit-animation: floater 100s infinite linear 25s;
   -moz-animation: floater 100s infinite linear 25s;
   -o-animation: floater 100s infinite linear 25s;
   animation: floater 100s infinite linear 25s;
-  z-index: 102;
 }
-div.floater02 {
-  top: 600px;
-  left: -10%;
-  width: 200px;
-  height: 120px;
-  background-position: -160px -240px;
-  -webkit-animation: floater 100s infinite linear;
-  -moz-animation: floater 100s infinite linear;
-  -o-animation: floater 100s infinite linear;
-  animation: floater 100s infinite linear;
-  z-index: 102;
+section.randomclouds div.floater:nth-child(8) {
+  bottom: 180px;
+  background-position: -210px -240px;
+  -webkit-animation: floater 100s infinite linear 35s;
+  -moz-animation: floater 100s infinite linear 35s;
+  -o-animation: floater 100s infinite linear 35s;
+  animation: floater 100s infinite linear 35s;
+}
+section.randomclouds div.floater:nth-child(9) {
+  bottom: 500px;
+  background-position: -210px -240px;
+  -webkit-animation: floater 100s infinite linear 20s;
+  -moz-animation: floater 100s infinite linear 20s;
+  -o-animation: floater 100s infinite linear 20s;
+  animation: floater 100s infinite linear 20s;
+}
+section.randomclouds div.floater:nth-child(10) {
+  bottom: 70px;
+  background-position: -210px -240px;
+  -webkit-animation: floater 100s infinite linear 35s;
+  -moz-animation: floater 100s infinite linear 35s;
+  -o-animation: floater 100s infinite linear 35s;
+  animation: floater 100s infinite linear 35s;
+}
+section.randomclouds div.floater:nth-child(11) {
+  bottom: 200px;
+  background-position: -210px -240px;
+  -webkit-animation: floater 100s infinite linear 45s;
+  -moz-animation: floater 100s infinite linear 45s;
+  -o-animation: floater 100s infinite linear 45s;
+  animation: floater 100s infinite linear 45s;
+}
+footer.hackandhops {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 104;
+}
+footer.hackandhops div.skyline {
+  width: 1000px;
+  height: 160px;
+  background-image: url("/imgs/nodephilly-hackandhops.png");
+  background-repeat: no-repeat;
+  background-position: 0 -840px;
+  margin: 0 auto;
+}
+footer.hackandhops div.yardsbuilding {
+  width: 300px;
+  height: 150px;
+  background-image: url("/imgs/nodephilly-hackandhops.png");
+  background-repeat: no-repeat;
+  background-position: 0 -690px;
+  margin: 0 auto;
+}
+footer.hackandhops div.content {
+  background-color: #82c0c0;
+  width: 100%;
+  height: 25px;
 }
 /*__________________________________________________________ media queries */
 @media screen and (max-width: 321px) {
@@ -1247,7 +1407,7 @@ div.floater02 {
 }
 @-moz-keyframes floater {
   0% {
-    left: -10%;
+    left: -18%;
   }
 
   100% {
@@ -1256,7 +1416,7 @@ div.floater02 {
 }
 @-webkit-keyframes floater {
   0% {
-    left: -10%;
+    left: -18%;
   }
 
   100% {
@@ -1265,7 +1425,7 @@ div.floater02 {
 }
 @-o-keyframes floater {
   0% {
-    left: -10%;
+    left: -18%;
   }
 
   100% {
@@ -1274,7 +1434,7 @@ div.floater02 {
 }
 @-ms-keyframes floater {
   0% {
-    left: -10%;
+    left: -18%;
   }
 
   100% {
@@ -1283,7 +1443,7 @@ div.floater02 {
 }
 @keyframes floater {
   0% {
-    left: -10%;
+    left: -18%;
   }
 
   100% {

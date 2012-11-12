@@ -15,7 +15,12 @@ html
 		- var analytics = '<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-34514579-1"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()</script>' 
 		| !{analytics}
 
+		| <script type="text/javascript" src="//use.typekit.net/aab8bct.js"></script>
+		| <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
 	body.hackandhops
+		section.hackandhops-content
+			p.welcome Though the weather outside is frightful. <br> Node Philly has something delightful…
 		section.cloudyforeground
 		section.foreground
 		header.hackandhops
@@ -23,6 +28,21 @@ html
 		section.cloudymidground
 		section.cloudybackground
 		section.background
-		div.floater01
-		div.floater02
-		div.floater02
+		section.randomclouds
+			div.floater
+			div.floater
+			div.floater(name="Monetate")
+				a(href="#")
+			div.floater(name="Chatham")
+				a(href="#")
+			div.floater(name="AndYet")
+				a(href="#")
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+		footer.hackandhops
+			div.skyline
+			div.content
