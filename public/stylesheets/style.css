@@ -933,6 +933,16 @@ body.hackandhops section.overview article.one {
   color: #82c0c0;
   text-align: center;
 }
+body.hackandhops section.pager {
+  height: 50px;
+  z-index: 105;
+}
+body.hackandhops section.pager a.pagenum {
+  width: 50px;
+  height: 50px;
+  background-color: #82c0c0;
+  margin: 100px 0 0 0;
+}
 section.cloudybackground,
 section.cloudymidground,
 section.cloudyforeground {
