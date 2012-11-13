@@ -939,7 +939,6 @@ div.hackandhops-logo {
 section.hackandhops-content {
   height: 500px;
   border-radius: 3px;
-  border: 1px solid rgba(127,136,145,0.5);
   z-index: 1;
   position: absolute;
   left: 0;
@@ -947,12 +946,11 @@ section.hackandhops-content {
   top: 26%;
 }
 section.hackandhops-content p.welcome {
-  font-family: 'sorts-mill-goudy';
-  width: 400px;
+  padding: 150px;
   height: auto;
   margin: 0 auto;
-  font-size: 25px;
-  line-height: 20px;
+  font-size: 35px;
+  line-height: 50px;
   font-weight: 300;
   color: #82c0c0;
   text-align: center;
@@ -1031,7 +1029,7 @@ section.randomclouds div.floater {
 section.randomclouds div.floater a {
   width: 150px;
   height: 90px;
-  margin: 10px auto 0 auto;
+  margin: 15px auto 0 auto;
   display: block;
   background-image: url("/imgs/nodephilly-hackandhops.png");
   background-repeat: no-repeat;
