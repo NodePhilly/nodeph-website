@@ -872,6 +872,30 @@ body.hackandhops
 	padding 0 0 0 0
 	overflow hidden
 
+	section.overview
+		width 100%
+		height 500px
+		border-radius 3px
+		padding 150px 0 0 0
+		z-index 1
+		position absolute
+		left 0
+		right 0
+		top 26%
+
+		article.one
+			width 100%
+			display block
+			height auto
+			margin 0 auto
+			font-size 35px
+			line-height 50px
+			font-weight 300
+			color nodeph-blue
+			text-align center
+
+
+
 section.cloudybackground, section.cloudymidground, section.cloudyforeground
 	width inherit
 	position absolute
@@ -894,26 +918,6 @@ div.hackandhops-logo
 	height 240px
 	margin 5px auto 0 auto
 	position relative
-
-section.hackandhops-content
-	height 500px
-	border-radius 3px
-	//border 1px solid nodeph-gray50
-	z-index 1
-	position absolute
-	left 0
-	right 0
-	top 26%
-
-	p.welcome
-		padding 150px
-		height auto
-		margin 0 auto
-		font-size 35px
-		line-height 50px
-		font-weight 300
-		color nodeph-blue
-		text-align center
 
 section.foreground, section.background
 	position absolute
@@ -983,17 +987,17 @@ section.randomclouds div.floater
 	&:nth-child(1)
 		bottom 600px
 		background-position 0 -240px
-		animation floater 100s infinite linear 10s
+		animation floater 100s infinite linear 7s
 
 	&:nth-child(2)
 		bottom 80px
 		background-position -210px -240px
-		animation floater 100s infinite linear 20s
+		animation floater 100s infinite linear 17s
 
 	&[name="Monetate"]
 		bottom 125px
 		background-position 0 -360px
-		animation floater 100s infinite linear 3s
+		animation floater 100s infinite linear
 		z-index 103
 
 		a
@@ -1005,7 +1009,7 @@ section.randomclouds div.floater
 	&[name="Chatham"]
 		bottom 225px
 		background-position 0 -360px
-		animation floater 100s infinite linear 8s
+		animation floater 100s infinite linear 5s
 		z-index 103
 
 		a
@@ -1029,17 +1033,17 @@ section.randomclouds div.floater
 	&:nth-child(6)
 		bottom 100px
 		background-position 0 -240px
-		animation floater 100s infinite linear 37s
+		animation floater 100s infinite linear 34s
 
 	&:nth-child(7)
 		bottom 50px
 		background-position -210px -240px
-		animation floater 100s infinite linear 25s
+		animation floater 100s infinite linear 22s
 
 	&:nth-child(8)
 		bottom 180px
 		background-position -210px -240px
-		animation floater 100s infinite linear 35s
+		animation floater 100s infinite linear 32s
 
 	&:nth-child(9)
 		bottom 500px
@@ -1049,12 +1053,12 @@ section.randomclouds div.floater
 	&:nth-child(10)
 		bottom 70px
 		background-position -210px -240px
-		animation floater 100s infinite linear 35s
+		animation floater 100s infinite linear 32s
 
 	&:nth-child(11)
 		bottom 200px
 		background-position -210px -240px
-		animation floater 100s infinite linear 45s
+		animation floater 100s infinite linear 42s
 
 
 //footer.hackandhops
@@ -1120,7 +1124,7 @@ footer.hackandhops
 
 @keyframes floater
 	0%
-		left -18%
+		left -15%
 	100%
 		left 105%
 

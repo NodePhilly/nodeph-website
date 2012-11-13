@@ -11,13 +11,14 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(type='text/javascript', src='/js/jquery1.7.2.js')
 		script(type='text/javascript', src='/js/modernizr.js')
+		script(type='text/javascript', src='/js/tinycarousel.js')
 	
 		- var analytics = '<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-34514579-1"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()</script>' 
 		| !{analytics}
 
 	body.hackandhops
-		section.hackandhops-content
-			p.welcome Oh the weather outside is frightful, <br> but Node Philly has something delightful…
+		section.overview
+			article.one Oh the weather outside is frightful, <br> but Node Philly has something delightful…
 		section.cloudyforeground
 		section.foreground
 		header.hackandhops
