@@ -38,7 +38,64 @@ html
 							h2 9:15pm
 							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 						div.clear
-					article.three The speakers
+					article.three
+						section.speakersGrid
+							section.speakerGridTopRow
+								section.speakerTile(speakerExpanded='MarkHeadd')
+									div.headshot(name='MarkHeadd')
+									h1 Mark Headd
+									a.speakercontact(href='http://www.twitter.com/mheadd', target='_blank') @mheadd
+									p.brief Chief Data Officer for Philadelphia and @codeforamerica alum.
+									a.moreButton See what they'll be sharing
+								section.speakerTile(speakerExpanded='PamSelle')
+									div.headshot(name='PamSelle')
+									h1 Pam Selle
+									a.speakercontact(href='http://www.twitter.com/pamasaur', target='_blank') @pamasaur
+									p.brief GirlDevelopIT instructor, front-end diva, Rubyist, Pythonista.
+									a.moreButton See what they'll be sharing
+								section.speakerTile(speakerExpanded='BryanPaluch')
+									div.headshot(name='BryanPaluch')
+									h1 Bryan Paluch
+									a.speakercontact(href='http://www.twitter.com/Letthisbemywrit', target='_blank') @Letthisbemywrit
+									p.brief Telecom Engineer at Comcast Labs focused on communication APIs.
+									a.moreButton See what they'll be sharing
+							section.speakerGridBottomRow
+								section.speakerTile(speakerExpanded='JordanSantell')
+									div.headshot(name='JordanSantell')
+									h1 Jordan Santell
+									a.speakercontact(href='http://www.twitter.com/jsantell', target='_blank') @jsantell
+									p.brief JavaScript developer @WebLinc and author of Poet blog module.
+									a.moreButton See what they'll be sharing
+								section.speakerTile(speakerExpanded='ChrisAlfano')
+									div.headshot(name='ChrisAlfano')
+									h1 Chris Alfano
+									a.speakercontact(href='http://www.twitter.com/themightychris', target='_blank') @themightychris
+									p.brief Mad scientist at @wearejarvus and cofounder at @devnuts.
+									a.moreButton See what they'll be sharing
+								div.clear
+						
+						section.speakerExpanded(id='MarkHeadd')
+							article.speakerinfo
+								div.headshot(name='MarkHeadd')
+								h1 Mark Headd &nbsp;&nbsp;|&nbsp;&nbsp;
+									a.speakercontact(href='http://www.twitter.com/mheadd', target='_blank') @mheadd
+									| &nbsp;&nbsp;|&nbsp;&nbsp;
+									a.speakercontact(href='#', target='_blank') awebsiteforthem.com
+								p.brief Chief Data Officer for Philadelphia and @codeforamerica alum.
+								a.lessButton Close this
+						section.speakerExpanded(id='PamSelle')
+							article.speakerinfo
+								a.lessButton Close this
+						section.speakerExpanded(id='BryanPaluch')
+							article.speakerinfo
+								a.lessButton Close this
+						section.speakerExpanded(id='JordanSantell')
+							article.speakerinfo
+								a.lessButton Close this
+						section.speakerExpanded(id='ChrisAlfano')
+							article.speakerinfo
+								a.lessButton Close this
+							div.clear
 					article.four
 						article.sponsor
 							div.chathamfinancial
@@ -58,8 +115,8 @@ html
 						article.sponsor
 							div.comcastlabs
 							p Lorem psum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>
-							//- a(href="http://www.twitter.com/AndYet", target="_blank") @&yet
-							a(href="http://labs.xfinity.com", target="_blank") Comcastlabs.com
+							a(href="http://www.twitter.com/Comcast", target="_blank") @Comcast
+							a(href="http://comcast.com", target="_blank") Comcast.com
 						div.clear
 					article.five
 						| <div class="eventbrite" >

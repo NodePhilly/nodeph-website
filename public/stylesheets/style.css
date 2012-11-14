@@ -952,10 +952,6 @@ body.hackandhops section.feature section.viewport {
 }
 body.hackandhops section.feature section.viewport section.overview {
   height: inherit;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 body.hackandhops section.feature section.viewport section.overview article {
   width: 1000px;
@@ -1004,6 +1000,124 @@ body.hackandhops section.feature section.viewport section.overview article.two a
 }
 body.hackandhops section.feature section.viewport section.overview article.two article.details p {
   margin: 0 0 5px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakersGrid {
+  width: 999px;
+  position: absolute;
+  height: 400px;
+  z-index: 102;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerTopRow {
+  width: 999px;
+  height: 195px;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerGridBottomRow {
+  width: 666px;
+  height: 195px;
+  margin: 0 auto;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerGridBottomRow .speakerTile {
+  width: 310px;
+  margin: 20px 20px 10px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerTile {
+  width: 310px;
+  float: left;
+  height: 180px;
+  border: 1px solid #82c0c0;
+  margin: 0 20px 0 0;
+  position: relative;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerBriefText {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  opacity: 1;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerExpanded {
+  position: absolute;
+  z-index: 1;
+  height: 400px;
+  width: 1000px;
+  opacity: 0;
+  -webkit-transition: opacity 0.7s 0s;
+  -moz-transition: opacity 0.7s 0s;
+  -o-transition: opacity 0.7s 0s;
+  transition: opacity 0.7s 0s;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerExpanded article.speakerinfo {
+  width: 700px;
+  height: 400px;
+  border: 1px solid #82c0c0;
+  position: relative;
+  opacity: inherit;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerExpanded article.speakerinfo h1 {
+  font-size: 20px;
+  margin: 15px 0 15px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerExpanded article.speakerinfo a.speakercontact {
+  display: inline;
+}
+body.hackandhops section.feature section.viewport section.overview article.three a.moreButton,
+body.hackandhops section.feature section.viewport section.overview article.three a.lessButton {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #82c0c0;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 0 5px 0;
+  text-align: center;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: box-shadow 0.5s linear;
+  -moz-transition: box-shadow 0.5s linear;
+  -o-transition: box-shadow 0.5s linear;
+  transition: box-shadow 0.5s linear;
+}
+body.hackandhops section.feature section.viewport section.overview article.three a.moreButton:hover,
+body.hackandhops section.feature section.viewport section.overview article.three a.lessButton:hover {
+  -webkit-box-shadow: inset 0 0 10px #3c5a5a;
+  -moz-box-shadow: inset 0 0 10px #3c5a5a;
+  -o-box-shadow: inset 0 0 10px #3c5a5a;
+  box-shadow: inset 0 0 10px #3c5a5a;
+}
+body.hackandhops section.feature section.viewport section.overview article.three div.headshot {
+  background-image: url("/imgs/nodephilly-hackandhops.png");
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  display: block;
+  float: left;
+  margin: 15px 15px 0 15px;
+}
+body.hackandhops section.feature section.viewport section.overview article.three div.headshot[name="MarkHeadd"] {
+  background-position: -600px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three div.headshot[name="PamSelle"] {
+  background-position: -600px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three div.headshot[name="BryanPaluch"] {
+  background-position: -600px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three div.headshot[name="JordanSantell"] {
+  background-position: -600px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three div.headshot[name="ChrisAlfano"] {
+  background-position: -600px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three h1 {
+  text-transform: none;
+  margin: 15px 0 0 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three a.speakercontact {
+  margin: 0 0 8px 0;
+  display: block;
 }
 body.hackandhops section.feature section.viewport section.overview article.four article.sponsor {
   width: 22%;
@@ -1093,10 +1207,10 @@ body.hackandhops section.feature section.pager a.pagenum {
   cursor: pointer;
   padding: 30px 15px 0 15px;
   margin: 0;
-  -webkit-transition: all 0.8s linear;
-  -moz-transition: all 0.8s linear;
-  -o-transition: all 0.8s linear;
-  transition: all 0.8s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
   text-decoration: none;
   text-align: center;
 }
@@ -1151,13 +1265,14 @@ section.foreground {
   animation: itsfrosty 20s infinite linear;
 }
 section.cloudyforeground {
-  height: 300px;
+  height: 134px;
   background-image: url("/imgs/hnh-clouds01.png");
   z-index: 101;
   -webkit-animation: itscloudy 80s infinite linear;
   -moz-animation: itscloudy 80s infinite linear;
   -o-animation: itscloudy 80s infinite linear;
   animation: itscloudy 80s infinite linear;
+  top: 100px;
 }
 section.cloudymidground {
   height: 225px;
@@ -1228,7 +1343,7 @@ section.randomclouds div.floater:nth-child(2) {
   animation: floater 80s infinite linear 15s;
 }
 section.randomclouds div.floater:nth-child(3) {
-  bottom: 110px;
+  bottom: 80px;
   background-position: 0 -360px;
   -webkit-animation: floater 80s infinite linear;
   -moz-animation: floater 80s infinite linear;
