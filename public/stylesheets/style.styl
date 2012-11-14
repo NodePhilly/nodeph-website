@@ -882,15 +882,16 @@ body.hackandhops
 	margin 0 auto
 	padding 0 0 0 0
 	overflow hidden
+	font-size 15px
 
 	section.feature
 		width 100%
-		height 500px
+		height 450px
 		z-index 101
 		position absolute
 		left 0
 		right 0
-		top 25%
+		top 27%
 		border-bottom none
 		transition all 0.5s linear
 
@@ -924,7 +925,6 @@ body.hackandhops
 					&.two
 						text-align left
 						p
-							font-size 16px
 							display block
 							text-align left
 							line-height 28px
@@ -949,7 +949,7 @@ body.hackandhops
 								padding 0 15px 0 0
 							&.details
 								width 56%
-								border-left 1px solid nodeph-blue50
+								//border-left 1px solid nodeph-blue50
 								padding 0 0 0 15px
 								margin 0 0 0 0
 
@@ -958,19 +958,26 @@ body.hackandhops
 
 					&.four
 						article.sponsor
-							width 31%
+							width 22%
 							height 95%
-							display inline-block
+							float left
+							word-wrap wrap
+							margin 0 0 0 0
 
 							&:nth-child(2)
-								border-right 1px solid nodeph-blue50
-								border-left 1px solid nodeph-blue50
+								//border-right 1px solid nodeph-blue50
+								//border-left 1px solid nodeph-blue50
 								padding 0 15px 0 15px
 								margin 0 15px 0 15px
+							&:nth-child(3)
+								//border-right 1px solid nodeph-blue50
+								padding 0 15px 0 0
+								margin 0 15px 0 0
 
 							div.chathamfinancial
 							div.monetate
 							div.andyet
+							div.comcastlabs
 								width 160px
 								height 80px
 								margin 15px auto 0 auto
@@ -980,7 +987,6 @@ body.hackandhops
 							a
 								margin 0 15px 0 0
 							p
-								font-size 16px
 								display block
 								text-align left
 								line-height 28px
@@ -995,6 +1001,9 @@ body.hackandhops
 							div.andyet
 								background-position -420px -300px
 
+							div.comcastlabs
+								background-position -420px -390px
+
 					div.eventbrite
 						float right
 						width 600px
@@ -1006,7 +1015,6 @@ body.hackandhops
 						margin 80px 0 0 0
 
 						p
-							font-size 16px
 							display block
 							text-align center
 							line-height 22px
@@ -1024,25 +1032,30 @@ body.hackandhops
 
 
 		section.pager
-			width 530px
+			width 450px
 			position relative
-			margin 25px auto 0 auto
+			margin 10px auto 0 auto
+			border-top 1px solid nodeph-blue50
 
 			a.pagenum
-				width auto
+				background-image hackandhops-sprite
+				background-repeat no-repeat
+				background-position -930px -60px
+				width 60px
 				font-size 15px
 				height 25px
-				background-image none
-				background-color transparent
-				margin 0 10px 0 0
 				cursor pointer
-				padding 5px 15px 5px 15px
-				margin 0 10px 0 0
-				transition all 0.3s linear
+				padding 30px 15px 0 15px
+				margin 0
+				transition all 0.8s linear
 				text-decoration none
+				text-align center
 
 				&:hover
-					font-weight bold
+				&:active
+				&.active
+					background-position -930px 0
+					color nodeph-gray
 
 section.cloudybackground, section.cloudymidground, section.cloudyforeground
 	width inherit
@@ -1143,31 +1156,26 @@ section.randomclouds div.floater
 		animation floater 80s infinite linear 15s
 
 	&:nth-child(3)
-		bottom 125px
+		bottom 110px
 		background-position 0 -360px
 		animation floater 80s infinite linear
 
 	&:nth-child(4)
-		bottom 165px
-		background-position 0 -360px
-		animation floater 80s infinite linear 10s
-
-	&:nth-child(5)
 		bottom 100px
 		background-position 0 -240px
 		animation floater 80s infinite linear 59s
 
-	&:nth-child(6)
+	&:nth-child(5)
 		bottom 50px
 		background-position -210px -240px
 		animation floater 80s infinite linear 50s
 
-	&:nth-child(7)
+	&:nth-child(6)
 		bottom 180px
 		background-position -210px -240px
 		animation floater 80s infinite linear 35s
 
-	&:nth-child(8)
+	&:nth-child(7)
 		bottom 500px
 		background-position -210px -240px
 		animation floater 80s infinite linear 20s
@@ -1177,7 +1185,7 @@ section.randomclouds div.floater
 
 footer.hackandhops
 	position absolute
-	bottom -10px
+	bottom -15px
 	left 0
 	right 0
 	z-index 104
@@ -1185,18 +1193,10 @@ footer.hackandhops
 
 	div.skyline
 		width 1000px
-		height 160px
+		height 140px
 		background-image hackandhops-sprite
 		background-repeat no-repeat
-		background-position 0 -840px
-		margin 0 auto
-
-	div.yardsbuilding
-		width 300px
-		height 150px
-		background-image hackandhops-sprite
-		background-repeat no-repeat
-		background-position 0 -690px
+		background-position 0 -487px
 		margin 0 auto
 		
 	div.content
@@ -1248,8 +1248,9 @@ footer.hackandhops
 		bottom -170px
 
 	body.hackandhops
+		
 		section.feature
-			top 35%
+			top 34%
 			height 400px
 		
 		section.randomclouds div.floater
@@ -1260,6 +1261,7 @@ footer.hackandhops
 			left -25%
 			z-index 102
 			background-repeat no-repeat
+
 		@keyframes floater
 			0%
 				left -25%

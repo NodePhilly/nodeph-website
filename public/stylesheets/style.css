@@ -927,15 +927,16 @@ body.hackandhops {
   margin: 0 auto;
   padding: 0 0 0 0;
   overflow: hidden;
+  font-size: 15px;
 }
 body.hackandhops section.feature {
   width: 100%;
-  height: 500px;
+  height: 450px;
   z-index: 101;
   position: absolute;
   left: 0;
   right: 0;
-  top: 25%;
+  top: 27%;
   border-bottom: none;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
@@ -973,7 +974,6 @@ body.hackandhops section.feature section.viewport section.overview article.two {
   text-align: left;
 }
 body.hackandhops section.feature section.viewport section.overview article.two p {
-  font-size: 16px;
   display: block;
   text-align: left;
   line-height: 28px;
@@ -999,7 +999,6 @@ body.hackandhops section.feature section.viewport section.overview article.two a
 }
 body.hackandhops section.feature section.viewport section.overview article.two article.details {
   width: 56%;
-  border-left: 1px solid rgba(130,192,192,0.5);
   padding: 0 0 0 15px;
   margin: 0 0 0 0;
 }
@@ -1007,19 +1006,24 @@ body.hackandhops section.feature section.viewport section.overview article.two a
   margin: 0 0 5px 0;
 }
 body.hackandhops section.feature section.viewport section.overview article.four article.sponsor {
-  width: 31%;
+  width: 22%;
   height: 95%;
-  display: inline-block;
+  float: left;
+  word-wrap: wrap;
+  margin: 0 0 0 0;
 }
 body.hackandhops section.feature section.viewport section.overview article.four article.sponsor:nth-child(2) {
-  border-right: 1px solid rgba(130,192,192,0.5);
-  border-left: 1px solid rgba(130,192,192,0.5);
   padding: 0 15px 0 15px;
   margin: 0 15px 0 15px;
 }
+body.hackandhops section.feature section.viewport section.overview article.four article.sponsor:nth-child(3) {
+  padding: 0 15px 0 0;
+  margin: 0 15px 0 0;
+}
 body.hackandhops section.feature section.viewport section.overview article.four article.sponsor div.chathamfinancial,
 body.hackandhops section.feature section.viewport section.overview article.four article.sponsor div.monetate,
-body.hackandhops section.feature section.viewport section.overview article.four article.sponsor div.andyet {
+body.hackandhops section.feature section.viewport section.overview article.four article.sponsor div.andyet,
+body.hackandhops section.feature section.viewport section.overview article.four article.sponsor div.comcastlabs {
   width: 160px;
   height: 80px;
   margin: 15px auto 0 auto;
@@ -1030,7 +1034,6 @@ body.hackandhops section.feature section.viewport section.overview article.four 
   margin: 0 15px 0 0;
 }
 body.hackandhops section.feature section.viewport section.overview article.four article.sponsor p {
-  font-size: 16px;
   display: block;
   text-align: left;
   line-height: 28px;
@@ -1045,6 +1048,9 @@ body.hackandhops section.feature section.viewport section.overview article.four 
 body.hackandhops section.feature section.viewport section.overview article.four article.sponsor div.andyet {
   background-position: -420px -300px;
 }
+body.hackandhops section.feature section.viewport section.overview article.four article.sponsor div.comcastlabs {
+  background-position: -420px -390px;
+}
 body.hackandhops section.feature section.viewport section.overview article div.eventbrite {
   float: right;
   width: 600px;
@@ -1056,7 +1062,6 @@ body.hackandhops section.feature section.viewport section.overview article secti
   margin: 80px 0 0 0;
 }
 body.hackandhops section.feature section.viewport section.overview article section.directions p {
-  font-size: 16px;
   display: block;
   text-align: center;
   line-height: 22px;
@@ -1073,28 +1078,33 @@ body.hackandhops section.feature section.viewport section.overview article secti
   position: relative;
 }
 body.hackandhops section.feature section.pager {
-  width: 530px;
+  width: 450px;
   position: relative;
-  margin: 25px auto 0 auto;
+  margin: 10px auto 0 auto;
+  border-top: 1px solid rgba(130,192,192,0.5);
 }
 body.hackandhops section.feature section.pager a.pagenum {
-  width: auto;
+  background-image: url("/imgs/nodephilly-hackandhops.png");
+  background-repeat: no-repeat;
+  background-position: -930px -60px;
+  width: 60px;
   font-size: 15px;
   height: 25px;
-  background-image: none;
-  background-color: transparent;
-  margin: 0 10px 0 0;
   cursor: pointer;
-  padding: 5px 15px 5px 15px;
-  margin: 0 10px 0 0;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  padding: 30px 15px 0 15px;
+  margin: 0;
+  -webkit-transition: all 0.8s linear;
+  -moz-transition: all 0.8s linear;
+  -o-transition: all 0.8s linear;
+  transition: all 0.8s linear;
   text-decoration: none;
+  text-align: center;
 }
-body.hackandhops section.feature section.pager a.pagenum:hover {
-  font-weight: bold;
+body.hackandhops section.feature section.pager a.pagenum:hover,
+body.hackandhops section.feature section.pager a.pagenum:active,
+body.hackandhops section.feature section.pager a.pagenum.active {
+  background-position: -930px 0;
+  color: #7f8891;
 }
 section.cloudybackground,
 section.cloudymidground,
@@ -1218,7 +1228,7 @@ section.randomclouds div.floater:nth-child(2) {
   animation: floater 80s infinite linear 15s;
 }
 section.randomclouds div.floater:nth-child(3) {
-  bottom: 125px;
+  bottom: 110px;
   background-position: 0 -360px;
   -webkit-animation: floater 80s infinite linear;
   -moz-animation: floater 80s infinite linear;
@@ -1226,14 +1236,6 @@ section.randomclouds div.floater:nth-child(3) {
   animation: floater 80s infinite linear;
 }
 section.randomclouds div.floater:nth-child(4) {
-  bottom: 165px;
-  background-position: 0 -360px;
-  -webkit-animation: floater 80s infinite linear 10s;
-  -moz-animation: floater 80s infinite linear 10s;
-  -o-animation: floater 80s infinite linear 10s;
-  animation: floater 80s infinite linear 10s;
-}
-section.randomclouds div.floater:nth-child(5) {
   bottom: 100px;
   background-position: 0 -240px;
   -webkit-animation: floater 80s infinite linear 59s;
@@ -1241,7 +1243,7 @@ section.randomclouds div.floater:nth-child(5) {
   -o-animation: floater 80s infinite linear 59s;
   animation: floater 80s infinite linear 59s;
 }
-section.randomclouds div.floater:nth-child(6) {
+section.randomclouds div.floater:nth-child(5) {
   bottom: 50px;
   background-position: -210px -240px;
   -webkit-animation: floater 80s infinite linear 50s;
@@ -1249,7 +1251,7 @@ section.randomclouds div.floater:nth-child(6) {
   -o-animation: floater 80s infinite linear 50s;
   animation: floater 80s infinite linear 50s;
 }
-section.randomclouds div.floater:nth-child(7) {
+section.randomclouds div.floater:nth-child(6) {
   bottom: 180px;
   background-position: -210px -240px;
   -webkit-animation: floater 80s infinite linear 35s;
@@ -1257,7 +1259,7 @@ section.randomclouds div.floater:nth-child(7) {
   -o-animation: floater 80s infinite linear 35s;
   animation: floater 80s infinite linear 35s;
 }
-section.randomclouds div.floater:nth-child(8) {
+section.randomclouds div.floater:nth-child(7) {
   bottom: 500px;
   background-position: -210px -240px;
   -webkit-animation: floater 80s infinite linear 20s;
@@ -1267,7 +1269,7 @@ section.randomclouds div.floater:nth-child(8) {
 }
 footer.hackandhops {
   position: absolute;
-  bottom: -10px;
+  bottom: -15px;
   left: 0;
   right: 0;
   z-index: 104;
@@ -1278,18 +1280,10 @@ footer.hackandhops {
 }
 footer.hackandhops div.skyline {
   width: 1000px;
-  height: 160px;
+  height: 140px;
   background-image: url("/imgs/nodephilly-hackandhops.png");
   background-repeat: no-repeat;
-  background-position: 0 -840px;
-  margin: 0 auto;
-}
-footer.hackandhops div.yardsbuilding {
-  width: 300px;
-  height: 150px;
-  background-image: url("/imgs/nodephilly-hackandhops.png");
-  background-repeat: no-repeat;
-  background-position: 0 -690px;
+  background-position: 0 -487px;
   margin: 0 auto;
 }
 footer.hackandhops div.content {
@@ -1303,7 +1297,7 @@ footer.hackandhops div.content {
     bottom: -170px;
   }
   body.hackandhops section.feature {
-    top: 35%;
+    top: 34%;
     height: 400px;
   }
   body.hackandhops section.randomclouds div.floater {
