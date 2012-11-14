@@ -38,6 +38,12 @@ transition(n)
 	-o-transition arguments
 	transition arguments
 
+box-shadow(n)
+	-webkit-box-shadow arguments
+	-moz-box-shadow arguments
+	-o-box-shadow arguments
+	box-shadow arguments
+
 /*__________________________________________________________ universals*/
 
 *
@@ -67,19 +73,23 @@ transition(n)
 /*__________________________________________________________ typography*/
 
 html
+	font-family "Helvetica Neue", Helvetica, sans-serif
 	font-size 100%
 	-webkit-text-size-adjust 100%
 	-ms-text-size-adjust 100%
-	font-family sans-serif
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;	
+	text-rendering:optimizeLegibility;
 	color nodeph-gray
-	text-rendering optimizeLegibility
 
 p
 	font-size 15px
 
 h1, h2, h3, h4
 	font-size 18px
-	font-weight 100
+	font-weight 400
 	text-transform uppercase
 
 h2
@@ -391,6 +401,7 @@ section.calendar1 header a.nextmo, section.calendar1 header a.prevmo, section.ca
 section.calendar1 header h1
 	width 225px
 	padding 5px 0
+	font-weight 500
 
 //icons 
 section.calendar1 header a.nextmo, section.calendar1 header a.prevmo, a.addtocalendar, a.speakicon, a.hostevent
@@ -872,39 +883,166 @@ body.hackandhops
 	padding 0 0 0 0
 	overflow hidden
 
-	section.overview
+	section.feature
 		width 100%
 		height 500px
-		border-radius 3px
-		padding 150px 0 0 0
-		z-index 1
+		z-index 101
 		position absolute
 		left 0
 		right 0
-		top 26%
+		top 25%
+		border-bottom none
+		transition all 0.5s linear
 
-		article.one
-			width 100%
-			display block
-			height auto
+		section.viewport
+			position relative
+			overflow hidden
+			width 1000px
+			height 100%
 			margin 0 auto
-			font-size 35px
-			line-height 50px
-			font-weight 300
-			color nodeph-blue
-			text-align center
 
-	section.pager
-		height 50px
-		z-index 105
+			section.overview
+				height inherit
+				position absolute
+				top 0
+				left 0
+				right 0
 
-		a.pagenum
-			width 50px
-			height 50px
-			background-color nodeph-blue
-			margin 100px 0 0 0
+				article
+					width 1000px
+					height 100%
+					margin 0 auto
+
+					&.one
+						font-size 35px
+						line-height 50px
+						font-weight 300
+						color nodeph-blue
+						text-align center
+						padding 150px 0 0 0
+
+					&.two
+						text-align left
+						p
+							font-size 16px
+							display block
+							text-align left
+							line-height 28px
+							margin 10px 0 0 0
+
+						h1
+							font-size 25px
+							color nodeph-blue
+							text-transform none
+
+						h2
+							font-size 20px
+							color nodeph-blue
+							font-weight 500
+							margin 0
+
+						article
+							float left
+
+							&.letscelebrate
+								width 40%
+								padding 0 15px 0 0
+							&.details
+								width 56%
+								border-left 1px solid nodeph-blue50
+								padding 0 0 0 15px
+								margin 0 0 0 0
+
+								p
+									margin 0 0 5px 0
+
+					&.four
+						article.sponsor
+							width 31%
+							height 95%
+							display inline-block
+
+							&:nth-child(2)
+								border-right 1px solid nodeph-blue50
+								border-left 1px solid nodeph-blue50
+								padding 0 15px 0 15px
+								margin 0 15px 0 15px
+
+							div.chathamfinancial
+							div.monetate
+							div.andyet
+								width 160px
+								height 80px
+								margin 15px auto 0 auto
+								background-image hackandhops-sprite
+								background-repeat no-repeat
+
+							a
+								margin 0 15px 0 0
+							p
+								font-size 16px
+								display block
+								text-align left
+								line-height 28px
+								margin 15px 0 0 0
+
+							div.chathamfinancial
+								background-position -420px -140px
+							
+							div.monetate
+								background-position -420px -220px
+							
+							div.andyet
+								background-position -420px -300px
+
+					div.eventbrite
+						float right
+						width 600px
+						margin 80px 0 0 0
+
+					section.directions
+						width 350px
+						height auto
+						margin 80px 0 0 0
+
+						p
+							font-size 16px
+							display block
+							text-align center
+							line-height 22px
+							margin 15px 0 0 0
+							
+						div.yardslogo
+							background-image hackandhops-sprite
+							background-repeat no-repeat
+							background-position -420px 0
+							width 180px
+							height 140px
+							margin 0 auto
+							display block
+							position relative
 
 
+		section.pager
+			width 530px
+			position relative
+			margin 25px auto 0 auto
+
+			a.pagenum
+				width auto
+				font-size 15px
+				height 25px
+				background-image none
+				background-color transparent
+				margin 0 10px 0 0
+				cursor pointer
+				padding 5px 15px 5px 15px
+				margin 0 10px 0 0
+				transition all 0.3s linear
+				text-decoration none
+
+				&:hover
+					font-weight bold
 
 section.cloudybackground, section.cloudymidground, section.cloudyforeground
 	width inherit
@@ -916,7 +1054,7 @@ section.cloudybackground, section.cloudymidground, section.cloudyforeground
 	background-position 0 0
 
 header.hackandhops
-	position fixed
+	position absolute
 	top 0
 	left 0
 	right 0
@@ -948,7 +1086,7 @@ section.cloudyforeground
 	height 300px
 	background-image url('/imgs/hnh-clouds01.png')
 	z-index 101
-	animation itscloudy 100s infinite linear
+	animation itscloudy 80s infinite linear
 
 section.cloudymidground
 	height 225px
@@ -997,88 +1135,53 @@ section.randomclouds div.floater
 	&:nth-child(1)
 		bottom 600px
 		background-position 0 -240px
-		animation floater 100s infinite linear 7s
+		animation floater 80s infinite linear 7s
 
 	&:nth-child(2)
 		bottom 80px
 		background-position -210px -240px
-		animation floater 100s infinite linear 17s
+		animation floater 80s infinite linear 15s
 
-	&[name="Monetate"]
+	&:nth-child(3)
 		bottom 125px
 		background-position 0 -360px
-		animation floater 100s infinite linear
-		z-index 103
+		animation floater 80s infinite linear
 
-		a
-			background-position -210px -360px
-
-			&:hover
-				background-position -210px -450px
-
-	&[name="Chatham"]
-		bottom 225px
-		background-position 0 -360px
-		animation floater 100s infinite linear 5s
-		z-index 103
-
-		a
-			background-position -360px -360px
-
-			&:hover
-				background-position -360px -450px
-
-	&[name="AndYet"]
+	&:nth-child(4)
 		bottom 165px
 		background-position 0 -360px
-		animation floater 100s infinite linear 17s
-		z-index 103
+		animation floater 80s infinite linear 10s
 
-		a
-			background-position -510px -360px
-
-			&:hover
-				background-position -510px -450px
-
-	&:nth-child(6)
+	&:nth-child(5)
 		bottom 100px
 		background-position 0 -240px
-		animation floater 100s infinite linear 34s
+		animation floater 80s infinite linear 59s
 
-	&:nth-child(7)
+	&:nth-child(6)
 		bottom 50px
 		background-position -210px -240px
-		animation floater 100s infinite linear 22s
+		animation floater 80s infinite linear 50s
 
-	&:nth-child(8)
+	&:nth-child(7)
 		bottom 180px
 		background-position -210px -240px
-		animation floater 100s infinite linear 32s
+		animation floater 80s infinite linear 35s
 
-	&:nth-child(9)
+	&:nth-child(8)
 		bottom 500px
 		background-position -210px -240px
-		animation floater 100s infinite linear 20s
-
-	&:nth-child(10)
-		bottom 70px
-		background-position -210px -240px
-		animation floater 100s infinite linear 32s
-
-	&:nth-child(11)
-		bottom 200px
-		background-position -210px -240px
-		animation floater 100s infinite linear 42s
+		animation floater 80s infinite linear 20s
 
 
 //footer.hackandhops
 
 footer.hackandhops
 	position absolute
-	bottom 0
+	bottom -10px
 	left 0
 	right 0
 	z-index 104
+	transition all 0.5s linear
 
 	div.skyline
 		width 1000px
@@ -1140,7 +1243,28 @@ footer.hackandhops
 
 /*__________________________________________________________ media queries */
 
-@media screen and (max-width: 321px)
-	body
-		width 95%
+@media all and (max-height: 800px)
+	footer.hackandhops
+		bottom -170px
+
+	body.hackandhops
+		section.feature
+			top 35%
+			height 400px
+		
+		section.randomclouds div.floater
+			background-image hackandhops-sprite
+			position absolute
+			width 210px
+			height 120px
+			left -25%
+			z-index 102
+			background-repeat no-repeat
+		@keyframes floater
+			0%
+				left -25%
+			100%
+				left 105%
+
+
 

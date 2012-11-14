@@ -1,0 +1,302 @@
+/*CSS for Node Philly's Hack and Hops 2012*/
+/*Authored: @bwhitham, Teddy Stroehecker*/
+/*__________________________________________________________ hackandhops 2012 */
+
+hackandhops-sprite = url('/imgs/nodephilly-hackandhops.png')
+
+animation(n)
+	-webkit-animation arguments
+	-moz-animation arguments
+	-o-animation arguments
+	animation arguments
+
+
+body.hackandhops
+	width inherit
+	height inherit
+	position relative
+	border none
+	margin 0 auto
+	padding 0 0 0 0
+	overflow hidden
+
+	section.feature
+		border 1px solid black
+		width 100%
+		height 400px
+		z-index 1
+		position absolute
+		left 0
+		right 0
+		top 25%
+
+		section.viewport
+			position relative
+			overflow hidden
+			width 1000px
+			height 400px
+			margin 0 auto
+
+			section.overview
+				height inherit
+				position absolute
+				top 0
+				left 0
+				right 0
+
+				article
+					width 1000px
+					height 400px
+					margin 0 auto
+					font-size 35px
+					line-height 50px
+					font-weight 300
+					color nodeph-blue
+					text-align center
+
+		section.pager
+			height 50px
+			position relative
+			margin 0 auto
+
+			a.pagenum
+				width 50px
+				height 50px
+				background-image none
+				background-color nodeph-blue
+				margin 0 10px 0 0
+				cursor pointer
+
+
+
+section.cloudybackground, section.cloudymidground, section.cloudyforeground
+	width inherit
+	position absolute
+	top 0
+	left 0
+	background-repeat repeat
+	background-color transparent
+	background-position 0 0
+
+header.hackandhops
+	position absolute
+	top 0
+	left 0
+	right 0
+	z-index 100
+
+div.hackandhops-logo
+	background-image hackandhops-sprite
+	width 350px
+	height 240px
+	margin 5px auto 0 auto
+	position relative
+
+section.foreground, section.background
+	position absolute
+	right 0
+	bottom 0
+	left 0
+
+section.foreground
+	top 60px
+	background-image url('/imgs/hnh-snow01.png')
+	background-repeat repeat
+	background-position 0 0
+	background-color transparent
+	z-index 100
+	animation itsfrosty 20s infinite linear
+
+section.cloudyforeground
+	height 300px
+	background-image url('/imgs/hnh-clouds01.png')
+	z-index 101
+	animation itscloudy 100s infinite linear
+
+section.cloudymidground
+	height 225px
+	background-image url('/imgs/hnh-clouds02.png')
+	z-index 2
+	animation itsstillcloudy 120s infinite linear
+
+section.cloudybackground
+	top -15px
+	height 150px
+	background-image url('/imgs/hnh-clouds03.png')
+	background-repeat repeat-x
+	z-index 1
+	animation itsstillreallycloudy 500s infinite linear
+
+section.background
+	min-width 100%
+	min-height 100%
+	top 60px
+	background-image url('/imgs/hnh-snow02.png'), url('/imgs/hnh-snow03.png')
+	background-repeat repeat
+	background-position 0 100, 25 25
+	background-color transparent
+	z-index 1
+	animation itsstillfrosty 40s infinite linear
+
+section.randomclouds div.floater
+	background-image hackandhops-sprite
+	position absolute
+	width 210px
+	height 120px
+	left -18%
+	z-index 102
+	background-repeat no-repeat
+
+	a
+		width 150px
+		height 90px
+		margin 15px auto 0 auto
+		display block
+		background-image hackandhops-sprite
+		background-repeat no-repeat
+		cursor pointer
+		//border 1px solid black
+
+	&:nth-child(1)
+		bottom 600px
+		background-position 0 -240px
+		animation floater 100s infinite linear 7s
+
+	&:nth-child(2)
+		bottom 80px
+		background-position -210px -240px
+		animation floater 100s infinite linear 17s
+
+	&[name="Monetate"]
+		bottom 125px
+		background-position 0 -360px
+		animation floater 100s infinite linear
+		z-index 103
+
+		a
+			background-position -210px -360px
+
+			&:hover
+				background-position -210px -450px
+
+	&[name="Chatham"]
+		bottom 225px
+		background-position 0 -360px
+		animation floater 100s infinite linear 5s
+		z-index 103
+
+		a
+			background-position -360px -360px
+
+			&:hover
+				background-position -360px -450px
+
+	&[name="AndYet"]
+		bottom 165px
+		background-position 0 -360px
+		animation floater 100s infinite linear 17s
+		z-index 103
+
+		a
+			background-position -510px -360px
+
+			&:hover
+				background-position -510px -450px
+
+	&:nth-child(6)
+		bottom 100px
+		background-position 0 -240px
+		animation floater 100s infinite linear 34s
+
+	&:nth-child(7)
+		bottom 50px
+		background-position -210px -240px
+		animation floater 100s infinite linear 22s
+
+	&:nth-child(8)
+		bottom 180px
+		background-position -210px -240px
+		animation floater 100s infinite linear 32s
+
+	&:nth-child(9)
+		bottom 500px
+		background-position -210px -240px
+		animation floater 100s infinite linear 20s
+
+	&:nth-child(10)
+		bottom 70px
+		background-position -210px -240px
+		animation floater 100s infinite linear 32s
+
+	&:nth-child(11)
+		bottom 200px
+		background-position -210px -240px
+		animation floater 100s infinite linear 42s
+
+
+//footer.hackandhops
+
+footer.hackandhops
+	position absolute
+	bottom 0
+	left 0
+	right 0
+	z-index 104
+
+	div.skyline
+		width 1000px
+		height 160px
+		background-image hackandhops-sprite
+		background-repeat no-repeat
+		background-position 0 -840px
+		margin 0 auto
+
+	div.yardsbuilding
+		width 300px
+		height 150px
+		background-image hackandhops-sprite
+		background-repeat no-repeat
+		background-position 0 -690px
+		margin 0 auto
+		
+	div.content
+		background-color nodeph-blue
+		width 100%
+		height 25px
+
+
+@keyframes itsfrosty
+	0%
+		background-position 0 0
+	100%
+		background-position 700px 700px
+
+@keyframes itsstillfrosty
+	0%
+		background-position 0 0, 0 0
+	100%
+		background-position 700px 700px, 700px 700px
+
+@keyframes itscloudy
+	0%
+		background-position 0 0
+	100%
+		background-position 1015px 0
+
+@keyframes itsstillcloudy
+	0%
+		background-position 0 0
+	100%
+		background-position 997px 0
+
+@keyframes itsstillreallycloudy
+	0%
+		background-position 0 0
+	100%
+		background-position 1042px 0
+
+@keyframes floater
+	0%
+		left -15%
+	100%
+		left 105%

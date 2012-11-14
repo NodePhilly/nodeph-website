@@ -8,21 +8,69 @@ html
 		meta(name="geo.location", content="39.96268, -75.13593")
 		link(rel="icon", href="/imgs/favicon.ico", type="image/x-icon")
 		meta(name="author", content="@bwhitham, @timsavery")
-		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')	
 		script(type='text/javascript', src='/js/jquery1.7.2.js')
 		script(type='text/javascript', src='/js/modernizr.js')
 		script(type='text/javascript', src='/js/tinycarousel.js')
+		script(type='text/javascript', src='/js/hackandhops.js')
 	
 		- var analytics = '<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(["_setAccount","UA-34514579-1"]);_gaq.push(["_trackPageview"]);(function(){var a=document.createElement("script");a.type="text/javascript";a.async=true;a.src=("https:"==document.location.protocol?"https://ssl":"http://www")+".google-analytics.com/ga.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})()</script>' 
 		| !{analytics}
 
 	body.hackandhops
-		section.overview
-			article.one Oh the weather outside is frightful, <br> but Node Philly has something delightful…
-		section.pager
-			a(rel="0").pagenum
-			a(rel="1").pagenum
-			a(rel="2").pagenum
+		section.feature
+			section.viewport
+				section.overview
+					article.one Oh the weather outside is frightful, <br> but Node Philly has something delightful…
+					article.two 
+						article.letscelebrate
+							h1 Let's celebrate an awesome year.
+							p It's that time of year to say thanks. From Node Philly to all of you, we say "thank you". Thank you to all the Noders, speakers, hackers, sponsors, boxes of pizza, and cases of PBR. It's been a great year and it's time to send it off with a celebration.
+							p Join us on December 13th, at Yards Brewery, as we celebrate all the things that make node.js great. There will be speeches from Philly Noders, a tour of Yards, and a special gift from our friends at 
+								a(href="http://www.monetate.com", target="_blank") Monetate.  
+						article.details
+							h2 7:30pm
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+							h2 8:00pm
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+							h2 8:45pm
+							p Brewery Tour. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+							h2 9:15pm
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+						div.clear
+					article.three The speakers
+					article.four
+						article.sponsor
+							div.chathamfinancial
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>
+							a(href="http://www.twitter.com/ChathamFin", target="_blank") @ChathamFin
+							a(href="http://www.chathamfinancial.com", target="_blank") Chathamfinancial.com &rarr;
+						article.sponsor
+							div.monetate
+							p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>
+							a(href="http://www.twitter.com/Monetate", target="_blank") @Monetate
+							a(href="http://www.monetate.com", target="_blank") Monetate.com &rarr;
+						article.sponsor
+							div.andyet
+							p Lorem psum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br>
+							a(href="http://www.twitter.com/AndYet", target="_blank") @&yet
+							a(href="http://www.andyet.com", target="_blank") Andyet.com &rarr;
+					article.five
+						| <div class="eventbrite" >
+						| <iframe src="http://www.eventbrite.com/tickets-external?eid=4822936533&ref=etckt&v=2" frameborder="0" height="214" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
+						| <div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" >
+						| </div></div>
+						section.directions
+							div.yardslogo
+							p 901 North Delaware Avenue, Philadelphia, PA <br>
+								a(href="http://goo.gl/maps/oC6tD", target="_blank") View in Google Maps &rarr;
+
+			section.pager
+				a(rel="0").pagenum Welcome
+				a(rel="1").pagenum The Event
+				a(rel="2").pagenum Speakers
+				a(rel="3").pagenum Sponsors
+				a(rel="4").pagenum Attend
 		section.cloudyforeground
 		section.foreground
 		header.hackandhops
@@ -33,12 +81,6 @@ html
 		section.randomclouds
 			div.floater
 			div.floater
-			div.floater(name="Monetate")
-				a(href="#")
-			div.floater(name="Chatham")
-				a(href="#")
-			div.floater(name="AndYet")
-				a(href="#")
 			div.floater
 			div.floater
 			div.floater
