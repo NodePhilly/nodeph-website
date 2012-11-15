@@ -919,6 +919,20 @@ form.contact a.cancelbtn {
   opacity: 0;
 }
 /*__________________________________________________________ hackandhops 2012 */
+section.viewport section.overview article.one section.hackandhops div.hackandhops {
+  background-image: url("/imgs/nodephilly-hackandhops.png");
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 240px;
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+section.viewport section.overview article.one section.hackandhops a {
+  font-size: 17px;
+  display: block;
+  width: 300px;
+  margin: -10px auto 0 auto;
+}
 body.hackandhops {
   width: inherit;
   height: inherit;

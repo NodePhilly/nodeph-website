@@ -1,6 +1,6 @@
 {
   "name": "node.ph",
-  "version": "0.2.0-19",
+  "version": "0.2.0-20",
   "private": true,
   "dependencies": {
     "express": "2.5.7",
@@ -10,7 +10,8 @@
     "async": "0.1.22",
     "geeklist": "git://github.com/timsavery/node-geeklist.git",
     "nodemailer": "0.3.22",
-    "nano": "3.3.0"
+    "nano": "3.3.0",
+    "poet": "0.2.x"
   },
   "subdomain": "nodephilly",
   "domains": [
