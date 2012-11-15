@@ -1059,6 +1059,19 @@ body.hackandhops section.feature section.viewport section.overview article.three
 body.hackandhops section.feature section.viewport section.overview article.three .speakerExpanded article.speakerinfo a.speakercontact {
   display: inline;
 }
+body.hackandhops section.feature section.viewport section.overview article.three .speakerExpanded article.speakerinfo header {
+  width: 95%;
+  margin: 15px auto 5px auto;
+  padding: 0 0 15px 0;
+  border-bottom: 1px solid #82c0c0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerExpanded article.speakerinfo div.headshot {
+  margin: 0 15px 10px 0;
+}
+body.hackandhops section.feature section.viewport section.overview article.three .speakerExpanded article.speakerinfo section.content {
+  padding: 0 15px 0 15px;
+  display: block;
+}
 body.hackandhops section.feature section.viewport section.overview article.three a.moreButton,
 body.hackandhops section.feature section.viewport section.overview article.three a.lessButton {
   position: absolute;
