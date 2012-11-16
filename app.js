@@ -7,7 +7,6 @@ var express = require('express')
   , tweets = require('./routes/twitter')
   , geeks = require('./routes/geeklist')
   , stylus = require('stylus')
-  , poet = require('poet')
   , hackandhops = require('./routes/hackandhops');
 
 var nano = require('nano')(process.env.COUCHDB_URI || 'http://localhost:5984');
@@ -50,12 +49,6 @@ nano.db.list(function(err, body) {
 
 var app = module.exports = express.createServer();
 
-poet(app)
-  .createPostRoute()
-  .createPageRoute()
-  .createTagRoute()
-  .createCategoryRoute()
-  .init(); 
 
 app.configure(function(){
   app.set('views', __dirname + '/views');

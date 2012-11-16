@@ -1234,18 +1234,18 @@ section.foreground
 	z-index 100
 	animation itsfrosty 20s infinite linear
 
-section.cloudyforeground
-	height 134px
-	background-image url('/imgs/hnh-clouds01.png')
-	z-index 101
-	animation itscloudy 80s infinite linear
-	top 100px
+//section.cloudyforeground
+//	height 134px
+//	background-image url('/imgs/hnh-clouds01.png')
+//	z-index 101
+//	animation itscloudy 80s infinite linear
+//	top 100px
 
-section.cloudymidground
-	height 225px
-	background-image url('/imgs/hnh-clouds02.png')
-	z-index 2
-	animation itsstillcloudy 120s infinite linear
+//section.cloudymidground
+//	height 225px
+//	background-image url('/imgs/hnh-clouds02.png')
+//	z-index 2
+//	animation itsstillcloudy 120s infinite linear
 
 section.cloudybackground
 	top -15px
@@ -1253,7 +1253,6 @@ section.cloudybackground
 	background-image url('/imgs/hnh-clouds03.png')
 	background-repeat repeat-x
 	z-index 1
-	animation itsstillreallycloudy 500s infinite linear
 
 section.background
 	min-width 100%
@@ -1266,13 +1265,13 @@ section.background
 	z-index 1
 	animation itsstillfrosty 40s infinite linear
 
-section.randomclouds div.floater
+div.floater
 	background-image hackandhops-sprite
 	position absolute
 	width 210px
 	height 120px
 	left -18%
-	z-index 102
+	//z-index 102
 	background-repeat no-repeat
 
 	a
@@ -1309,6 +1308,54 @@ section.randomclouds div.floater
 		bottom 180px
 		background-position -210px -240px
 		animation floater 80s infinite linear 35s
+
+	&:nth-child(6)
+		top 85px
+		background-position 0 -240px
+		animation floater 80s infinite linear
+		z-index 99
+
+	&:nth-child(7)
+		top 120px
+		background-position -210px -240px
+		animation floater 80s infinite linear 10s
+		z-index 105
+
+	&:nth-child(8)
+		top 20px
+		background-position 0 -240px
+		animation floater 80s infinite linear 20s
+		z-index 99
+
+	&:nth-child(9)
+		top 40px
+		background-position 0 -240px
+		animation floater 80s infinite linear 30s
+		z-index 105
+
+	&:nth-child(10)
+		top 140px
+		background-position -210px -240px
+		animation floater 80s infinite linear 35s
+		z-index 99
+
+	&:nth-child(11)
+		top 100px
+		background-position 0 -240px
+		animation floater 80s infinite linear 45s
+		z-index 99
+
+	&:nth-child(12)
+		top 30px
+		background-position 0 -240px
+		animation floater 80s infinite linear 55s
+		z-index 99
+
+	&:nth-child(13)
+		top 60px
+		background-position -210px -240px
+		animation floater 80s infinite linear 65s
+		z-index 105
 
 
 //footer.hackandhops
