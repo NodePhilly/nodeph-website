@@ -1482,14 +1482,12 @@ footer.hackandhops div.content {
     top: 30%;
     height: 420px;
   }
-  body.hackandhops section.randomclouds div.floater {
-    background-image: url("/imgs/nodephilly-hackandhops.png");
-    position: absolute;
-    width: 210px;
-    height: 120px;
-    left: -25%;
-    z-index: 102;
-    background-repeat: no-repeat;
+  body.hackandhops div.floater:nth-child(1),
+  body.hackandhops div.floater:nth-child(2),
+  body.hackandhops div.floater:nth-child(3),
+  body.hackandhops div.floater:nth-child(4),
+  body.hackandhops div.floater:nth-child(5) {
+    z-index: 5;
   }
 @-moz-keyframes floater {
   0% {
