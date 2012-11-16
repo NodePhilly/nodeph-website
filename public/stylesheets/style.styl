@@ -1218,6 +1218,8 @@ div.hackandhops-logo
 	height 240px
 	margin 5px auto 0 auto
 	position relative
+	background-position 0 0
+	background-repeat no-repeat
 
 section.foreground, section.background
 	position absolute
@@ -1233,19 +1235,6 @@ section.foreground
 	background-color transparent
 	z-index 100
 	animation itsfrosty 20s infinite linear
-
-//section.cloudyforeground
-//	height 134px
-//	background-image url('/imgs/hnh-clouds01.png')
-//	z-index 101
-//	animation itscloudy 80s infinite linear
-//	top 100px
-
-//section.cloudymidground
-//	height 225px
-//	background-image url('/imgs/hnh-clouds02.png')
-//	z-index 2
-//	animation itsstillcloudy 120s infinite linear
 
 section.cloudybackground
 	top -15px
@@ -1420,15 +1409,14 @@ footer.hackandhops
 
 /*__________________________________________________________ media queries */
 
-@media all and (max-height: 800px)
+@media screen and (max-height: 800px)
 	footer.hackandhops
 		bottom -170px
 
 	body.hackandhops
-		
 		section.feature
-			top 30%
-			height 420px
+			top 20%
+			height 430px
 		
 		div.floater
 			&:nth-child(1)
@@ -1436,6 +1424,7 @@ footer.hackandhops
 			&:nth-child(3)
 			&:nth-child(4)
 			&:nth-child(5)
+			&:nth-child(6)
 				z-index 5
 
 		@keyframes floater
@@ -1443,6 +1432,31 @@ footer.hackandhops
 				left -25%
 			100%
 				left 105%
+
+		header.hackandhops
+			position absolute
+			top 0
+			left 0
+			right 0
+			z-index 100
+		
+		div.hackandhops-logo
+			background-image hackandhops-sprite
+			width 190px
+			height 125px
+			margin 5px auto 0 auto
+			position relative
+			background-position -810px -360px
+			background-repeat no-repeat
+
+
+
+
+
+
+
+
+
 
 
 

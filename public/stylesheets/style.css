@@ -1279,6 +1279,8 @@ div.hackandhops-logo {
   height: 240px;
   margin: 5px auto 0 auto;
   position: relative;
+  background-position: 0 0;
+  background-repeat: no-repeat;
 }
 section.foreground,
 section.background {
@@ -1474,20 +1476,37 @@ footer.hackandhops div.content {
   height: 25px;
 }
 /*__________________________________________________________ media queries */
-@media all and (max-height: 800px) {
+@media screen and (max-height: 800px) {
   footer.hackandhops {
     bottom: -170px;
   }
   body.hackandhops section.feature {
-    top: 30%;
-    height: 420px;
+    top: 20%;
+    height: 430px;
   }
   body.hackandhops div.floater:nth-child(1),
   body.hackandhops div.floater:nth-child(2),
   body.hackandhops div.floater:nth-child(3),
   body.hackandhops div.floater:nth-child(4),
-  body.hackandhops div.floater:nth-child(5) {
+  body.hackandhops div.floater:nth-child(5),
+  body.hackandhops div.floater:nth-child(6) {
     z-index: 5;
+  }
+  body.hackandhops header.hackandhops {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  body.hackandhops div.hackandhops-logo {
+    background-image: url("/imgs/nodephilly-hackandhops.png");
+    width: 190px;
+    height: 125px;
+    margin: 5px auto 0 auto;
+    position: relative;
+    background-position: -810px -360px;
+    background-repeat: no-repeat;
   }
 @-moz-keyframes floater {
   0% {
