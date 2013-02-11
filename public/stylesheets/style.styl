@@ -867,6 +867,23 @@ form.contact a.cancelbtn
 
 hackandhops-sprite = url('/imgs/nodephilly-hackandhops.png')
 
+section.viewport
+	section.overview
+		article.one
+			section.hackandhops
+				div.hackandhops
+					background-image hackandhops-sprite
+					background-repeat no-repeat
+					width 350px
+					height 240px
+					margin 0 auto 0 auto
+					position relative
+				a
+					font-size 17px
+					display block
+					width 300px
+					margin -10px auto 0 auto
+
 animation(n)
 	-webkit-animation arguments
 	-moz-animation arguments
@@ -891,7 +908,7 @@ body.hackandhops
 		position absolute
 		left 0
 		right 0
-		top 27%
+		top 25%
 		border-bottom none
 		transition all 0.5s linear
 
@@ -924,7 +941,7 @@ body.hackandhops
 							display block
 							text-align left
 							line-height 28px
-							margin 10px 0 0 0
+							margin 10px 0 -15px 0
 
 						h1
 							font-size 25px
@@ -936,6 +953,7 @@ body.hackandhops
 							color nodeph-blue
 							font-weight 500
 							margin 0
+							text-transform none
 
 						article
 							float left
@@ -950,7 +968,7 @@ body.hackandhops
 								margin 0 0 0 0
 
 								p
-									margin 0 0 5px 0
+									margin 10px 0 15px 0
 					&.three
 						.speakersGrid
 							width 999px
@@ -978,6 +996,11 @@ body.hackandhops
 							border 1px solid nodeph-blue
 							margin 0 20px 0 0
 							position relative
+
+							p
+								a
+								p
+									display inline
 						
 						.speakerBriefText
 							height 100%
@@ -1003,12 +1026,16 @@ body.hackandhops
 								h1
 									font-size 20px
 									margin 15px 0 15px 0
+
+									&[name="BryanPaluch"]
+										font-size 18px
 								
 								a.speakercontact
 									display inline
 
 								header
 									width 95%
+									min-height 115px
 									margin 15px auto 5px auto
 									padding 0 0 15px 0
 									border-bottom 1px solid nodeph-blue
@@ -1054,13 +1081,13 @@ body.hackandhops
 								&[name="MarkHeadd"]
 									background-position -600px 0
 								&[name="PamSelle"]
-									background-position -600px 0
+									background-position -600px -120px
 								&[name="BryanPaluch"]
-									background-position -600px 0
+									background-position -600px -240px
 								&[name="JordanSantell"]
-									background-position -600px 0
+									background-position -720px 0
 								&[name="ChrisAlfano"]
-									background-position -600px 0
+									background-position -720px -120px
 
 							h1
 								text-transform none
@@ -1072,9 +1099,8 @@ body.hackandhops
 					&.four
 						article.sponsor
 							width 22%
-							height 95%
+							height 99%
 							float left
-							word-wrap wrap
 							margin 0 0 0 0
 
 							&:nth-child(2)
@@ -1092,8 +1118,8 @@ body.hackandhops
 							div.andyet
 							div.comcastlabs
 								width 160px
-								height 80px
-								margin 15px auto 0 auto
+								height 60px
+								margin 0 0 0 15px
 								background-image hackandhops-sprite
 								background-repeat no-repeat
 
@@ -1102,7 +1128,7 @@ body.hackandhops
 							p
 								display block
 								text-align left
-								line-height 28px
+								line-height 24px
 								margin 15px 0 0 0
 
 							div.chathamfinancial
@@ -1115,7 +1141,7 @@ body.hackandhops
 								background-position -420px -300px
 
 							div.comcastlabs
-								background-position -420px -390px
+								background-position -420px -400px
 
 					div.eventbrite
 						float right
@@ -1192,6 +1218,8 @@ div.hackandhops-logo
 	height 240px
 	margin 5px auto 0 auto
 	position relative
+	background-position 0 0
+	background-repeat no-repeat
 
 section.foreground, section.background
 	position absolute
@@ -1208,26 +1236,12 @@ section.foreground
 	z-index 100
 	animation itsfrosty 20s infinite linear
 
-section.cloudyforeground
-	height 134px
-	background-image url('/imgs/hnh-clouds01.png')
-	z-index 101
-	animation itscloudy 80s infinite linear
-	top 100px
-
-section.cloudymidground
-	height 225px
-	background-image url('/imgs/hnh-clouds02.png')
-	z-index 2
-	animation itsstillcloudy 120s infinite linear
-
 section.cloudybackground
 	top -15px
 	height 150px
 	background-image url('/imgs/hnh-clouds03.png')
 	background-repeat repeat-x
 	z-index 1
-	animation itsstillreallycloudy 500s infinite linear
 
 section.background
 	min-width 100%
@@ -1240,13 +1254,13 @@ section.background
 	z-index 1
 	animation itsstillfrosty 40s infinite linear
 
-section.randomclouds div.floater
+div.floater
 	background-image hackandhops-sprite
 	position absolute
 	width 210px
 	height 120px
 	left -18%
-	z-index 102
+	//z-index 102
 	background-repeat no-repeat
 
 	a
@@ -1260,9 +1274,9 @@ section.randomclouds div.floater
 		//border 1px solid black
 
 	&:nth-child(1)
-		bottom 600px
+		bottom 80px
 		background-position 0 -240px
-		animation floater 80s infinite linear 7s
+		animation floater 80s infinite linear
 
 	&:nth-child(2)
 		bottom 80px
@@ -1270,29 +1284,67 @@ section.randomclouds div.floater
 		animation floater 80s infinite linear 15s
 
 	&:nth-child(3)
-		bottom 80px
-		background-position 0 -360px
-		animation floater 80s infinite linear
-
-	&:nth-child(4)
 		bottom 100px
 		background-position 0 -240px
 		animation floater 80s infinite linear 59s
 
-	&:nth-child(5)
+	&:nth-child(4)
 		bottom 50px
 		background-position -210px -240px
 		animation floater 80s infinite linear 50s
 
-	&:nth-child(6)
+	&:nth-child(5)
 		bottom 180px
 		background-position -210px -240px
 		animation floater 80s infinite linear 35s
 
+	&:nth-child(6)
+		top 85px
+		background-position 0 -240px
+		animation floater 80s infinite linear
+		z-index 99
+
 	&:nth-child(7)
-		bottom 500px
+		top 120px
 		background-position -210px -240px
+		animation floater 80s infinite linear 10s
+		z-index 105
+
+	&:nth-child(8)
+		top 20px
+		background-position 0 -240px
 		animation floater 80s infinite linear 20s
+		z-index 99
+
+	&:nth-child(9)
+		top 40px
+		background-position 0 -240px
+		animation floater 80s infinite linear 30s
+		z-index 105
+
+	&:nth-child(10)
+		top 140px
+		background-position -210px -240px
+		animation floater 80s infinite linear 35s
+		z-index 99
+
+	&:nth-child(11)
+		top 100px
+		background-position 0 -240px
+		animation floater 80s infinite linear 45s
+		z-index 99
+
+	&:nth-child(12)
+		top 30px
+		background-position 0 -240px
+		animation floater 80s infinite linear 55s
+		z-index 99
+
+	&:nth-child(13)
+		top 60px
+		background-position -210px -240px
+		animation floater 80s infinite linear 65s
+		z-index 105
 
 
 //footer.hackandhops
@@ -1357,30 +1409,54 @@ footer.hackandhops
 
 /*__________________________________________________________ media queries */
 
-@media all and (max-height: 800px)
+@media screen and (max-height: 800px)
 	footer.hackandhops
 		bottom -170px
 
 	body.hackandhops
-		
 		section.feature
-			top 34%
-			height 400px
+			top 20%
+			height 430px
 		
-		section.randomclouds div.floater
-			background-image hackandhops-sprite
-			position absolute
-			width 210px
-			height 120px
-			left -25%
-			z-index 102
-			background-repeat no-repeat
+		div.floater
+			&:nth-child(1)
+			&:nth-child(2)
+			&:nth-child(3)
+			&:nth-child(4)
+			&:nth-child(5)
+			&:nth-child(6)
+				z-index 5
 
 		@keyframes floater
 			0%
 				left -25%
 			100%
 				left 105%
+
+		header.hackandhops
+			position absolute
+			top 0
+			left 0
+			right 0
+			z-index 100
+		
+		div.hackandhops-logo
+			background-image hackandhops-sprite
+			width 190px
+			height 125px
+			margin 5px auto 0 auto
+			position relative
+			background-position -810px -360px
+			background-repeat no-repeat
+
+
+
+
+
+
+
+
+
 
 
 

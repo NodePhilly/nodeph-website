@@ -6,8 +6,8 @@ var express = require('express')
   , connect = require('./routes/connect')
   , tweets = require('./routes/twitter')
   , geeks = require('./routes/geeklist')
+  , ptw2013 = require('./routes/ptw2013')
   , stylus = require('stylus')
-  , poet = require('poet')
   , hackandhops = require('./routes/hackandhops');
 
 var nano = require('nano')(process.env.COUCHDB_URI || 'http://localhost:5984');
@@ -50,12 +50,6 @@ nano.db.list(function(err, body) {
 
 var app = module.exports = express.createServer();
 
-poet(app)
-  .createPostRoute()
-  .createPageRoute()
-  .createTagRoute()
-  .createCategoryRoute()
-  .init(); 
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -91,6 +85,8 @@ app.get('/geeks/next/:numGeeks', geeks.next);
 
 app.get('/tweets/next', tweets.next);
 app.get('/tweets/next/:numTweets', tweets.next);
+
+app.get('/ptw2013', ptw2013.index);
 
 app.listen(3000, function() {
   console.log('server started on port 3000');
