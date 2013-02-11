@@ -918,6 +918,20 @@ form.contact a.cancelbtn {
 .contactinnerstuff {
   opacity: 0;
 }
+/*__________________________________________________________ sponsorship form */
+.payment-errors {
+  color: #f00;
+}
+form#sponsorship input,
+form#sponsorship button {
+  height: 25px;
+  border: rgba(127,136,145,0.5) 1px solid;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 0 5px 0 5px;
+  margin: 0 0 10px 0;
+}
 /*__________________________________________________________ hackandhops 2012 */
 section.viewport section.overview article.one section.hackandhops div.hackandhops {
   background-image: url("/imgs/nodephilly-hackandhops.png");
