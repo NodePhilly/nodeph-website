@@ -1,0 +1,61 @@
+section.global
+  aside.global
+      li(partner='chatham')
+        img(src='/imgs/node-philly-partner-chathamfinancial.png', alt='Chatham Financial')
+      li(partner='nodejitsu')
+        img(src='/imgs/node-philly-partner-nodejitsu.png', alt='Nodejitsu')
+      li(partner='voltdb')
+        img(src='/imgs/node-philly-partner-voltdb.png', alt='VoltDB')
+      li(partner='geeklist')
+        img(src='/imgs/node-philly-partner-geeklist.png', alt='Geeklist')
+  article.global
+    section
+      section.content 
+        h2 Sponsor Us
+        form#sponsorship(method='POST')
+          section.sponsordetail 
+            h3 Your Info
+            label Company
+              div.clear
+              input#company(type='text', name='company', required='required')
+            div.clear
+            label Email
+              div.clear
+              input#email(type='email', name='email', required='required')
+
+            div.clear &nbsp;
+            h3 Sponsorship Level
+            - each level in sponsorLevels
+              li
+                label 
+                  input(type='radio', name='sponsorshipAmount', value='#{level.amount}', checked)
+                  | #{level.name} ($#{level.amount})
+          
+            div.clear &nbsp;
+            h3 Credit Card Info
+            div#card-error.payment-errors
+            label Card Number
+              div.clear
+              input.card-number(type='text', size='20', autocomplete='off', required='required')
+              div#card-number-error.payment-errors
+            div.clear
+            label CVC
+              div.clear
+              input.card-cvc(type='text', size='4', autocomplete='off',required='required')
+              div#card-cvc-error.payment-errors
+            div.clear
+            label Expiration (MM/YYYY)
+              div.clear
+              input.card-expiry-month(type='text', size='2', required='required')
+            &nbsp;/&nbsp;
+            label
+              input.card-expiry-year(type='text', size='4', required='required')
+              div#card-expiry-error.payment-errors
+            div.clear &nbsp;
+            hr
+            button.submit-button(type='submit') Show me the money!
+  div.clear
+
+script
+  Stripe.setPublishableKey('#{publishableKey}');
+script(src='/js/stripepayment.js')

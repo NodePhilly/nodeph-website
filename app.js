@@ -7,17 +7,18 @@ var express = require('express')
   , tweets = require('./routes/twitter')
   , geeks = require('./routes/geeklist')
   , ptw2013 = require('./routes/ptw2013')
+  , sponsorship = require('./routes/sponsorship')
   , stylus = require('stylus')
   , hackandhops = require('./routes/hackandhops');
 
 var nano = require('nano')(process.env.COUCHDB_URI || 'http://localhost:5984');
 
 nano.db.list(function(err, body) {
-  if (body === null || body.indexOf('nodephilly') < 0) {
-    if (err) {
-      return console.log('ERROR :: %s', JSON.stringify(err));
-    }
+  if (err) {
+    return console.log('ERROR :: %s', JSON.stringify(err));
+  }
 
+  if (body === null || body.indexOf('nodephilly') < 0) {
     nano.db.create('nodephilly', function(err, body) {
       if (err) {
         return console.log('ERROR :: %s', JSON.stringify(err));
@@ -44,6 +45,15 @@ nano.db.list(function(err, body) {
 
         console.log('INFO :: created database "nodephilly"');      
       });
+    });
+  }
+
+  if (body.indexOf('nodephilly_sponsorship') < 0) {
+    nano.db.create('nodephilly_sponsorship', function(err, body) {
+      if (err) {
+        return console.log('ERROR :: %s', JSON.stringify(err));
+      }
+      console.log('INFO :: created database "nodephilly_sponsorship"');
     });
   }
 });
@@ -87,6 +97,9 @@ app.get('/tweets/next', tweets.next);
 app.get('/tweets/next/:numTweets', tweets.next);
 
 app.get('/ptw2013', ptw2013.index);
+
+app.get('/sponsorship', sponsorship.index);
+app.post('/sponsorship', sponsorship.post);
 
 app.listen(3000, function() {
   console.log('server started on port 3000');
