@@ -11,7 +11,8 @@
     "geeklist": "git://github.com/timsavery/node-geeklist.git",
     "nodemailer": "0.3.22",
     "nano": "3.3.0",
-    "poet": "0.2.x"
+    "poet": "0.2.x",
+    "stripe": "1.3.0"
   },
   "subdomain": "nodephilly",
   "domains": [
