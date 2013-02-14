@@ -1,7 +1,8 @@
 var nano = require('nano')(process.env.COUCHDB_URI || 'http://localhost:5984')
   , stripeSecretKey = process.env.STRIPE_SECRET_KEY || 'sk_test_sKlzbaGMQnQ1Sh4qC9t24p3q' // test secret key
   , stripePublishableKey = process.env.STRIPE_PUBLISHABLE_KEY || 'pk_test_NG1l5MY9GZA00HjN7nmTTu43' // test publishable key
-  , stripe = require('stripe')(stripeSecretKey); 
+  , stripe = require('stripe')(stripeSecretKey)
+  , log = require('../lib/logger'); 
   
 
 exports.index = function(req, res){
@@ -17,7 +18,7 @@ exports.index = function(req, res){
 exports.post = function(req, res) {
 
   // process payment with stripe token
-  console.log('INFO :: Processing payment...');
+  log.info('Processing payment...');
 
   var tokenId = req.body.stripeToken;
   var company = req.body.company;
@@ -37,14 +38,14 @@ exports.post = function(req, res) {
     if (err) {
       sponsor.results = { succeeded: false, message: 'token retrieval error', data: err };
 
+      log.error('Error retrieving token', JSON.stringify(sponsor));
+
       db.insert(sponsor, function(err, result) {
         if (err) {
-          // probably want to log this
-          console.log('DB ERROR :: ' + JSON.stringify(err));
+          log.error('Error saving to database!', JSON.stringify(err));
         }
       });
 
-      console.log(sponsor);
       res.render('sponsorshipresult', { sponsor : sponsor });
     } else {
       var charge = {
@@ -58,26 +59,26 @@ exports.post = function(req, res) {
         if (err) {
           sponsor.results = { succeeded: false, message: 'charge failed', data: err };
 
+          log.error('Error making charge', JSON.stringify(sponsor));
+
           db.insert(sponsor, function(err, result) {
             if (err) {
-              // probably want to log this
-              console.log('DB ERROR :: ' + JSON.stringify(err));
+              log.error('Error saving to database!', JSON.stringify(err));
             }
           });          
 
-          console.log(sponsor);
           res.render('sponsorshipresult', { sponsor : sponsor });
         } else {
           sponsor.results = { succeeded: true, message: 'charge succeeded', data: result };
 
+          log.info('Successfully charged card', JSON.stringify(sponsor));
+
           db.insert(sponsor, function(err, result) {
             if (err) {
-              // probably want to log this
-              console.log('DB ERROR :: ' + JSON.stringify(err));
+              log.error('Error saving to database!', JSON.stringify(err));
             }
           });
 
-          console.log(sponsor);
           res.render('sponsorshipresult', { sponsor : sponsor });
         }
       });
