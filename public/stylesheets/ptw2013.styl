@@ -1,0 +1,143 @@
+/* CSS for Node Philly's Philly Tech Week 2013 event*/
+/*Version: 1.0*/
+/*Authored: @bwhitham @tsavery*/
+
+//styl variables
+
+box-shadow()
+	-webkit-box-shadow arguments
+	-moz-box-shadow arguments
+	-o-box-shadow arguments
+	box-shadow arguments
+
+transition()
+	-webkit-transition arguments
+	-moz-transition arguments
+	-o-transition arguments
+
+box-sizing()
+	-webkit-box-sizing arguments
+	-moz-box-sizing arguments
+	-o-box-sizing arguments
+
+lightwhite = 	rgba(255, 255, 255, 0.5)
+black = 		rgba(0, 0, 0, 1.0)
+gray = 			rgba(0, 0, 0, 0.5)
+
+/*__________________________________________________________ universals*/
+
+*
+	margin 0
+	padding 0 
+	outline none
+	border none
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section
+	display block
+
+.clear
+	clear both
+
+::-webkit-selection
+	background-color black
+	color white
+	text-shadow none
+
+::-moz-selection
+	background-color black
+	color white
+	text-shadow none
+
+::selection
+	background-color black
+	color white
+	text-shadow none
+
+input, button
+	-webkit-appearance none
+	line-height normal
+
+input:focus
+	outline 0
+
+img
+	border none
+	-ms-interpolation-mode bicubic
+	vertical-align middle
+
+nav
+	&ul, &ol
+		list-style none
+		margin 0
+		padding 0
+
+/*__________________________________________________________ typography*/
+
+html
+	font-family "Helvetica Neue", Helvetica, sans-serif
+	font-size 100%
+	-webkit-text-size-adjust 100%
+	-ms-text-size-adjust 100%
+	-webkit-font-smoothing		antialiased
+	-moz-font-smoothing			antialiased
+	-o-font-smoothing			antialiased
+	font-smoothing				antialiased	
+	text-rendering				optimizeLegibility
+
+
+/*__________________________________________________________ structure*/
+
+html
+	width 100%
+	height 100%
+
+body
+	width 98%
+	max-width 1000px
+	height auto
+	margin 0 auto
+	border 1px solid black
+	padding 10px
+	box-sizing border-box
+
+section.category
+	width 100%
+	min-height 300px
+	background-color gray
+	border 1px solid black
+
+	article
+		box-sizing border-box
+		width 50%
+		min-height inherit
+		float left
+		border 1px solid lightwhite
+
+	article.full
+		width 100%
+		min-height 0
+		height 200px
+		float none
+		border 1px solid orange
+
+
+/*__________________________________________________________ media*/
+
+@media all and (max-width: 400px) and (min-width: 320px)
+	html
+		section.category
+			article
+				width inherit
+				float none
+				border 1px solid lightwhite
+		
+				&:nth-child(2)
+					float none
+
+
+
+
+
+
+
+
