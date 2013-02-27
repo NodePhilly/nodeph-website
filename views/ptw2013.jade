@@ -9,6 +9,7 @@ html
 		link(rel="icon", href="/imgs/favicon.ico", type="image/x-icon")
 		meta(name="author", content="@bwhitham, @timsavery")
 		link(rel='stylesheet', href='/stylesheets/ptw2013.css')
+		link(href='http://fonts.googleapis.com/css?family=Bubblegum+Sans', rel='stylesheet', type='text/css')
 
 		script(type='text/javascript', src='/js/jquery1.7.2.js')
 		script(type='text/javascript', src='/js/modernizr.js')
@@ -17,29 +18,54 @@ html
 		| !{analytics}
 
 	body
-		section.category
-			article.full Node Philly Logo
-			article.full Node Philly event abstract
-			article.col Ninjablocks logo
-			article.col Time / workshop info
-			div.clear
-		section.category
-			article.col Evening presentations info
-			article.col Evening presentations info
-			div.clear
-		section.category
-			article.full Thanks to all our speakers
-			article.col Speaker 1
-			article.col Speaker 2
-			article.col Speaker 3
-			article.col Speaker 4
-			article.col Speaker 5
-			div.clear
-		section.category
-			article.col Buy some tickets
-			article.col Ticket purchase form
-			div.clear
-		section.category
-			article.col Map and location data
-			article.col Contact form > I want to speak, I want to sponsor
-			div.clear
+		section.category(name='intro')
+			article(name='intro')
+				div.logo
+				h1 
+					|  &nbsp;&nbsp;&nbsp;&nbsp;				We've got something<br/>
+					|  										totally awesome planned<br/>
+					|  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	for you!
+		section.category(name='details')
+			hr.rippin
+			article(name='details')
+		section.category(name='evening')
+			hr.rippin
+			article(name='evening')
+		section.category(name='close')
+			hr.rippin
+			article
+				section.map Google map
+				section.tix 
+					a.buytix 
+						p Get your tickets!
+			article(name='sponsors')
+				p Sponsor logos
+
+
+	//- body
+	//- 	section.category
+	//- 		article.full Node Philly Logo
+	//- 		article.full Node Philly event abstract
+	//- 		article.col Ninjablocks logo
+	//- 		article.col Time / workshop info
+	//- 		div.clear
+	//- 	section.category
+	//- 		article.col Evening presentations info
+	//- 		article.col Evening presentations info
+	//- 		div.clear
+	//- 	section.category
+	//- 		article.full Thanks to all our speakers
+	//- 		article.col Speaker 1
+	//- 		article.col Speaker 2
+	//- 		article.col Speaker 3
+	//- 		article.col Speaker 4
+	//- 		article.col Speaker 5
+	//- 		div.clear
+	//- 	section.category
+	//- 		article.col Buy some tickets
+	//- 		article.col Ticket purchase form
+	//- 		div.clear
+	//- 	section.category
+	//- 		article.col Map and location data
+	//- 		article.col Contact form > I want to speak, I want to sponsor
+	//- 		div.clear
