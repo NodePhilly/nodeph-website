@@ -1,0 +1,47 @@
+section.global
+  aside.global
+      li(partner='chatham')
+        img(src='/imgs/node-philly-partner-chathamfinancial.png', alt='Chatham Financial')
+      li(partner='nodejitsu')
+        img(src='/imgs/node-philly-partner-nodejitsu.png', alt='Nodejitsu')
+      li(partner='voltdb')
+        img(src='/imgs/node-philly-partner-voltdb.png', alt='VoltDB')
+      li(partner='geeklist')
+        img(src='/imgs/node-philly-partner-geeklist.png', alt='Geeklist')
+  article.global
+    section
+      section.content 
+        h2 Synchronous ($500)
+        p
+          form(method="POST", action="/sponsorship")
+            input(name="amount", type="hidden", value="500")
+            input(name="type", type="hidden", value="Synchronous")
+            script(src="https://checkout.stripe.com/v2/checkout.js", class="stripe-button", data-key="#{publishableKey}", data-amount="50000", data-name="Node Philly", data-description="Sponsorship ($500.00)")
+        h2 Asynchronous ($750)
+        p
+          form(method="POST", action="/sponsorship")
+            input(name="amount", type="hidden", value="750")
+            input(name="type", type="hidden", value="Asynchronous")
+            script(src="https://checkout.stripe.com/v2/checkout.js", class="stripe-button", data-key="#{publishableKey}", data-amount="75000", data-name="Node Philly", data-description="Sponsorship ($750.00)")
+        h2 Workshop Food & Drink ($1,500)
+        p
+          form(method="POST", action="/sponsorship")
+            input(name="amount", type="hidden", value="1500")
+            input(name="type", type="hidden", value="Workshop Food & Drink")
+            script(src="https://checkout.stripe.com/v2/checkout.js", class="stripe-button", data-key="#{publishableKey}", data-amount="150000", data-name="Node Philly", data-description="Sponsorship ($1,500.00)")
+        h2 Conference Food & Drink ($2,750)
+        p
+          form(method="POST", action="/sponsorship")
+            input(name="amount", type="hidden", value="2750")
+            input(name="type", type="hidden", value="Conference Food & Drink")
+            script(src="https://checkout.stripe.com/v2/checkout.js", class="stripe-button", data-key="#{publishableKey}", data-amount="275000", data-name="Node Philly", data-description="Sponsorship ($2,750.00)")
+        h2 After Party ($2,000)
+        p
+          form(method="POST", action="/sponsorship")
+            input(name="amount", type="hidden", value="2000")
+            input(name="type", type="hidden", value="After Party")
+            script(src="https://checkout.stripe.com/v2/checkout.js", class="stripe-button", data-key="#{publishableKey}", data-amount="200000", data-name="Node Philly", data-description="Sponsorship ($2,000.00)")
+  div.clear
+script
+  Stripe.setPublishableKey('#{publishableKey}');
+script(src='/js/stripepayment.js')

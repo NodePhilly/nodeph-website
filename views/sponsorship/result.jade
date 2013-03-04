@@ -11,10 +11,5 @@ section.global
   article.global
     section
       section.content 
-        h2 #{sponsor.results.message}
-          section.resultdetail
-            - if (sponsor.results.succeeded)
-              div Thanks for your sponsorship! 
-            - else 
-              div.payment-errors #{sponsor.results.data}
+        h2 #{result.message}
   div.clear
