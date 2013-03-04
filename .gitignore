@@ -2,3 +2,4 @@ node_modules/**/*
 .monitor
 .DS_Store
 views/.DS_Store
+erl_crash.dump
