@@ -28,14 +28,33 @@ box-sizing()
 	-o-box-sizing arguments
 	box-sizing arguments
 
+text-shadow()
+	-webkit-text-shadow arguments
+	-moz-text-shadow arguments
+	-o-text-shadow arguments
+	text-shadow arguments
+
+background-clip()
+	-webkit-background-clip arguments
+	-moz-background-clip arguments
+	-o-background-clip arguments
+	background-clip arguments
+
+customfont()
+	font-family "Bubblegum Sans", sans-serif
+	font-weight 400
+	font-size arguments
+
 lightwhite = 	rgba(255, 255, 255, 0.5)
 black = 		rgba(0, 0, 0, 1.0)
 gray = 			rgba(0, 0, 0, 0.5)
 blue =			rgba(109, 189, 250, 1.0)
-blue20 =			rgba(109, 189, 250, 0.2)
+blue20 =		rgba(109, 189, 250, 0.2)
 bluemed =		rgba(76, 133, 177, 1.0)
 bluedark =		rgba(5, 23, 31, 1.0)
 orange = 		rgba(245, 174, 73, 1.0)
+purple =		rgba(168, 50, 192, 1.0)
+purple40 =		rgba(168, 50, 192, 0.4)
 
 // images
 
@@ -44,14 +63,14 @@ sprite()
 	background-repeat no-repeat
 	background-position arguments
 
+skylinenight()
+	background-image url('/imgs/ptw2013/nodephilly-skyline-night.png')
+	background-repeat no-repeat
+	background-position arguments
+
 rippindivider()
 	background-image url('/imgs/ptw2013/nodeph-ptw2013-sprite.png')
 	background-repeat repeat-x
-	background-position arguments
-
-sprite2x()
-	background-image url('/imgs/ptw2013/nodeph-ptw2013-sprite@2x.png')
-	background-repeat no-repeat
 	background-position arguments
 
 bluebg()
@@ -65,11 +84,6 @@ purplebg()
 starbg()
 	background-image url('/imgs/ptw2013/nodeph-ptw2013-starbg.png')
 	background-repeat repeat
-
-bubblegumfont()
-	font-family "Bubblegum Sans", sans-serif
-	font-weight 400
-	font-size arguments
 
 /*__________________________________________________________ universals*/
 
@@ -118,8 +132,13 @@ nav
 		margin 0
 		padding 0
 
-a
+a,
+a:hover,
+a:visited
 	cursor pointer
+	text-decoration none
+	color inherit
+
 
 /*__________________________________________________________ typography*/
 
@@ -133,7 +152,6 @@ html
 	-o-font-smoothing			antialiased
 	font-smoothing				antialiased	
 	text-rendering				optimizeLegibility
-
 
 /*__________________________________________________________ structure*/
 
@@ -150,12 +168,12 @@ body
 div.logo
 	width 200px 
 	height 125px
-	sprite 0 -807px
+	sprite 0 -429px
 	position absolute
 	z-index 101
 	top 45px
 	left 150px
-	transform rotate(-15deg)
+	transform rotate(-8deg)
 
 section.category
 	width 100%
@@ -165,14 +183,15 @@ section.category
 		bluebg()
 
 		h1
-			bubblegumfont 40px
-			line-height 35px
+			customfont 50px
+			line-height 50px
 			display block
 			color white
 			transform rotate(10deg)
 			position absolute
-			right 100px
-			top 120px
+			right 50px
+			top 70px
+			text-shadow 0 2px bluemed
 
 	&[name='details']
 		purplebg()
@@ -185,7 +204,7 @@ section.category
 		background-color black
 
 	hr.rippin
-		rippindivider(0 -757px)
+		rippindivider(0 -379px)
 		width 100%
 		height 50px
 		z-index 100
@@ -195,7 +214,6 @@ section.category
 	article
 		box-sizing border-box
 		width 1000px
-		min-height inherit
 		margin 0 auto
 		position relative
 
@@ -207,15 +225,165 @@ section.category
 			padding 25px 0 0 0
 
 		&[name='details']
-			height 800px
+
+			header,
+			article
+				width 100%
+				padding 50px 0 60px 0
+				border-bottom 1px solid orange
+
+				h1, 
+				h2, 
+				time
+					customfont 35px
+					width 50%
+					text-shadow 0 2px bluedark
+					color white
+					text-align center
+					display block
+					float left
+	
+				a.ptwlogo
+					width 448px
+					height 75px
+					display block
+					sprite -200px -429px
+					float right
+					margin 0 50px 0 0
+
+				a.ninjablocks
+					background-image url('/imgs/ptw2013/ninjablock.png')
+					background-repeat no-repeat
+					width 400px
+					height 225px
+					display block
+					float left
+					border 5px solid orange
+					transform rotate(-1deg)
+					margin 0 25px 0 0
+
+				h2, 
+				time
+					font-size 30px
+					display inline-block
+					text-align left
+					width auto
+				h2
+					margin 0 15px 0 0
+				time
+					color orange
+					display inline
+				p
+					font-size 18px
+					color white
+					display block
+					line-height 30px
+					margin 25px 0 0 0
+
+				section.speakers
+					margin 15px 0
+					
+					a
+						box-sizing border-box
+						width 25%
+						min-height 350px
+						float left
+						padding 15px
+						transition background-color 0.3s linear
+						text-align center
+
+						img.headshot
+							width 150px
+							height 150px
+							border 3px solid orange
+							margin 0 auto
+							display block
+
+							&[name='markheadd']
+								transform rotate(1deg)
+							&[name='cityofphilly']
+								transform rotate(-1deg)
+							&[name='sarachipps']
+								transform rotate(-1deg)
+							&[name='danfriedman']
+								transform rotate(1deg)
+							&[name='spikebrehm']
+								transform rotate(1deg)
+							&[name='danshaw']
+								transform rotate(-1deg)
+							&[name='saucelabs']
+								transform rotate(-1deg)
+							&[name='jameshalladay']
+								transform rotate(1deg)
+
+						h3
+							color white
+							margin 10px 0 0 0
+
+						h4
+							color orange
+							text-transform italic
+
+						p
+							margin 5px 0 0 0
+
+						&:nth-child(4)
+							border-right 0
+
+						&:hover
+							background-color purple40
+
+			article
+				padding 20px 0
+
+				&:nth-last-child(1)
+					border-bottom none
+
 
 		&[name='evening']
-			height 800px
+			min-height 700px
 			border-right 1px solid blue
 			border-left  1px solid blue
-			sprite 0 40px
-			background-clip content-box
-			padding-top 420px
+			skylinenight 0 325px
+
+			h1
+				customfont 50px
+				line-height 50px
+				display block
+				color blue
+				transform rotate(-3deg)
+				position absolute
+				left 50px
+				top 80px
+				text-shadow 0 4px black
+			
+				time
+					font-size 30px
+					color orange
+					top 90px
+					width auto
+					text-align center
+					margin 0 0 0 150px
+
+			a.leadonomicslogo
+				width 280px
+				height 46px
+				sprite 0 -560px
+				display block
+				position absolute
+				top 120px
+				right 70px
+				transform rotate(2deg)
+
+			p
+				font-size 20px
+				display block
+				position absolute
+				top 250px
+				left 0
+				width 100%
+				text-align center
+				color white
 
 		section.map,
 		section.tix
@@ -226,12 +394,12 @@ section.category
 			color white
 
 			a.buytix
-				bubblegumfont 60px
+				customfont 60px
 				display block
 				width 100%
 				height 200px
 				background-color blue
-				margin 25px 0 0 0
+				margin 70px 0 0 0
 				text-align center
 				padding 20px
 				box-sizing border-box
@@ -248,13 +416,23 @@ section.category
 				&:hover
 					background-color orange
 
+		section.map
+			a, p
+				display block
+			a
+				font-size 20px
+				margin 10px 0
+				color blue
+			p
+				font-size 20px
+				line-height 20px
+
 	article[name='sponsors']
 		color white
 		height 200px
 		border-top 1px solid bluemed
 		margin-top 15px
 		padding 15px 0 0 0 
-
 
 /*__________________________________________________________ media*/
 

@@ -28,45 +28,101 @@ html
 		section.category(name='details')
 			hr.rippin
 			article(name='details')
+				header
+					h1 
+						| Geek out with us on April 23rd <br>
+						| at Philly Tech Week 2013!
+					a.ptwlogo(href="http://www.phillytechweek.com/", target="_blank")
+					div.clear
+				article
+					a.ninjablocks(href="http://www.ninjablocks.com/", target="_blank")
+					h2 Ninja Blocks Workshop
+					time 8:30am – 2:00pm
+					| <br>
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					div.clear
+				article 
+					h2 Ninja Blocks demos and pre-conference happy hour
+					time 2:00pm – 4:00pm
+					| <br>
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					div.clear
+				article
+					h2 Node Philly 2013
+					time 4:00pm – 8:00pm
+					| <br>
+					p Time for our event. Some shit will be going down. People will be talking about building web apps, creating APIs with node.js, and some other cool things.
+					section.speakers
+						a(href='http://www.twitter.com/mheadd', target="_blank") 
+							img.headshot(name='markheadd')
+							h3 Mark Headd
+							h4 This person's role
+							p A description of the person and their talk.
+						a(href='http://twitter.com/PhiladelphiaGov', target="_blank") 
+							img.headshot(name='cityofphilly')
+							h3 City of Philadelphia
+							h4 Office of New Urban Mechanics
+							p A description of the person and their talk.
+						a(href='http://www.twitter.com/SaraJChipps', target="_blank") 
+							img.headshot(name='sarachipps')
+							h3 Sara Chipps
+							h4 This person's role
+							p A description of the person and their talk.
+						a(href='http://www.twitter.com/danfriedman', target="_blank") 
+							img.headshot(name='danfriedman')
+							h3 Dan Friedman
+							h4 This person's role
+							p A description of the person and their talk.
+						a(href='http://www.twitter.com/spikebrehm', target="_blank") 
+							img.headshot(name='spikebrehm')
+							h3 Spike Brehm
+							h4 This person's role
+							p A description of the person and their talk.
+						a(href='http://www.twitter.com/dshaw', target="_blank") 
+							img.headshot(name='danshaw')
+							h3 Dan Shaw
+							h4 This person's role
+							p A description of the person and their talk.
+						a(href='http://www.twitter.com/saucelabs', target="_blank") 
+							img.headshot(name='saucelabs')
+							h3 Saucelabs
+							h4 This person's role
+							p A description of the person and their talk.
+						a(href='http://www.twitter.com/substack', target="_blank") 
+							img.headshot(name='jameshalladay')
+							h3 James Halladay
+							h4 This person's role
+							p A description of the person and their talk.
+						div.clear
+				div.clear
+
 		section.category(name='evening')
 			hr.rippin
 			article(name='evening')
+				h1
+					| Rock out with Leadnomics!
+					| <br>
+					time Party starts at 8:30pm
+				a.leadonomicslogo
+				p Join Leadnomics as we wrap up the day with drinks and great eats at A Location. 
 		section.category(name='close')
 			hr.rippin
 			article
 				section.map
-					iframe(width="425", height="250", frameborder="0", scrolling="no", marginheight="0", marginwidth="0", src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=3711+Market+Street,+Philadelphia,+PA&amp;aq=1&amp;oq=3711+market&amp;sll=37.6,-95.665&amp;sspn=45.201731,92.548828&amp;ie=UTF8&amp;hq=&amp;hnear=3711+Market+St,+Philadelphia,+Pennsylvania+19104&amp;t=m&amp;z=14&amp;ll=39.956628,-75.19684&amp;output=embed")
+					iframe(width="425", height="350", frameborder="0", scrolling="no", marginheight="0", marginwidth="0", src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=3711+Market+Street,+Philadelphia,+PA&amp;aq=1&amp;oq=3711+market&amp;sll=37.6,-95.665&amp;sspn=45.201731,92.548828&amp;ie=UTF8&amp;hq=&amp;hnear=3711+Market+St,+Philadelphia,+Pennsylvania+19104&amp;t=m&amp;z=14&amp;ll=39.956628,-75.19684&amp;output=embed")
+					a(href="http://www.sciencecenter.org/", target="_blank") University City Science Center
+					p 
+						| 3711 Market St
+						| Philadelphia, PA 19104
 				section.tix 
 					a.buytix(href="https://nodephilly.ticketleap.com/ptw2013", target="_blank")
 						p Get your tickets!
+				div.clear
 			article(name='sponsors')
 				p Sponsor logos
 
 
-	//- body
-	//- 	section.category
-	//- 		article.full Node Philly Logo
-	//- 		article.full Node Philly event abstract
-	//- 		article.col Ninjablocks logo
-	//- 		article.col Time / workshop info
-	//- 		div.clear
-	//- 	section.category
-	//- 		article.col Evening presentations info
-	//- 		article.col Evening presentations info
-	//- 		div.clear
-	//- 	section.category
-	//- 		article.full Thanks to all our speakers
-	//- 		article.col Speaker 1
-	//- 		article.col Speaker 2
-	//- 		article.col Speaker 3
-	//- 		article.col Speaker 4
-	//- 		article.col Speaker 5
-	//- 		div.clear
-	//- 	section.category
-	//- 		article.col Buy some tickets
-	//- 		article.col Ticket purchase form
-	//- 		div.clear
-	//- 	section.category
-	//- 		article.col Map and location data
-	//- 		article.col Contact form > I want to speak, I want to sponsor
-	//- 		div.clear
+
+
+
+
