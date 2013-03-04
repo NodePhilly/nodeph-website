@@ -1,3 +1,5 @@
 node_modules/**/*
 .monitor
-*.sh
+.DS_Store
+views/.DS_Store
+erl_crash.dump
