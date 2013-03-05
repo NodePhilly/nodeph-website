@@ -137,6 +137,8 @@ a:hover,
 a:visited
 	cursor pointer
 	text-decoration none
+
+a:visited
 	color inherit
 
 
@@ -152,6 +154,14 @@ html
 	-o-font-smoothing			antialiased
 	font-smoothing				antialiased	
 	text-rendering				optimizeLegibility
+
+p a
+	font-weight 600
+	text-shadow 0 1px 0 black
+	color orange
+
+	&:visited
+		color orange
 
 /*__________________________________________________________ structure*/
 
@@ -192,6 +202,7 @@ section.category
 			right 50px
 			top 70px
 			text-shadow 0 2px bluemed
+			text-align center
 
 	&[name='details']
 		purplebg()
@@ -260,7 +271,7 @@ section.category
 					float left
 					border 5px solid orange
 					transform rotate(-1deg)
-					margin 0 25px 0 0
+					margin 100px 25px 100px 0
 
 				h2, 
 				time
@@ -271,7 +282,7 @@ section.category
 				h2
 					margin 0 15px 0 0
 				time
-					color orange
+					color blue
 					display inline
 				p
 					font-size 18px
@@ -286,11 +297,12 @@ section.category
 					a
 						box-sizing border-box
 						width 25%
-						min-height 350px
+						min-height 320px
 						float left
-						padding 15px
+						padding 15px 15px 5px 15px
 						transition background-color 0.3s linear
 						text-align center
+
 
 						img.headshot
 							width 150px
@@ -326,6 +338,7 @@ section.category
 
 						p
 							margin 5px 0 0 0
+							line-height 22px
 
 						&:nth-child(4)
 							border-right 0
@@ -341,10 +354,10 @@ section.category
 
 
 		&[name='evening']
-			min-height 700px
+			min-height 650px
 			border-right 1px solid blue
 			border-left  1px solid blue
-			skylinenight 0 325px
+			skylinenight 0 275px
 
 			h1
 				customfont 50px
@@ -354,13 +367,13 @@ section.category
 				transform rotate(-3deg)
 				position absolute
 				left 50px
-				top 80px
+				top 60px
 				text-shadow 0 4px black
 			
 				time
 					font-size 30px
 					color orange
-					top 90px
+					top 70px
 					width auto
 					text-align center
 					margin 0 0 0 150px
@@ -371,7 +384,7 @@ section.category
 				sprite 0 -560px
 				display block
 				position absolute
-				top 120px
+				top 100px
 				right 70px
 				transform rotate(2deg)
 
@@ -379,7 +392,7 @@ section.category
 				font-size 20px
 				display block
 				position absolute
-				top 250px
+				top 200px
 				left 0
 				width 100%
 				text-align center
@@ -433,6 +446,7 @@ section.category
 		border-top 1px solid bluemed
 		margin-top 15px
 		padding 15px 0 0 0 
+		text-align center
 
 /*__________________________________________________________ media*/
 

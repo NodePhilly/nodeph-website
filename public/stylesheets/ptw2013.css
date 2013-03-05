@@ -71,6 +71,8 @@ a:hover,
 a:visited {
   cursor: pointer;
   text-decoration: none;
+}
+a:visited {
   color: inherit;
 }
 /*__________________________________________________________ typography*/
@@ -84,6 +86,17 @@ html {
   -o-font-smoothing: antialiased;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+p a {
+  font-weight: 600;
+  -webkit-text-shadow: 0 1px 0 #000;
+  -moz-text-shadow: 0 1px 0 #000;
+  -o-text-shadow: 0 1px 0 #000;
+  text-shadow: 0 1px 0 #000;
+  color: #f5ae49;
+}
+p a:visited {
+  color: #f5ae49;
 }
 /*__________________________________________________________ structure*/
 html {
@@ -140,6 +153,7 @@ section.category[name='intro'] h1 {
   -moz-text-shadow: 0 2px #4c85b1;
   -o-text-shadow: 0 2px #4c85b1;
   text-shadow: 0 2px #4c85b1;
+  text-align: center;
 }
 section.category[name='details'] {
   background-image: url("/imgs/ptw2013/nodeph-ptw2013-purplebg.jpg");
@@ -230,7 +244,7 @@ section.category article[name='details'] article a.ninjablocks {
   -moz-transform: rotate(-1deg);
   -o-transform: rotate(-1deg);
   transform: rotate(-1deg);
-  margin: 0 25px 0 0;
+  margin: 100px 25px 100px 0;
 }
 section.category article[name='details'] header h2,
 section.category article[name='details'] article h2,
@@ -247,7 +261,7 @@ section.category article[name='details'] article h2 {
 }
 section.category article[name='details'] header time,
 section.category article[name='details'] article time {
-  color: #f5ae49;
+  color: #6dbdfa;
   display: inline;
 }
 section.category article[name='details'] header p,
@@ -269,9 +283,9 @@ section.category article[name='details'] article section.speakers a {
   -o-box-sizing: border-box;
   box-sizing: border-box;
   width: 25%;
-  min-height: 350px;
+  min-height: 320px;
   float: left;
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
   -webkit-transition: background-color 0.3s linear;
   -moz-transition: background-color 0.3s linear;
   -o-transition: background-color 0.3s linear;
@@ -355,6 +369,7 @@ section.category article[name='details'] article section.speakers a h4 {
 section.category article[name='details'] header section.speakers a p,
 section.category article[name='details'] article section.speakers a p {
   margin: 5px 0 0 0;
+  line-height: 22px;
 }
 section.category article[name='details'] header section.speakers a:nth-child(4),
 section.category article[name='details'] article section.speakers a:nth-child(4) {
@@ -371,12 +386,12 @@ section.category article[name='details'] article:nth-last-child(1) {
   border-bottom: none;
 }
 section.category article[name='evening'] {
-  min-height: 700px;
+  min-height: 650px;
   border-right: 1px solid #6dbdfa;
   border-left: 1px solid #6dbdfa;
   background-image: url("/imgs/ptw2013/nodephilly-skyline-night.png");
   background-repeat: no-repeat;
-  background-position: 0 325px;
+  background-position: 0 275px;
 }
 section.category article[name='evening'] h1 {
   font-family: "Bubblegum Sans", sans-serif;
@@ -391,7 +406,7 @@ section.category article[name='evening'] h1 {
   transform: rotate(-3deg);
   position: absolute;
   left: 50px;
-  top: 80px;
+  top: 60px;
   -webkit-text-shadow: 0 4px #000;
   -moz-text-shadow: 0 4px #000;
   -o-text-shadow: 0 4px #000;
@@ -400,7 +415,7 @@ section.category article[name='evening'] h1 {
 section.category article[name='evening'] h1 time {
   font-size: 30px;
   color: #f5ae49;
-  top: 90px;
+  top: 70px;
   width: auto;
   text-align: center;
   margin: 0 0 0 150px;
@@ -413,7 +428,7 @@ section.category article[name='evening'] a.leadonomicslogo {
   background-position: 0 -560px;
   display: block;
   position: absolute;
-  top: 120px;
+  top: 100px;
   right: 70px;
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
@@ -424,7 +439,7 @@ section.category article[name='evening'] p {
   font-size: 20px;
   display: block;
   position: absolute;
-  top: 250px;
+  top: 200px;
   left: 0;
   width: 100%;
   text-align: center;
@@ -497,6 +512,7 @@ section.category article[name='sponsors'] {
   border-top: 1px solid #4c85b1;
   margin-top: 15px;
   padding: 15px 0 0 0;
+  text-align: center;
 }
 /*__________________________________________________________ media*/
 @media all and (max-width: 400px) and (min-width: 320px) {
