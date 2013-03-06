@@ -46,6 +46,7 @@ customfont()
 	font-size arguments
 
 lightwhite = 	rgba(255, 255, 255, 0.5)
+white20 = 		rgba(255, 255, 255, 0.2)
 black = 		rgba(0, 0, 0, 1.0)
 gray = 			rgba(0, 0, 0, 0.5)
 blue =			rgba(109, 189, 250, 1.0)
@@ -100,17 +101,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 	clear both
 
 ::-webkit-selection
-	background-color black
+	background-color orange
 	color white
 	text-shadow none
 
 ::-moz-selection
-	background-color black
+	background-color orange
 	color white
 	text-shadow none
 
 ::selection
-	background-color black
+	background-color orange
 	color white
 	text-shadow none
 
@@ -174,6 +175,7 @@ body
 	min-height inherit
 	box-sizing border-box
 	background-color black
+	padding 0 0 150px 0
 
 div.logo
 	width 200px 
@@ -230,8 +232,8 @@ section.category
 
 		&[name='intro']
 			height 600px
-			border-right 1px solid bluemed
-			border-left  1px solid bluemed
+			border-right 1px solid lightwhite
+			border-left  1px solid lightwhite
 			sprite 0 225px
 			padding 25px 0 0 0
 
@@ -313,20 +315,31 @@ section.category
 
 							&[name='markheadd']
 								transform rotate(1deg)
+								sprite 0 -840px
 							&[name='cityofphilly']
 								transform rotate(-1deg)
+								sprite -150px -840px
 							&[name='sarachipps']
 								transform rotate(-1deg)
+								sprite -300px -840px
 							&[name='danfriedman']
 								transform rotate(1deg)
+								sprite -450px -840px
 							&[name='spikebrehm']
 								transform rotate(1deg)
+								sprite -600px -840px
 							&[name='danshaw']
 								transform rotate(-1deg)
+								sprite -750px -840px
+							&[name='substack']
+								transform rotate(1deg)
+								sprite 0 -990px
 							&[name='saucelabs']
 								transform rotate(-1deg)
-							&[name='jameshalladay']
+								sprite -300px -990px
+							&[name='bryanpaluch']
 								transform rotate(1deg)
+								sprite -150px -990px	
 
 						h3
 							color white
@@ -358,6 +371,7 @@ section.category
 			border-right 1px solid blue
 			border-left  1px solid blue
 			skylinenight 0 275px
+			padding 0
 
 			h1
 				customfont 50px
@@ -418,6 +432,7 @@ section.category
 				box-sizing border-box
 				transform rotate(3deg)
 				transition background-color 0.3s linear
+				color white
 
 				p
 					display block
@@ -428,6 +443,8 @@ section.category
 
 				&:hover
 					background-color orange
+				&:visited
+					color inherit
 
 		section.map
 			a, p
@@ -447,6 +464,41 @@ section.category
 		margin-top 15px
 		padding 15px 0 0 0 
 		text-align center
+
+		p
+			margin 0 0 25px 0
+		a
+			box-sizing border-box
+			width 25%
+			height 100px
+			display block
+			float left
+			transition background-color 0.3s linear
+			margin 0 0 25px 0
+
+			&[name='chathamfinancial']
+				sprite 0 -640px
+
+			&[name='ninjablocks']
+				sprite -250px -640px
+
+			&[name='leadnomics']
+				sprite -500px -640px
+
+			&[name='comcast']
+				sprite -750px -640px
+
+			&[name='voxer']
+				sprite 0 -740px
+
+			&[name='saucelabs']
+				sprite -250px -740px
+
+			&[name='ucsc']
+				sprite -500px -740px
+
+			&:hover
+				background-color white20
 
 /*__________________________________________________________ media*/
 

@@ -24,7 +24,7 @@ section {
   clear: both;
 }
 ::-webkit-selection {
-  background-color: #000;
+  background-color: #f5ae49;
   color: #fff;
   -webkit-text-shadow: none;
   -moz-text-shadow: none;
@@ -32,7 +32,7 @@ section {
   text-shadow: none;
 }
 ::-moz-selection {
-  background-color: #000;
+  background-color: #f5ae49;
   color: #fff;
   -webkit-text-shadow: none;
   -moz-text-shadow: none;
@@ -40,7 +40,7 @@ section {
   text-shadow: none;
 }
 ::selection {
-  background-color: #000;
+  background-color: #f5ae49;
   color: #fff;
   -webkit-text-shadow: none;
   -moz-text-shadow: none;
@@ -111,6 +111,7 @@ body {
   -o-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #000;
+  padding: 0 0 150px 0;
 }
 div.logo {
   width: 200px;
@@ -188,8 +189,8 @@ section.category article {
 }
 section.category article[name='intro'] {
   height: 600px;
-  border-right: 1px solid #4c85b1;
-  border-left: 1px solid #4c85b1;
+  border-right: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
   background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
   background-repeat: no-repeat;
   background-position: 0 225px;
@@ -306,6 +307,9 @@ section.category article[name='details'] article section.speakers a img.headshot
   -moz-transform: rotate(1deg);
   -o-transform: rotate(1deg);
   transform: rotate(1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: 0 -840px;
 }
 section.category article[name='details'] header section.speakers a img.headshot[name='cityofphilly'],
 section.category article[name='details'] article section.speakers a img.headshot[name='cityofphilly'] {
@@ -313,6 +317,9 @@ section.category article[name='details'] article section.speakers a img.headshot
   -moz-transform: rotate(-1deg);
   -o-transform: rotate(-1deg);
   transform: rotate(-1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -150px -840px;
 }
 section.category article[name='details'] header section.speakers a img.headshot[name='sarachipps'],
 section.category article[name='details'] article section.speakers a img.headshot[name='sarachipps'] {
@@ -320,6 +327,9 @@ section.category article[name='details'] article section.speakers a img.headshot
   -moz-transform: rotate(-1deg);
   -o-transform: rotate(-1deg);
   transform: rotate(-1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -300px -840px;
 }
 section.category article[name='details'] header section.speakers a img.headshot[name='danfriedman'],
 section.category article[name='details'] article section.speakers a img.headshot[name='danfriedman'] {
@@ -327,6 +337,9 @@ section.category article[name='details'] article section.speakers a img.headshot
   -moz-transform: rotate(1deg);
   -o-transform: rotate(1deg);
   transform: rotate(1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -450px -840px;
 }
 section.category article[name='details'] header section.speakers a img.headshot[name='spikebrehm'],
 section.category article[name='details'] article section.speakers a img.headshot[name='spikebrehm'] {
@@ -334,6 +347,9 @@ section.category article[name='details'] article section.speakers a img.headshot
   -moz-transform: rotate(1deg);
   -o-transform: rotate(1deg);
   transform: rotate(1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -600px -840px;
 }
 section.category article[name='details'] header section.speakers a img.headshot[name='danshaw'],
 section.category article[name='details'] article section.speakers a img.headshot[name='danshaw'] {
@@ -341,6 +357,19 @@ section.category article[name='details'] article section.speakers a img.headshot
   -moz-transform: rotate(-1deg);
   -o-transform: rotate(-1deg);
   transform: rotate(-1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -750px -840px;
+}
+section.category article[name='details'] header section.speakers a img.headshot[name='substack'],
+section.category article[name='details'] article section.speakers a img.headshot[name='substack'] {
+  -webkit-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  transform: rotate(1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: 0 -990px;
 }
 section.category article[name='details'] header section.speakers a img.headshot[name='saucelabs'],
 section.category article[name='details'] article section.speakers a img.headshot[name='saucelabs'] {
@@ -348,13 +377,19 @@ section.category article[name='details'] article section.speakers a img.headshot
   -moz-transform: rotate(-1deg);
   -o-transform: rotate(-1deg);
   transform: rotate(-1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -300px -990px;
 }
-section.category article[name='details'] header section.speakers a img.headshot[name='jameshalladay'],
-section.category article[name='details'] article section.speakers a img.headshot[name='jameshalladay'] {
+section.category article[name='details'] header section.speakers a img.headshot[name='bryanpaluch'],
+section.category article[name='details'] article section.speakers a img.headshot[name='bryanpaluch'] {
   -webkit-transform: rotate(1deg);
   -moz-transform: rotate(1deg);
   -o-transform: rotate(1deg);
   transform: rotate(1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -150px -990px;
 }
 section.category article[name='details'] header section.speakers a h3,
 section.category article[name='details'] article section.speakers a h3 {
@@ -392,6 +427,7 @@ section.category article[name='evening'] {
   background-image: url("/imgs/ptw2013/nodephilly-skyline-night.png");
   background-repeat: no-repeat;
   background-position: 0 275px;
+  padding: 0;
 }
 section.category article[name='evening'] h1 {
   font-family: "Bubblegum Sans", sans-serif;
@@ -480,6 +516,7 @@ section.category article section.tix a.buytix {
   -moz-transition: background-color 0.3s linear;
   -o-transition: background-color 0.3s linear;
   transition: background-color 0.3s linear;
+  color: #fff;
 }
 section.category article section.map a.buytix p,
 section.category article section.tix a.buytix p {
@@ -492,6 +529,10 @@ section.category article section.tix a.buytix p {
 section.category article section.map a.buytix:hover,
 section.category article section.tix a.buytix:hover {
   background-color: #f5ae49;
+}
+section.category article section.map a.buytix:visited,
+section.category article section.tix a.buytix:visited {
+  color: inherit;
 }
 section.category article section.map a,
 section.category article section.map p {
@@ -513,6 +554,62 @@ section.category article[name='sponsors'] {
   margin-top: 15px;
   padding: 15px 0 0 0;
   text-align: center;
+}
+section.category article[name='sponsors'] p {
+  margin: 0 0 25px 0;
+}
+section.category article[name='sponsors'] a {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 25%;
+  height: 100px;
+  display: block;
+  float: left;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+  margin: 0 0 25px 0;
+}
+section.category article[name='sponsors'] a[name='chathamfinancial'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: 0 -640px;
+}
+section.category article[name='sponsors'] a[name='ninjablocks'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -250px -640px;
+}
+section.category article[name='sponsors'] a[name='leadnomics'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -500px -640px;
+}
+section.category article[name='sponsors'] a[name='comcast'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -750px -640px;
+}
+section.category article[name='sponsors'] a[name='voxer'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: 0 -740px;
+}
+section.category article[name='sponsors'] a[name='saucelabs'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -250px -740px;
+}
+section.category article[name='sponsors'] a[name='ucsc'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -500px -740px;
+}
+section.category article[name='sponsors'] a:hover {
+  background-color: rgba(255,255,255,0.2);
 }
 /*__________________________________________________________ media*/
 @media all and (max-width: 400px) and (min-width: 320px) {
