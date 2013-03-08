@@ -421,7 +421,7 @@ section.category article[name='details'] article:nth-last-child(1) {
   border-bottom: none;
 }
 section.category article[name='evening'] {
-  min-height: 650px;
+  min-height: 620px;
   border-right: 1px solid #6dbdfa;
   border-left: 1px solid #6dbdfa;
   background-image: url("/imgs/ptw2013/nodephilly-skyline-night.png");
@@ -480,6 +480,10 @@ section.category article[name='evening'] p {
   width: 100%;
   text-align: center;
   color: #fff;
+}
+section.category article[name='close'] {
+  min-height: 300px;
+  padding: 0;
 }
 section.category article section.map,
 section.category article section.tix {
@@ -610,15 +614,4 @@ section.category article[name='sponsors'] a[name='ucsc'] {
 }
 section.category article[name='sponsors'] a:hover {
   background-color: rgba(255,255,255,0.2);
-}
-/*__________________________________________________________ media*/
-@media all and (max-width: 400px) and (min-width: 320px) {
-  html section.category article {
-    width: inherit;
-    float: none;
-    border: 1px solid rgba(255,255,255,0.5);
-  }
-  html section.category article:nth-child(2) {
-    float: none;
-  }
 }

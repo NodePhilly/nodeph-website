@@ -367,7 +367,7 @@ section.category
 
 
 		&[name='evening']
-			min-height 650px
+			min-height 620px
 			border-right 1px solid blue
 			border-left  1px solid blue
 			skylinenight 0 275px
@@ -411,6 +411,10 @@ section.category
 				width 100%
 				text-align center
 				color white
+		
+		&[name='close']
+			min-height 300px
+			padding 0
 
 		section.map,
 		section.tix
@@ -499,24 +503,3 @@ section.category
 
 			&:hover
 				background-color white20
-
-/*__________________________________________________________ media*/
-
-@media all and (max-width: 400px) and (min-width: 320px)
-	html
-		section.category
-			article
-				width inherit
-				float none
-				border 1px solid lightwhite
-		
-				&:nth-child(2)
-					float none
-
-
-
-
-
-
-
-

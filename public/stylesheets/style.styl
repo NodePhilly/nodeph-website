@@ -57,13 +57,13 @@ box-shadow(n)
 	clear both
 
 ::-moz-selection
-	background-color nodeph-green
-	color inherit
+	background-color nodeph-blue
+	color white
 	text-shadow none
 
 ::selection
-	background-color nodeph-green
-	color inherit
+	background-color nodeph-blue
+	color white
 	text-shadow none
 
 .hidden
@@ -312,7 +312,7 @@ section.overview .callout:after
 	content "}"
 	right 0
 
-section.speak, section.host
+section.speak, section.host, section.ptw2013
 	background-image url('/imgs/201208-feature-speak.png')
 	background-position middle
 	background-repeat no-repeat
@@ -332,6 +332,16 @@ section.host p
 	display block
 	width 375px
 	margin 0 0 0 100px
+
+section.ptw2013
+	background-image url('/imgs/ptw2013/nodeph-feature-ptw2013.png')
+	position relative
+
+	a
+		position absolute
+		right 230px
+		bottom 50px
+		font-weight 600
 
 
 /*__________________________________________________________ widgets*/
@@ -636,6 +646,8 @@ article.global
 	section[partner]
 		min-height 400px
 
+/*__________________________________________________________ featured content*/
+
 /*__________________________________________________________ site footer*/
 
 footer.global section.col1, footer.global section.col2, footer.global section.socicons
@@ -796,7 +808,7 @@ nav.nav1 a[data-tip]:hover::before, nav.nav2 a[data-tip]:hover::before
 	bottom 10px
 	left 60px
 
-/*__________________________________________________________ contact form */
+/*__________________________________________________________ forms */
 
 form.contact
 	width 100%
@@ -861,11 +873,22 @@ form.contact a.cancelbtn
 
 .contactinnerstuff
 	opacity 0.0
+
+
+
 /*__________________________________________________________ sponsorship form */
+section.sponsorship
+	width 40%
+	margin 25px auto 25px auto
+
+	p
+		line-height 23px
+
+
 .payment-errors
 	color: #ff0000
 
-form#sponsorship input, form#sponsorship button
+form#sponsorship button
 	height 25px
 	border nodeph-gray50 nodeph-thinborder solid
 	border-radius 5px
@@ -873,6 +896,18 @@ form#sponsorship input, form#sponsorship button
 	-moz-border-radius 5px
 	padding 0 5px 0 5px
 	margin 0 0 10px 0
+
+input[type='number']
+	width 100%
+	height 25px
+	font-size 18px
+	color nodeph-gray
+	border 1px solid nodeph-blue
+	padding 0 5px
+	margin 25px auto
+
+	&:focus
+		box-shadow 0 0 15px nodeph-blue50
 
 
 /*__________________________________________________________ hackandhops 2012 */
