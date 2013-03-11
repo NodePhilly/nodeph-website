@@ -391,6 +391,16 @@ section.category article[name='details'] article section.speakers a img.headshot
   background-repeat: no-repeat;
   background-position: -150px -990px;
 }
+section.category article[name='details'] header section.speakers a img.headshot[name='adamchristian'],
+section.category article[name='details'] article section.speakers a img.headshot[name='adamchristian'] {
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  -o-transform: rotate(-1deg);
+  transform: rotate(-1deg);
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -300px -990px;
+}
 section.category article[name='details'] header section.speakers a h3,
 section.category article[name='details'] article section.speakers a h3 {
   color: #fff;
@@ -592,12 +602,14 @@ section.category article[name='sponsors'] a[name='leadnomics'] {
   background-repeat: no-repeat;
   background-position: -500px -640px;
 }
-section.category article[name='sponsors'] a[name='comcast'] {
+section.category article[name='sponsors'] a[name='voxer'] {
   background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
   background-repeat: no-repeat;
   background-position: -750px -640px;
+  height: 200px;
+  clear: both;
 }
-section.category article[name='sponsors'] a[name='voxer'] {
+section.category article[name='sponsors'] a[name='comcast'] {
   background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
   background-repeat: no-repeat;
   background-position: 0 -740px;
@@ -610,7 +622,18 @@ section.category article[name='sponsors'] a[name='saucelabs'] {
 section.category article[name='sponsors'] a[name='ucsc'] {
   background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
   background-repeat: no-repeat;
+  background-position: -750px -430px;
+  height: 200px;
+}
+section.category article[name='sponsors'] a[name='geeklist'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
   background-position: -500px -740px;
+}
+section.category article[name='sponsors'] a[name='apiphany'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -500px -540px;
 }
 section.category article[name='sponsors'] a:hover {
   background-color: rgba(255,255,255,0.2);
