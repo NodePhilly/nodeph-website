@@ -625,6 +625,12 @@ section.category article[name='sponsors'] a[name='ucsc'] {
   background-position: -750px -430px;
   height: 200px;
 }
+section.category article[name='sponsors'] a[name='strongloop'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -500px -990px;
+  height: 200px;
+}
 section.category article[name='sponsors'] a[name='geeklist'] {
   background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
   background-repeat: no-repeat;
