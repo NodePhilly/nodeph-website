@@ -641,6 +641,11 @@ section.category article[name='sponsors'] a[name='apiphany'] {
   background-repeat: no-repeat;
   background-position: -500px -540px;
 }
+section.category article[name='sponsors'] a[name='zivtech'] {
+  background-image: url("/imgs/ptw2013/nodeph-ptw2013-sprite.png");
+  background-repeat: no-repeat;
+  background-position: -750px -990px;
+}
 section.category article[name='sponsors'] a:hover {
   background-color: rgba(255,255,255,0.2);
 }
