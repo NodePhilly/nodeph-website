@@ -4,7 +4,9 @@ var stripeSecretKey = process.env.STRIPE_SECRET_KEY || 'sk_test_kIPiTmbushJpYUGe
   , log = require('../lib/logger'); 
   
 exports.index = function(req, res){
-  res.render('sponsorship');
+  res.render('sponsorship', {
+    publishableKey: stripePublishableKey
+  });
 };
 
 exports.post = function(req, res) {

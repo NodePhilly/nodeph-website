@@ -1,6 +1,6 @@
 {
   "name": "node.ph",
-  "version": "0.2.0-37",
+  "version": "0.2.0-42",
   "private": true,
   "dependencies": {
     "express": "2.5.7",
@@ -24,7 +24,7 @@
     "start": "app.js"
   },
   "engines": {
-    "node": "v0.8.x"
+    "node": "0.8.x"
   },
   "repository": {
     "type": "git",
