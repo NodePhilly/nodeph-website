@@ -1,11 +1,33 @@
+script(src="https://checkout.stripe.com/v2/checkout.js")
+
 section.sponsorship
-  h2 Sponsor an event or meetup
-  p
-    | Thanks for your interest in helping out! If you've reached this page then you likely were given a link and have spoken to one of us about sponsoring. If that's the case, please fill in your sponsorship amount below and hit submit. The next screen will prompt you for your payment info.
-    form(method="POST", action="/sponsorship")
-      input(name='amount', type='number', min='1', max='1000000')
-      script(src="https://checkout.stripe.com/v2/checkout.js", class="stripe-button", data-key="#{publishableKey}", data-amount="50000", data-name="Node Philly", data-description="Sponsorship ($500.00)")
-  div.clear
-script
-  Stripe.setPublishableKey('#{publishableKey}');
+	h2 Sponsor an event or meetup
+	p
+		| Thanks for your interest in helping out! If you've reached this page then you likely were given a link and have spoken to one of us about sponsoring. If that's the case, please select your sponsorship amount below and hit submit. The next screen will prompt you for your payment info.
+		br
+		br
+		form(method="POST", action="/sponsorship")
+			input(type="hidden", name="key", value="#{publishableKey}")
+			input(type="radio", name="amount", value="50000", checked) 
+			span &nbsp;&nbsp;Synchronous ($500)
+			br
+			br
+			input(type="radio", name="amount", value="75000") 
+			span &nbsp;&nbsp;Asynchronous ($750)
+			br
+			br
+			input(type="radio", name="amount", value="150000") 
+			span &nbsp;&nbsp;Workshop Food & Drink Sponsorship ($1,500)
+			br
+			br
+			input(type="radio", name="amount", value="275000") 
+			span &nbsp;&nbsp;Conference Food & Drink Sponsorship ($2,750)
+			br
+			br
+			input(type="radio", name="amount", value="200000") 
+			span &nbsp;&nbsp;Post-Event Party Sponsorship ($2,000)
+			br
+			br
+			button(id="pay") Pay With Card
+	div.clear
 script(src='/js/stripepayment.js')

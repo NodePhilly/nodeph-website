@@ -4,9 +4,7 @@ var stripeSecretKey = process.env.STRIPE_SECRET_KEY || 'sk_test_kIPiTmbushJpYUGe
   , log = require('../lib/logger'); 
   
 exports.index = function(req, res){
-  res.render('sponsorship', {
-    publishableKey: stripePublishableKey 
-  });
+  res.render('sponsorship');
 };
 
 exports.post = function(req, res) {
@@ -15,7 +13,7 @@ exports.post = function(req, res) {
       type = req.body.type;
 
   var charge = {
-    amount: amount * 100,
+    amount: amount,
     currency: 'usd',
     card: token,
     description: type + ' Sponsorship ' + amount
