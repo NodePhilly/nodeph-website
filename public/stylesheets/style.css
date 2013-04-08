@@ -930,6 +930,19 @@ form.contact a.cancelbtn {
 .contactinnerstuff {
   opacity: 0;
 }
+button#pay {
+  width: 150px;
+  height: 50px;
+  background-color: #82c0c0;
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  margin: 15px 0 0 0;
+  cursor: pointer;
+}
+button#pay:hover {
+  background-color: rgba(130,192,192,0.8);
+}
 /*__________________________________________________________ sponsorship form */
 section.sponsorship {
   width: 40%;
