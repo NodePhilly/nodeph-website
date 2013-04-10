@@ -27,13 +27,13 @@ exports.post = function(req, res) {
     if (err) {
       result = { 
         succeeded: false, 
-        message: 'charge failed', 
+        message: 'Something went wrong. Please contact team@node.ph.', 
         data: err 
       };
     } else {
       result = { 
         succeeded: true, 
-        message: 'charge succeeded', 
+        message: 'Thank You!', 
         data: result 
       };
     }
