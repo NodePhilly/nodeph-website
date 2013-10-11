@@ -1,571 +1,114 @@
-/*CSS for Node Philly's Hack and Hops 2012*/
-/*Authored: @bwhitham, Teddy Stroehecker*/
-/*__________________________________________________________ hackandhops 2012 */
-body.hackandhops {
-  width: inherit;
-  height: inherit;
-  position: relative;
-  border: none;
-  margin: 0 auto;
-  padding: 0 0 0 0;
-  overflow: hidden;
+/*CSS for Node Philly's Hack and Hops 2013*/
+/* =========================================== globals */
+* {
+  margin: 0;
+  padding: 0;
 }
-body.hackandhops section.feature {
-  border: 1px solid #000;
+::-webkit-selection {
+  background-color: #eab132;
+  color: #fee799;
+  text-shadow: none;
+}
+::-moz-selection {
+  background-color: #eab132;
+  color: #fee799;
+  text-shadow: none;
+}
+::selection {
+  background-color: #eab132;
+  color: #fee799;
+  text-shadow: none;
+}
+hr {
+  background-image: url("/imgs/hackandhops2013.png");
+  background-position: 0 -204px;
+  height: 28px;
   width: 100%;
-  height: 400px;
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 25%;
+  display: block;
+  outline: none;
+  border: none;
+  margin: 15px 0;
 }
-body.hackandhops section.feature section.viewport {
-  position: relative;
-  overflow: hidden;
-  width: 1000px;
-  height: 400px;
-  margin: 0 auto;
+/* =========================================== structure */
+html {
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-radial-gradient(top center, #fee799, #fcc143);
+  background-image: -moz-radial-gradient(top center, #fee799, #fcc143);
+  background-image: -ms-radial-gradient(top center, #fee799, #fcc143);
+  background-attachment: fixed;
 }
-body.hackandhops section.feature section.viewport section.overview {
-  height: inherit;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-body.hackandhops section.feature section.viewport section.overview article {
-  width: 1000px;
-  height: 400px;
-  margin: 0 auto;
-  font-size: 35px;
-  line-height: 50px;
-  font-weight: 300;
-  color: nodeph-blue;
-  text-align: center;
-}
-body.hackandhops section.feature section.pager {
-  height: 50px;
-  position: relative;
-  margin: 0 auto;
-}
-body.hackandhops section.feature section.pager a.pagenum {
-  width: 50px;
-  height: 50px;
-  background-image: none;
-  background-color: nodeph-blue;
-  margin: 0 10px 0 0;
-  cursor: pointer;
-}
-section.cloudybackground,
-section.cloudymidground,
-section.cloudyforeground {
-  width: inherit;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-repeat: repeat;
-  background-color: transparent;
-  background-position: 0 0;
-}
-header.hackandhops {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-div.hackandhops-logo {
-  background-image: url("/imgs/nodephilly-hackandhops.png");
-  width: 350px;
-  height: 240px;
-  margin: 5px auto 0 auto;
-  position: relative;
-}
-section.foreground,
-section.background {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-section.foreground {
-  top: 60px;
-  background-image: url("/imgs/hnh-snow01.png");
-  background-repeat: repeat;
-  background-position: 0 0;
-  background-color: transparent;
-  z-index: 100;
-  -webkit-animation: itsfrosty 20s infinite linear;
-  -moz-animation: itsfrosty 20s infinite linear;
-  -o-animation: itsfrosty 20s infinite linear;
-  animation: itsfrosty 20s infinite linear;
-}
-section.cloudyforeground {
-  height: 300px;
-  background-image: url("/imgs/hnh-clouds01.png");
-  z-index: 101;
-  -webkit-animation: itscloudy 100s infinite linear;
-  -moz-animation: itscloudy 100s infinite linear;
-  -o-animation: itscloudy 100s infinite linear;
-  animation: itscloudy 100s infinite linear;
-}
-section.cloudymidground {
-  height: 225px;
-  background-image: url("/imgs/hnh-clouds02.png");
-  z-index: 2;
-  -webkit-animation: itsstillcloudy 120s infinite linear;
-  -moz-animation: itsstillcloudy 120s infinite linear;
-  -o-animation: itsstillcloudy 120s infinite linear;
-  animation: itsstillcloudy 120s infinite linear;
-}
-section.cloudybackground {
-  top: -15px;
-  height: 150px;
-  background-image: url("/imgs/hnh-clouds03.png");
-  background-repeat: repeat-x;
-  z-index: 1;
-  -webkit-animation: itsstillreallycloudy 500s infinite linear;
-  -moz-animation: itsstillreallycloudy 500s infinite linear;
-  -o-animation: itsstillreallycloudy 500s infinite linear;
-  animation: itsstillreallycloudy 500s infinite linear;
-}
-section.background {
+body {
   min-width: 100%;
   min-height: 100%;
-  top: 60px;
-  background-image: url("/imgs/hnh-snow02.png"), url("/imgs/hnh-snow03.png");
-  background-repeat: repeat;
-  background-position: 0 100, 25 25;
+}
+header {
+  min-width: 100%;
+  height: 50px;
+  background-image: url("/imgs/hackandhops2013head.png");
+  background-repeat: repeat-x;
+  z-index: 101;
+  position: relative;
+}
+.content {
+  width: 560px;
+  min-height: 100%;
   background-color: transparent;
-  z-index: 1;
-  -webkit-animation: itsstillfrosty 40s infinite linear;
-  -moz-animation: itsstillfrosty 40s infinite linear;
-  -o-animation: itsstillfrosty 40s infinite linear;
-  animation: itsstillfrosty 40s infinite linear;
-}
-section.randomclouds div.floater {
-  background-image: url("/imgs/nodephilly-hackandhops.png");
-  position: absolute;
-  width: 210px;
-  height: 120px;
-  left: -18%;
-  z-index: 102;
-  background-repeat: no-repeat;
-}
-section.randomclouds div.floater a {
-  width: 150px;
-  height: 90px;
-  margin: 15px auto 0 auto;
-  display: block;
-  background-image: url("/imgs/nodephilly-hackandhops.png");
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-section.randomclouds div.floater:nth-child(1) {
-  bottom: 600px;
-  background-position: 0 -240px;
-  -webkit-animation: floater 100s infinite linear 7s;
-  -moz-animation: floater 100s infinite linear 7s;
-  -o-animation: floater 100s infinite linear 7s;
-  animation: floater 100s infinite linear 7s;
-}
-section.randomclouds div.floater:nth-child(2) {
-  bottom: 80px;
-  background-position: -210px -240px;
-  -webkit-animation: floater 100s infinite linear 17s;
-  -moz-animation: floater 100s infinite linear 17s;
-  -o-animation: floater 100s infinite linear 17s;
-  animation: floater 100s infinite linear 17s;
-}
-section.randomclouds div.floater[name="Monetate"] {
-  bottom: 125px;
-  background-position: 0 -360px;
-  -webkit-animation: floater 100s infinite linear;
-  -moz-animation: floater 100s infinite linear;
-  -o-animation: floater 100s infinite linear;
-  animation: floater 100s infinite linear;
-  z-index: 103;
-}
-section.randomclouds div.floater[name="Monetate"] a {
-  background-position: -210px -360px;
-}
-section.randomclouds div.floater[name="Monetate"] a:hover {
-  background-position: -210px -450px;
-}
-section.randomclouds div.floater[name="Chatham"] {
-  bottom: 225px;
-  background-position: 0 -360px;
-  -webkit-animation: floater 100s infinite linear 5s;
-  -moz-animation: floater 100s infinite linear 5s;
-  -o-animation: floater 100s infinite linear 5s;
-  animation: floater 100s infinite linear 5s;
-  z-index: 103;
-}
-section.randomclouds div.floater[name="Chatham"] a {
-  background-position: -360px -360px;
-}
-section.randomclouds div.floater[name="Chatham"] a:hover {
-  background-position: -360px -450px;
-}
-section.randomclouds div.floater[name="AndYet"] {
-  bottom: 165px;
-  background-position: 0 -360px;
-  -webkit-animation: floater 100s infinite linear 17s;
-  -moz-animation: floater 100s infinite linear 17s;
-  -o-animation: floater 100s infinite linear 17s;
-  animation: floater 100s infinite linear 17s;
-  z-index: 103;
-}
-section.randomclouds div.floater[name="AndYet"] a {
-  background-position: -510px -360px;
-}
-section.randomclouds div.floater[name="AndYet"] a:hover {
-  background-position: -510px -450px;
-}
-section.randomclouds div.floater:nth-child(6) {
-  bottom: 100px;
-  background-position: 0 -240px;
-  -webkit-animation: floater 100s infinite linear 34s;
-  -moz-animation: floater 100s infinite linear 34s;
-  -o-animation: floater 100s infinite linear 34s;
-  animation: floater 100s infinite linear 34s;
-}
-section.randomclouds div.floater:nth-child(7) {
-  bottom: 50px;
-  background-position: -210px -240px;
-  -webkit-animation: floater 100s infinite linear 22s;
-  -moz-animation: floater 100s infinite linear 22s;
-  -o-animation: floater 100s infinite linear 22s;
-  animation: floater 100s infinite linear 22s;
-}
-section.randomclouds div.floater:nth-child(8) {
-  bottom: 180px;
-  background-position: -210px -240px;
-  -webkit-animation: floater 100s infinite linear 32s;
-  -moz-animation: floater 100s infinite linear 32s;
-  -o-animation: floater 100s infinite linear 32s;
-  animation: floater 100s infinite linear 32s;
-}
-section.randomclouds div.floater:nth-child(9) {
-  bottom: 500px;
-  background-position: -210px -240px;
-  -webkit-animation: floater 100s infinite linear 20s;
-  -moz-animation: floater 100s infinite linear 20s;
-  -o-animation: floater 100s infinite linear 20s;
-  animation: floater 100s infinite linear 20s;
-}
-section.randomclouds div.floater:nth-child(10) {
-  bottom: 70px;
-  background-position: -210px -240px;
-  -webkit-animation: floater 100s infinite linear 32s;
-  -moz-animation: floater 100s infinite linear 32s;
-  -o-animation: floater 100s infinite linear 32s;
-  animation: floater 100s infinite linear 32s;
-}
-section.randomclouds div.floater:nth-child(11) {
-  bottom: 200px;
-  background-position: -210px -240px;
-  -webkit-animation: floater 100s infinite linear 42s;
-  -moz-animation: floater 100s infinite linear 42s;
-  -o-animation: floater 100s infinite linear 42s;
-  animation: floater 100s infinite linear 42s;
-}
-footer.hackandhops {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 104;
-}
-footer.hackandhops div.skyline {
-  width: 1000px;
-  height: 160px;
-  background-image: url("/imgs/nodephilly-hackandhops.png");
-  background-repeat: no-repeat;
-  background-position: 0 -840px;
   margin: 0 auto;
+  position: relative;
+  padding: 20px;
+  z-index: 100;
 }
-footer.hackandhops div.yardsbuilding {
+/* =========================================== typography */
+html {
+  font-family: 'Ubuntu', Helvetica, sans-serif;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-align: center;
+}
+h1 {
+  font-weight: 300;
+  font-size: 48px;
+  color: #814c03;
+  margin: 0 0 15px 0;
+}
+h2 {
+  font-weight: 400;
+  font-size: 26px;
+  color: #814c03;
+  margin: 0 0 15px 0;
+}
+p {
+  font-weight: 300;
+  font-size: 20px;
+  color: #351d09;
+}
+p a {
+  color: #1180a5;
+  text-decoration: none;
+}
+/* =========================================== head */
+.logo {
+  background-image: url("/imgs/hackandhops2013.png");
+  background-position: 0 0;
   width: 300px;
-  height: 150px;
-  background-image: url("/imgs/nodephilly-hackandhops.png");
-  background-repeat: no-repeat;
-  background-position: 0 -690px;
-  margin: 0 auto;
+  height: 204px;
+  margin: 0 auto 25px auto;
 }
-footer.hackandhops div.content {
-  background-color: nodeph-blue;
-  width: 100%;
-  height: 25px;
-}
-@-moz-keyframes itsfrosty {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px;
-  }
-}
-@-webkit-keyframes itsfrosty {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px;
-  }
-}
-@-o-keyframes itsfrosty {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px;
-  }
-}
-@-ms-keyframes itsfrosty {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px;
-  }
-}
-@keyframes itsfrosty {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px;
-  }
-}
-@-moz-keyframes itsstillfrosty {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px, 700px 700px;
-  }
-}
-@-webkit-keyframes itsstillfrosty {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px, 700px 700px;
-  }
-}
-@-o-keyframes itsstillfrosty {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px, 700px 700px;
-  }
-}
-@-ms-keyframes itsstillfrosty {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px, 700px 700px;
-  }
-}
-@keyframes itsstillfrosty {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-
-  100% {
-    background-position: 700px 700px, 700px 700px;
-  }
-}
-@-moz-keyframes itscloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1015px 0;
-  }
-}
-@-webkit-keyframes itscloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1015px 0;
-  }
-}
-@-o-keyframes itscloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1015px 0;
-  }
-}
-@-ms-keyframes itscloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1015px 0;
-  }
-}
-@keyframes itscloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1015px 0;
-  }
-}
-@-moz-keyframes itsstillcloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 997px 0;
-  }
-}
-@-webkit-keyframes itsstillcloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 997px 0;
-  }
-}
-@-o-keyframes itsstillcloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 997px 0;
-  }
-}
-@-ms-keyframes itsstillcloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 997px 0;
-  }
-}
-@keyframes itsstillcloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 997px 0;
-  }
-}
-@-moz-keyframes itsstillreallycloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1042px 0;
-  }
-}
-@-webkit-keyframes itsstillreallycloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1042px 0;
-  }
-}
-@-o-keyframes itsstillreallycloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1042px 0;
-  }
-}
-@-ms-keyframes itsstillreallycloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1042px 0;
-  }
-}
-@keyframes itsstillreallycloudy {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 1042px 0;
-  }
-}
-@-moz-keyframes floater {
-  0% {
-    left: -15%;
-  }
-
-  100% {
-    left: 105%;
-  }
-}
-@-webkit-keyframes floater {
-  0% {
-    left: -15%;
-  }
-
-  100% {
-    left: 105%;
-  }
-}
-@-o-keyframes floater {
-  0% {
-    left: -15%;
-  }
-
-  100% {
-    left: 105%;
-  }
-}
-@-ms-keyframes floater {
-  0% {
-    left: -15%;
-  }
-
-  100% {
-    left: 105%;
-  }
-}
-@keyframes floater {
-  0% {
-    left: -15%;
-  }
-
-  100% {
-    left: 105%;
-  }
+.bubble {
+  position: absolute;
+  background-color: transparent;
+  height: 10px;
+  width: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #eab132;
 }

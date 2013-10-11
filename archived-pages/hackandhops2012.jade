@@ -1,0 +1,217 @@
+!!!
+html
+	head
+		title= title
+		meta(name="description", content="Node Philly will be at Yards Brewery on Thursday, December 13th for our first Holiday Hack and Hops event!")
+		meta(name="robots", content="index, follow")
+		meta(name="geo.placename", content="Philadelphia, Pennsylvania")
+		meta(name="geo.location", content="39.96268, -75.13593")
+		link(rel="icon", href="/imgs/favicon.ico", type="image/x-icon")
+		meta(name="author", content="@bwhitham, @timsavery")
+		link(rel='stylesheet', href='/stylesheets/style.css')	
+		script(type='text/javascript', src='/js/jquery1.7.2.js')
+		script(type='text/javascript', src='/js/modernizr.js')
+		script(type='text/javascript', src='/js/tinycarousel.js')
+		script(type='text/javascript', src='/js/hackandhops.js')
+	
+		script(type="text/javascript")
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-29643918-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+	body.hackandhops
+		section.feature
+			section.viewport
+				section.overview
+					article.one Oh the weather outside is frightful, <br> but Node Philly has something delightful…
+					article.two 
+						article.letscelebrate
+							h1 Let's celebrate an awesome year.
+							p It's that time of year to say thanks. From Node Philly to all of you, we say "thank you". Thank you to all the Noders, speakers, hackers, sponsors, boxes of pizza, and cases of PBR. It's been a great year and it's time to send it off with a celebration.<br><br>
+							p Join us on December 13th, at Yards Brewery, as we celebrate all the things that make node.js great. There will be speeches from Philly Noders, a tour of Yards, and a special gift from our friends at 
+								a(href="http://www.monetate.com", target="_blank") Monetate.  
+						article.details
+							h2 7:30pm - 11:30pm
+							p Check back soon for a full itinerary. We’ll kick off the evening around 7:30pm with some time to enjoy a drink and mingle with guests for the first half hour. Around 8:00pm, the talks will begin with some breaks in between for sharing work, mingling, and tours of Yards Brewery.
+						div.clear
+					article.three
+						section.speakersGrid
+							section.speakerGridTopRow
+								section.speakerTile(speakerExpanded='MarkHeadd')
+									div.headshot(name='MarkHeadd')
+									h1 Mark Headd
+									a.speakercontact(href='http://www.twitter.com/mheadd', target='_blank') @mheadd
+									p.brief 
+										| <p>Chief Data Officer for Philadelphia and <a href="http://www.twitter.com/codeforamerica" target="_blank">@codeforamerica</a> alum.</p> 
+									a.moreButton See what he'll be sharing
+								section.speakerTile(speakerExpanded='PamSelle')
+									div.headshot(name='PamSelle')
+									h1 Pam Selle
+									a.speakercontact(href='http://www.twitter.com/pamasaur', target='_blank') @pamasaur
+									p.brief 
+										| <p><a href="http://www.twitter.com/gdiphilly" target="_blank">@gdiphilly</a> instructor, front-end diva, Rubyist, Pythonista.</p>
+									a.moreButton See what she'll be sharing
+								section.speakerTile(speakerExpanded='BryanPaluch')
+									div.headshot(name='BryanPaluch')
+									h1 Bryan Paluch
+									a.speakercontact(href='http://www.twitter.com/Letthisbemywrit', target='_blank') @Letthisbemywrit
+									p.brief Telecom Engineer at Comcast Labs focused on communication APIs.
+									a.moreButton See what he'll be sharing
+							section.speakerGridBottomRow
+								section.speakerTile(speakerExpanded='JordanSantell')
+									div.headshot(name='JordanSantell')
+									h1 Jordan Santell
+									a.speakercontact(href='http://www.twitter.com/jsantell', target='_blank') @jsantell
+									p.brief JavaScript consultant and builder of browser audio APIs
+									a.moreButton See what he'll be sharing
+								section.speakerTile(speakerExpanded='ChrisAlfano')
+									div.headshot(name='ChrisAlfano')
+									h1 Chris Alfano
+									a.speakercontact(href='http://www.twitter.com/themightychris', target='_blank') @themightychris
+									p.brief 
+										| <p>Mad scientist at <a href="http://www.twitter.com/wearejarvus" target="_blank">@wearejarvus</a> and cofounder of <a href="http://www.twitter.com/devnuts" target="_blank">@devnuts</a>.</p>
+									a.moreButton See what he'll be sharing
+								div.clear
+						
+						section.speakerExpanded(id='MarkHeadd')
+							article.speakerinfo
+								header
+									div.headshot(name='MarkHeadd')
+									h1 Mark Headd &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://www.twitter.com/mheadd', target='_blank') @mheadd
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://civic.io', target='_blank') Civic.io
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='https://github.com/mheadd', target='_blank') Github
+									p Mark Headd is a writer, speaker, teacher and thought leader on communication technologies and open government. He has been developing telephone, mobile, speech recognition and messaging applications for 10 years. In 2012, the Mayor Michael Nutter selected Mark to become the City of Philadelphia’s first Chief Data Officer, to lead the city’s open data and government transparency initiatives.
+								section.content
+									h1 Civic coding in the City of Brotherly Love
+									p The City of Philadelphia is in the process of rolling out a number of powerful REST APIs for querying public data. Node.js is an ideal tool to interact with these APIs and to build apps that use open data from Philadelphia. This talk will provide an overview of the APIs are that available and walk through using Node.js modules to build powerful open data apps for the City of Brotherly Love.
+								a.lessButton Close
+						section.speakerExpanded(id='PamSelle')
+							article.speakerinfo
+								header
+									div.headshot(name='PamSelle')
+									h1 Pam Selle &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://www.twitter.com/pamasaur', target='_blank') @pamasaur
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://www.twitter.com/gdiphilly', target='_blank') @gdiphilly
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://thewebivore.com', target='_blank') thewebivore.com
+									p Pam Selle is a professional front-end developer at Paperless Post, bringing beautiful stationery to the digital realm. She is known as a champion of web standards, use of fancy CSS, and for her love of VanillaJS™. She also teaches students web development and JavaScript through GirlDevelopIt Philadelphia, and is an active blogger.
+								section.content
+									h1 It’s Just JavaScript: Rapid Protoyping in Node
+									p Have you ever wanted to get something up on the web in a short amount of time to gather feedback? Recently, I needed to create a prototype as part of an MOOC HCI class -- and I ended up using Node, Express, and Heroku. This talk covers the issues and solutions applied to quickly and easily get a prototype on the web. This talk will also highlight precious gains you’ll get from prototyping and how you can fulfill your needs with ‘just JavaScript’.
+								a.lessButton Close
+						section.speakerExpanded(id='BryanPaluch')
+							article.speakerinfo
+								header
+									div.headshot(name='BryanPaluch')
+									h1(name='BryanPaluch') Byan Paluch &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://www.twitter.com/Letthisbemywrit', target='_blank') @Letthisbemywrit
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://bryanpaluch.com/', target='_blank') bryanpaluch.com
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='https://github.com/bryanpaluch', target='_blank') Github
+									p Bryan Paluch is a Telecom Engineer at Comcast Labs. He is responsible for building communication infrastructure that pushes the boundaries of the voice stack and extends it into video and web. His current focus is building a API that will allow customers to use their communication services on any website or application. 
+								section.content
+									h1 Real-time audio and video is hard to do
+									p Real-time audio and video can be tough to implement. Implementing it correctly can be even tougher. This talk will cover how node.js was crucial in building the WebRTC communication service. There will be highlights of how signaling modules like socket.io were implemented, how to access PSTN, and how this will impact telecom providers. There will also be a demo of Paluch’s video service, WebRTC With Me.
+								a.lessButton Close
+						section.speakerExpanded(id='JordanSantell')
+							article.speakerinfo
+								header
+									div.headshot(name='JordanSantell')
+									h1 Jordan Santell &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://www.twitter.com/jsantell', target='_blank') @jsantell
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://www.jsantell.com/', target='_blank') jsantell.com
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='https://github.com/jsantell', target='_blank') Github
+									p Jordan is a JavaScript consultant in Philly, interested in all forms of JavaScript: node.js apps and CLI tools, wrestling with audio and JavaScript in the form of browser audio APIs with dancer.js and audio decoding with ogg.js, and slinging out open source JS.
+								section.content
+									h1 Speech details pending.
+									p Jordan is clearly busy building something amazing to share with all of you and as soon as we figure out what it is, we'll post it here.
+								a.lessButton Close
+						section.speakerExpanded(id='ChrisAlfano')
+							article.speakerinfo
+								header
+									div.headshot(name='ChrisAlfano')
+									h1 Chris Alfano &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://www.twitter.com/themightychris', target='_blank') @themightychris
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='http://www.jarv.us', target='_blank') jarv.us
+										| &nbsp;&nbsp;|&nbsp;&nbsp;
+										a.speakercontact(href='https://github.com/themightychris', target='_blank') Github
+									p Chris is the mad scientist at @wearejarvus and cofounder at @devnuts. He serves Philly as CfA Brigade Captain. Chris loves building technology in education with SLA & @UTP_Philly.
+								section.content
+									h1 Speech details pending.
+									p Chris is clearly busy building something amazing to share with all of you and as soon as we figure out what it is, we'll post it here.
+								a.lessButton Close
+							div.clear
+					article.four
+						article.sponsor
+							div.chathamfinancial
+							p We create sophisticated technology solutions for our clients. We help clients understand their foreign currency, interest rate, and commodity risks and offer alternatives for how to manage it. We are great at listening to clients, doing hard math and writing powerful analysis tools that can be used both within Chatham and by external users.<br><br>
+							a(href="http://www.twitter.com/ChathamFin", target="_blank") @ChathamFin<br>
+							a(href="http://www.chathamfinancial.com", target="_blank") Chathamfinancial.com
+						article.sponsor
+							div.monetate
+							p We help marketers deliver relevant website experiences based on real-time analysis. Our products allow clients to change anything, anywhere on their websites instantly, helping them easily run A/B and multivariate test campaigns. We love data crunching, UX, JS, high-volume/low-latency APIs -- and we ship code often.<br><br>
+							a(href="http://www.twitter.com/Monetate", target="_blank") @Monetate
+							a(href="http://engineering.monetate.com", target="_blank") Monetate.com
+						article.sponsor
+							div.andyet
+							p The common phrase “and yet” is poetry's simple–machine lever. Whether said with stuttering hesitance or inspiring confidence, it always means a departure from what came before. “And yet” humbly hints at the precise moment of possibility.<br><br>
+							a(href="http://www.twitter.com/AndYet", target="_blank") @&yet
+							a(href="http://www.andyet.com", target="_blank") Andyet.com
+						article.sponsor
+							div.comcastlabs
+							p Comcast Labs is the research group dedicated to finding innovative solutions for over 2.5 million Comcast subscribers. Our group helps expand service provisions meeting the goal of providing for everyone’s entertainment needs.<br><br>
+							a(href="http://www.twitter.com/Comcast", target="_blank") @Comcast
+							a(href="http://comcast.com", target="_blank") Comcast.com
+						div.clear
+					article.five
+						| <div class="eventbrite" >
+						| <iframe src="http://www.eventbrite.com/tickets-external?eid=4822936533&ref=etckt&v=2" frameborder="0" height="214" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe>
+						| <div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" >
+						| </div></div>
+						section.directions
+							div.yardslogo
+							p 901 North Delaware Avenue, Philadelphia, PA <br>
+								a(href="http://goo.gl/maps/oC6tD", target="_blank") View in Google Maps &rarr;
+
+			section.pager
+				a(rel="0").pagenum Welcome
+				a(rel="1").pagenum Details
+				a(rel="2").pagenum Speakers
+				a(rel="3").pagenum Sponsors
+				a(rel="4").pagenum Attend
+		section.foreground
+		header.hackandhops
+			div.hackandhops-logo
+		section.cloudybackground
+		section.background
+		section.randomclouds
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+			div.floater
+		footer.hackandhops
+			div.skyline
+			div.content
