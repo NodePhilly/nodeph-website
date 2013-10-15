@@ -80,7 +80,8 @@ function startDrinking(){
 	var content = $("#content");
 
 	var blureffect = parseInt($(".whitespace").css('height'))/50 + "px";
-	$("p, h2, h1").css({'color': 'transparent',  'textShadow': 'black 0px 0px ' +blureffect})
+	$("p").css({'color': 'transparent',  'textShadow': '#351d09 0px 0px ' +blureffect})
+	$("h1, h2").css({'color': 'transparent',  'textShadow': '#814C03 0px 0px ' +blureffect})
 	if($(".whitespace").height() >= 400){
 	leftBlur.show();
 	rightBlur.show();
@@ -103,7 +104,8 @@ function stopDrinking(){
 	}	
 
 	var blureffect = parseInt($(".whitespace").css('height'))/50 + "px";
-	$("p, h2, h1").css({'color': 'transparent',  'textShadow': 'black 0px 0px ' +blureffect})
+	$("p").css({'color': 'transparent',  'textShadow': '#351d09 0px 0px ' +blureffect})
+	$("h1, h2").css({'color': 'transparent',  'textShadow': '#814C03 0px 0px ' +blureffect})
 	if($(".whitespace").height() > 400){
 		leftBlur.show();
 		rightBlur.show();
