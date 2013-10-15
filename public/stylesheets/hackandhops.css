@@ -1,8 +1,11 @@
-/*CSS for Node Philly's Hack and Hops 2013*/
 /* =========================================== globals */
 * {
   margin: 0;
   padding: 0;
+}
+img {
+  outline: 0;
+  border: 0;
 }
 ::-webkit-selection {
   background-color: #eab132;
@@ -28,6 +31,9 @@ hr {
   outline: none;
   border: none;
   margin: 15px 0;
+}
+.clear {
+  clear: both;
 }
 /* =========================================== structure */
 html {
@@ -63,6 +69,33 @@ header {
   min-width: 100%;
   height: 50px;
   position: relative;
+}
+.speaker {
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  margin: 0 0 15px 0;
+  float: left;
+}
+.speaker img {
+  width: 150px;
+  height: 150px;
+  background-color: #351d09;
+}
+.speaker img,
+.speaker .content {
+  float: left;
+}
+.speaker .content {
+  width: 385px;
+  padding: 0 0 0 15px;
+  text-align: left;
+}
+.speaker .content h2 a {
+  font-size: 20px;
+  margin: 0 0 0 15px;
+  text-decoration: none;
+  color: #1180a5;
 }
 /* =========================================== typography */
 html {
