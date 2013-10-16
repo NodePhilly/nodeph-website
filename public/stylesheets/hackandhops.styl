@@ -44,6 +44,12 @@ border-radius(args)
 .clear
 	clear both
 
+transition()
+	-webkit-transition arguments
+	-moz-transition arguments
+	-o-transition arguments
+	transition arguments
+
 /* =========================================== structure */
 
 html
@@ -105,11 +111,45 @@ header
 		padding 0 0 0 15px
 		text-align left
 
+		h2
+			margin 0
+			line-height normal
+
 		h2 a
 			font-size 20px
-			margin 0 0 0 15px
+			margin 0 0 0 10px
 			text-decoration none
 			color blue
+a.partner
+	width 280px
+	height 100px
+	background-color transparent
+	float left
+	transition(all, 0.3s, linear)
+
+	&:nth-even-child
+		margin 0 0 0 10px
+
+	&:hover
+		background-color bg-yellow
+
+address.location,
+section.tickets
+	width 280px
+	height 100px
+	float left
+	text-align left
+	font-style normal
+
+address.location a
+		font-size 28px
+		color blue
+		text-decoration none
+
+section.tickets a
+	color blue
+	text-decoration none
+
 
 
 /* =========================================== typography */
@@ -138,6 +178,12 @@ h2
 	color brown
 	margin 0 0 15px 0
 
+h3
+	font-size 18px
+	font-weight 300
+	line-height normal
+	margin 0
+
 p
 	font-weight 300
 	font-size 20px
@@ -147,6 +193,9 @@ p a
 	color blue
 	text-decoration none
 
+p.description
+	font-size 16px
+	margin 10px 0 0 0
 
 /* =========================================== head */
 
@@ -156,7 +205,6 @@ p a
 	width 300px
 	height 204px
 	margin 0 auto 25px auto
-
 
 .bubble
 	position absolute
@@ -171,3 +219,10 @@ p a
 	position absolute
 .whitespace
 	background-color white
+.bubblesContainer
+	position absolute
+	top 0
+	left 0
+	right 0
+	bottom 0
+
