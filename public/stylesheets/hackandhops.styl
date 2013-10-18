@@ -2,7 +2,6 @@
 
 hackandhops-sprite = url('/imgs/hackandhops2013.png')
 
-
 /* =========================================== globals */
 *
 	margin 0
@@ -130,16 +129,33 @@ header
 			color blue
 a.partner
 	width 280px
-	height 100px
+	height 150px
 	background-color transparent
 	float left
 	transition(all, 0.3s, linear)
+	background-repeat no-repeat
 
 	&:nth-even-child
 		margin 0 0 0 10px
 
 	&:hover
 		background-color bg-yellow
+
+	&[name="chathamfinancial"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-chathamfinancial.png')
+	&[name="monetate"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-monetate.png')
+	&[name="leadnomics"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-leadnomics.png')
+	&[name="strongloop"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-strongloop.png')
+	&[name="yourkarma"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-yourkarma.png')
+	&[name="technicallyphilly"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-technically.png')
+	
+	
+
 
 address.location,
 section.tickets

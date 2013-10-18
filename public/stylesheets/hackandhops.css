@@ -111,19 +111,38 @@ header {
 }
 a.partner {
   width: 280px;
-  height: 100px;
+  height: 150px;
   background-color: transparent;
   float: left;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  background-repeat: no-repeat;
 }
 a.partner:nth-even-child {
   margin: 0 0 0 10px;
 }
 a.partner:hover {
   background-color: #fcc143;
+}
+a.partner[name="chathamfinancial"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-chathamfinancial.png");
+}
+a.partner[name="monetate"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-monetate.png");
+}
+a.partner[name="leadnomics"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-leadnomics.png");
+}
+a.partner[name="strongloop"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-strongloop.png");
+}
+a.partner[name="yourkarma"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-yourkarma.png");
+}
+a.partner[name="technicallyphilly"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-technically.png");
 }
 address.location,
 section.tickets {
