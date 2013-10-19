@@ -1,15 +1,15 @@
-/*CSS for Node Philly's Hack and Hops 2013*/
-
 @import "colors.styl"
 
 hackandhops-sprite = url('/imgs/hackandhops2013.png')
-
 
 /* =========================================== globals */
 *
 	margin 0
 	padding 0
 
+img
+	outline 0
+	border 0
 
 ::-webkit-selection 
 	background-color hnhbubbles
@@ -40,11 +40,20 @@ border-radius(args)
 	-o-border-radius args
 	border-radius args
 
+.clear
+	clear both
+
+transition()
+	-webkit-transition arguments
+	-moz-transition arguments
+	-o-transition arguments
+	transition arguments
+
 /* =========================================== structure */
 
 html
-	width 100%
-	height 100%
+	min-width 100%
+	min-height 100%
 
 	background-image -webkit-radial-gradient(top center, bg-white, bg-yellow)
 	
@@ -58,12 +67,18 @@ body
 	min-width 100%
 	min-height 100%
 
+.bubblesContainer
+	position fixed
+	top 0
+	left 0
+	bottom 0
+	right 0
+	z-index 1
+
 header
 	min-width 100%
 	height 50px;
-	background-image url('/imgs/hackandhops2013head.png')
-	background-repeat repeat-x
-	z-index 101
+	z-index 99
 	position relative
 
 .content
@@ -74,6 +89,91 @@ header
 	position relative
 	padding 20px
 	z-index 100
+
+.foam
+	background-image url("../imgs/hackandhops2013head.png")
+	background-repeat repeat-x
+	min-width 100%
+	height 50px
+	position relative
+
+.speaker
+	position relative
+	width 100%
+	padding 15px
+	margin 0 0 15px 0
+	float left
+
+	img
+		width 150px
+		height 150px
+		background-color black
+
+	img,
+	.content
+		float left
+
+	.content
+		width 385px
+		padding 0 0 0 15px
+		text-align left
+
+		h2
+			margin 0
+			line-height normal
+
+		h2 a
+			font-size 20px
+			margin 0 0 0 10px
+			text-decoration none
+			color blue
+a.partner
+	width 280px
+	height 150px
+	background-color transparent
+	float left
+	transition(all, 0.3s, linear)
+	background-repeat no-repeat
+
+	&:nth-even-child
+		margin 0 0 0 10px
+
+	&:hover
+		background-color bg-yellow
+
+	&[name="chathamfinancial"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-chathamfinancial.png')
+	&[name="monetate"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-monetate.png')
+	&[name="leadnomics"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-leadnomics.png')
+	&[name="strongloop"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-strongloop.png')
+	&[name="yourkarma"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-yourkarma.png')
+	&[name="technicallyphilly"]
+		background-image url('/imgs/hnh2013/hnh2013-partner-technically.png')
+	
+	
+
+
+address.location,
+section.tickets
+	width 280px
+	height 100px
+	float left
+	text-align left
+	font-style normal
+
+address.location a
+		font-size 28px
+		color blue
+		text-decoration none
+
+section.tickets a
+	color blue
+	text-decoration none
+
 
 
 /* =========================================== typography */
@@ -102,6 +202,12 @@ h2
 	color brown
 	margin 0 0 15px 0
 
+h3
+	font-size 18px
+	font-weight 300
+	line-height normal
+	margin 0
+
 p
 	font-weight 300
 	font-size 20px
@@ -111,6 +217,9 @@ p a
 	color blue
 	text-decoration none
 
+p.description
+	font-size 16px
+	margin 10px 0 0 0
 
 /* =========================================== head */
 
@@ -121,7 +230,6 @@ p a
 	height 204px
 	margin 0 auto 25px auto
 
-
 .bubble
 	position absolute
 	background-color transparent
@@ -129,12 +237,11 @@ p a
 	width 10px
 	border-radius 50%
 	border 1px solid hnhbubbles
-
-
-
-
-
-
-
+.ZeBubbleHolder
+	height 50px
+	width 50px
+	position absolute
+.whitespace
+	background-color white
 
 

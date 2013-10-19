@@ -25,19 +25,67 @@ html
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 
-	body.bubblesContainer
+	body
 		header
-		section.content
+			.whitespace
+			.foam
+		section.content#content
+
 			nav.logo
 			h1 It's time to celebrate.
 			p Join us at Manayunk Brewery for the 2nd Annual Hack and Hops to toast another year full of great Node stuff. We’ll keep the awesome going with speakers, swag, food, and of course… beer.
 			hr
 			h2 Speakers
-			p Holder.
+			section.speaker
+				img(src="/imgs/hnh2013/hnh2013-bryanpaluch.jpg")
+				section.content
+					h2 
+						| Bryan Paluch
+						| <a href="http://www.twitter.com/bryanpaluch"> @bryanpaluch</a>
+					h3 Engineer at Comcast
+					p.description How to tank your production Node.js application without anyone ever finding out.  We'll look at some big Node.js issues that are rarely talked about, and how to have your application self-monitor and self-repair errors you've never encountered before.
+				div.clear
+			section.speaker
+				img(src="/imgs/hnh2013/hnh2013-tomsawver.jpg")
+				section.content
+					h2 
+						| Tom Sawver
+						| <a href="https://twitter.com/tomfrost"> @tomfrost</a>
+					h3 Lead Architect at Leadnomics
+					p.description How to tank your production Node.js application without anyone ever finding out.  We'll look at some big Node.js issues that are rarely talked about, and how to have your application self-monitor and self-repair errors you've never encountered before.
+				div.clear
+			section.speaker
+				img(src="/imgs/hnh2013/hnh2013-glenlougheed.jpg")
+				section.content
+					h2 
+						| Glen Lougheed
+						| <a href="https://twitter.com/glougheed"> @glougheed</a>
+					h3 CEO of Nodefly - Acquired by StrongLoop
+					p.description How to tank your production Node.js application without anyone ever finding out.  We'll look at some big Node.js issues that are rarely talked about, and how to have your application self-monitor and self-repair errors you've never encountered before.
+				div.clear
+			
 			hr
 			h2 Partners
-			p Holder.
+			a.partner(name="chathamfinancial", href="http://www.chathamfinancial.com", target="_blank")
+			a.partner(name="monetate", href="http://www.monetate.com", target="_blank")
+			a.partner(name="leadnomics", href="http://www.leadnomics.com", target="_blank")
+			a.partner(name="strongloop", href="http://www.strongloop.com", target="_blank")
+			a.partner(name="yourkarma", href="http://www.yourkarma.com", target="_blank")
+			a.partner(name="technicallyphilly", href="http://www.technical.ly/philly", target="_blank")
+			div.clear
+
 			hr
-			h2 Tickets
-			p Holder.
-			
+			h2 Tickets and Location
+			section.tickets
+				p 
+					| Tickets are only $10 and are available on our
+					| <a href="http://nodephilly.ticketleap.com/hackandhops"> Ticketleap page</a>
+			address.location
+				img()
+				a(href="http://www.manayunkbrewery.com/", target="_blank") Manayunk Brewery
+				p 400 Some Street
+				p Philadelphia, PA
+			div.clear
+		div.clear
+		.bubblesContainer
+		

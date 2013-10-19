@@ -1,8 +1,11 @@
-/*CSS for Node Philly's Hack and Hops 2013*/
 /* =========================================== globals */
 * {
   margin: 0;
   padding: 0;
+}
+img {
+  outline: 0;
+  border: 0;
 }
 ::-webkit-selection {
   background-color: #eab132;
@@ -29,10 +32,13 @@ hr {
   border: none;
   margin: 15px 0;
 }
+.clear {
+  clear: both;
+}
 /* =========================================== structure */
 html {
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   background-image: -webkit-radial-gradient(top center, #fee799, #fcc143);
   background-image: -moz-radial-gradient(top center, #fee799, #fcc143);
   background-image: -ms-radial-gradient(top center, #fee799, #fcc143);
@@ -42,12 +48,18 @@ body {
   min-width: 100%;
   min-height: 100%;
 }
+.bubblesContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
 header {
   min-width: 100%;
   height: 50px;
-  background-image: url("/imgs/hackandhops2013head.png");
-  background-repeat: repeat-x;
-  z-index: 101;
+  z-index: 99;
   position: relative;
 }
 .content {
@@ -58,6 +70,96 @@ header {
   position: relative;
   padding: 20px;
   z-index: 100;
+}
+.foam {
+  background-image: url("../imgs/hackandhops2013head.png");
+  background-repeat: repeat-x;
+  min-width: 100%;
+  height: 50px;
+  position: relative;
+}
+.speaker {
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  margin: 0 0 15px 0;
+  float: left;
+}
+.speaker img {
+  width: 150px;
+  height: 150px;
+  background-color: #351d09;
+}
+.speaker img,
+.speaker .content {
+  float: left;
+}
+.speaker .content {
+  width: 385px;
+  padding: 0 0 0 15px;
+  text-align: left;
+}
+.speaker .content h2 {
+  margin: 0;
+  line-height: normal;
+}
+.speaker .content h2 a {
+  font-size: 20px;
+  margin: 0 0 0 10px;
+  text-decoration: none;
+  color: #1180a5;
+}
+a.partner {
+  width: 280px;
+  height: 150px;
+  background-color: transparent;
+  float: left;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  background-repeat: no-repeat;
+}
+a.partner:nth-even-child {
+  margin: 0 0 0 10px;
+}
+a.partner:hover {
+  background-color: #fcc143;
+}
+a.partner[name="chathamfinancial"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-chathamfinancial.png");
+}
+a.partner[name="monetate"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-monetate.png");
+}
+a.partner[name="leadnomics"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-leadnomics.png");
+}
+a.partner[name="strongloop"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-strongloop.png");
+}
+a.partner[name="yourkarma"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-yourkarma.png");
+}
+a.partner[name="technicallyphilly"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-technically.png");
+}
+address.location,
+section.tickets {
+  width: 280px;
+  height: 100px;
+  float: left;
+  text-align: left;
+  font-style: normal;
+}
+address.location a {
+  font-size: 28px;
+  color: #1180a5;
+  text-decoration: none;
+}
+section.tickets a {
+  color: #1180a5;
+  text-decoration: none;
 }
 /* =========================================== typography */
 html {
@@ -84,6 +186,12 @@ h2 {
   color: #814c03;
   margin: 0 0 15px 0;
 }
+h3 {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: normal;
+  margin: 0;
+}
 p {
   font-weight: 300;
   font-size: 20px;
@@ -92,6 +200,10 @@ p {
 p a {
   color: #1180a5;
   text-decoration: none;
+}
+p.description {
+  font-size: 16px;
+  margin: 10px 0 0 0;
 }
 /* =========================================== head */
 .logo {
@@ -111,4 +223,12 @@ p a {
   -o-border-radius: 50%;
   border-radius: 50%;
   border: 1px solid #eab132;
+}
+.ZeBubbleHolder {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+}
+.whitespace {
+  background-color: #fff;
 }
