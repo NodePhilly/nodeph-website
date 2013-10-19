@@ -8,7 +8,7 @@ $(function() {
     StripeCheckout.open({
       key: 'pk_live_MQhN5CuHpu9maQ07HQlVpFMB',
       address: true,
-      amount: $('input[name="amount"]:checked').val(),
+      amount: $('select[name="amount"]').val(),
       name: 'Node Philly Sponsorship',
       panelLabel: 'Checkout',
       token: token
