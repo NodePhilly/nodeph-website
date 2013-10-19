@@ -47,6 +47,7 @@ html {
 body {
   min-width: 100%;
   min-height: 100%;
+  margin: 0 0 15px 0;
 }
 .bubblesContainer {
   position: fixed;
@@ -151,6 +152,7 @@ section.tickets {
   float: left;
   text-align: left;
   font-style: normal;
+  margin: 0 0 25px 0;
 }
 address.location a {
   font-size: 28px;
@@ -197,7 +199,8 @@ p {
   font-size: 20px;
   color: #351d09;
 }
-p a {
+p a,
+a {
   color: #1180a5;
   text-decoration: none;
 }

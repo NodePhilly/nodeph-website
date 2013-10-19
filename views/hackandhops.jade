@@ -33,9 +33,17 @@ html
 
 			nav.logo
 			h1 It's time to celebrate.
-			p Join us at Manayunk Brewery for the 2nd Annual Hack and Hops to toast another year full of great Node stuff. We’ll keep the awesome going with speakers, swag, food, and of course… beer.
+			p 
+				| Join us at Manayunk Brewery for the 2nd Annual <br/>
+				| Hack and Hops to toast another year full of great Node stuff. We’ll keep the awesome going with speakers, <br/>
+				| swag, food, and of course… beer.
 			hr
-			h2 Speakers
+			h2 Wednesday, November 20, 2013
+				p 6:00pm - 11:00pm
+				a(href="http://www.manayunkbrewery.com/", target="_blank") Manayunk Brewery
+				p 4120 Main Street, Philadelphia, PA 19127
+			hr
+			//- h2 Speakers
 			section.speaker
 				img(src="/imgs/hnh2013/hnh2013-bryanpaluch.jpg")
 				section.content
@@ -43,7 +51,7 @@ html
 						| Bryan Paluch
 						| <a href="http://www.twitter.com/bryanpaluch"> @bryanpaluch</a>
 					h3 Engineer at Comcast
-					p.description How to tank your production Node.js application without anyone ever finding out.  We'll look at some big Node.js issues that are rarely talked about, and how to have your application self-monitor and self-repair errors you've never encountered before.
+					p.description Using Nodejs to Control Complex Applications: Load balancing media servers with node. Typical load balancing scenarios will be covered as well as how they are normally solved and why in some particular cases a more tightly integrated solution is needed.
 				div.clear
 			section.speaker
 				img(src="/imgs/hnh2013/hnh2013-tomsawver.jpg")
@@ -61,11 +69,20 @@ html
 						| Glen Lougheed
 						| <a href="https://twitter.com/glougheed"> @glougheed</a>
 					h3 CEO of Nodefly - Acquired by StrongLoop
-					p.description How to tank your production Node.js application without anyone ever finding out.  We'll look at some big Node.js issues that are rarely talked about, and how to have your application self-monitor and self-repair errors you've never encountered before.
+					p.description Glen's working furiously to put together this awesome talk. Check back soon.
+				div.clear
+			section.speaker
+				img(src="/imgs/hnh2013/hnh2013-jarrettcruger.jpg")
+				section.content
+					h2 
+						| Jarrett Cruger
+						| <a href="https://twitter.com/jcrugzz"> @jcrugzz</a>
+					h3 Engineer at Nodejitsu
+					p.description A Journey through LevelDB. Learn about LevelDB and how it can be used to create your own custom live-streaming database!
 				div.clear
 			
 			hr
-			h2 Partners
+			//- h2 Partners
 			a.partner(name="chathamfinancial", href="http://www.chathamfinancial.com", target="_blank")
 			a.partner(name="monetate", href="http://www.monetate.com", target="_blank")
 			a.partner(name="leadnomics", href="http://www.leadnomics.com", target="_blank")
@@ -75,16 +92,14 @@ html
 			div.clear
 
 			hr
-			h2 Tickets and Location
-			section.tickets
-				p 
-					| Tickets are only $10 and are available on our
-					| <a href="http://nodephilly.ticketleap.com/hackandhops"> Ticketleap page</a>
-			address.location
-				img()
-				a(href="http://www.manayunkbrewery.com/", target="_blank") Manayunk Brewery
-				p 400 Some Street
-				p Philadelphia, PA
+			img(src="/imgs/hnh2013/ticketleap.png")
+			p 
+				| Tickets are only $10 and are available on our
+				| <a href="http://nodephilly.ticketleap.com/hackandhops"> Ticketleap page</a>
+			<br/>
+			p 
+				| Each ticket to the event is good for food, two deliciously fresh drafts, an event pint glass from the fine folks at Monetate, assorted goodies from our sponsors, a giveaway from YourKarma and a cornucopia of Node information <br/>
+				| from our presenters.
 			div.clear
 		div.clear
 		.bubblesContainer
