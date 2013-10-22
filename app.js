@@ -4,6 +4,8 @@ var express = require('express')
   , partners = require('./routes/partners')
   , gallery = require('./routes/gallery')
   , connect = require('./routes/connect')
+  , tweets = require('./routes/twitter')
+  , geeks = require('./routes/geeklist')
   , ptw2013 = require('./routes/ptw2013')
   , sponsorship = require('./routes/sponsorship')
   , stylus = require('stylus')
@@ -88,6 +90,11 @@ app.get('/hackandhops', hackandhops.index);
 app.get('/connect', connect.index);
 app.post('/connect', connect.post);
 
+app.get('/geeks/next', geeks.next);
+app.get('/geeks/next/:numGeeks', geeks.next);
+
+app.get('/tweets/next', tweets.next);
+app.get('/tweets/next/:numTweets', tweets.next);
 
 app.get('/ptw2013', ptw2013.index);
 
