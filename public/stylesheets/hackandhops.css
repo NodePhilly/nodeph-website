@@ -146,6 +146,9 @@ a.partner[name="yourkarma"] {
 a.partner[name="technicallyphilly"] {
   background-image: url("/imgs/hnh2013/hnh2013-partner-technically.png");
 }
+a.partner[name="manayunkbrewery"] {
+  background-image: url("/imgs/hnh2013/hnh2013-partner-manayunk.png");
+}
 address.location,
 section.tickets {
   width: 280px;
