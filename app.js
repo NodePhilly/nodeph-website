@@ -1,12 +1,12 @@
 var express = require('express')
-  //, routes = require('./routes/index')
-  //, events = require('./routes/events')
+  , routes = require('./routes/index')
+  , events = require('./routes/events')
   , partners = require('./routes/partners')
-  //, gallery = require('./routes/gallery')
+  , gallery = require('./routes/gallery')
   , connect = require('./routes/connect')
-  //, tweets = require('./routes/twitter')
-  //, geeks = require('./routes/geeklist')
-  //, ptw2013 = require('./routes/ptw2013')
+//  , tweets = require('./routes/twitter')
+//  , geeks = require('./routes/geeklist')
+  , ptw2013 = require('./routes/ptw2013')
   , sponsorship = require('./routes/sponsorship')
   , stylus = require('stylus')
   , hackandhops = require('./routes/hackandhops');
@@ -76,26 +76,26 @@ app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
-app.get('/', hackandhops.index);
+app.get('/', routes.index);
 app.get('/hackandhops', hackandhops.index);
 
-//app.get('/events', events.index);
-//app.get('/events/:year/:month', events.month);
+app.get('/events', events.index);
+app.get('/events/:year/:month', events.month);
 
 app.get('/partners', partners.index);
 
-//app.get('/gallery', gallery.index);
+app.get('/gallery', gallery.index);
 
 app.get('/connect', connect.index);
 app.post('/connect', connect.post);
+/*
+app.get('/geeks/next', geeks.next);
+app.get('/geeks/next/:numGeeks', geeks.next);
 
-//app.get('/geeks/next', geeks.next);
-//app.get('/geeks/next/:numGeeks', geeks.next);
-
-//app.get('/tweets/next', tweets.next);
-//app.get('/tweets/next/:numTweets', tweets.next);
-
-//app.get('/ptw2013', ptw2013.index);
+app.get('/tweets/next', tweets.next);
+app.get('/tweets/next/:numTweets', tweets.next);
+*/
+app.get('/ptw2013', ptw2013.index);
 
 app.get('/sponsorship', sponsorship.index);
 app.post('/sponsorship', sponsorship.post);
