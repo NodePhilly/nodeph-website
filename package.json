@@ -3,7 +3,7 @@
   "version": "0.2.0-56",
   "private": true,
   "dependencies": {
-    "express": "2.5.7",
+    "express": "4.17.1",
     "stylus": "0.28.0",
     "jade": "0.26.3",
     "twitterfeed": "0.1.1",
